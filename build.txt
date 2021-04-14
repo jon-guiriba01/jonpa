@@ -1,0 +1,21 @@
+Building the projects in this solution one at a time. To enable parallel build, please add the "-m" switch.
+  Copying C:\Users\Jon\Personal Projects\pa-beta\node_modules\gl/deps/windows/dll/x64/libEGL.dll to C:\Users\Jon\Personal Projects\pa-beta\node_modules\gl\build\Release
+          1 file(s) copied.
+  Copying C:\Users\Jon\Personal Projects\pa-beta\node_modules\gl/deps/windows/dll/x64/libGLESv2.dll to C:\Users\Jon\Personal Projects\pa-beta\node_modules\gl\build\Release
+          1 file(s) copied.
+  Copying C:\Users\Jon\Personal Projects\pa-beta\node_modules\gl/deps/windows/dll/x64/d3dcompiler_47.dll to C:\Users\Jon\Personal Projects\pa-beta\node_modules\gl\build\Release
+          1 file(s) copied.
+  bindings.cc
+C:\Users\Jon\.electron-gyp\11.3.0\include\node\v8.h(9182,39): warning C4996: 'v8::MicrotasksCompletedCallback': Use *WithData version. [C:\Users\Jon\Personal Projects\pa-beta\node_modules\gl\build\webgl.vcxproj]
+C:\Users\Jon\.electron-gyp\11.3.0\include\node\v8.h(9190,42): warning C4996: 'v8::MicrotasksCompletedCallback': Use *WithData version. [C:\Users\Jon\Personal Projects\pa-beta\node_modules\gl\build\webgl.vcxproj]
+  webgl.cc
+C:\Users\Jon\.electron-gyp\11.3.0\include\node\v8.h(9182,39): warning C4996: 'v8::MicrotasksCompletedCallback': Use *WithData version. [C:\Users\Jon\Personal Projects\pa-beta\node_modules\gl\build\webgl.vcxproj]
+C:\Users\Jon\.electron-gyp\11.3.0\include\node\v8.h(9190,42): warning C4996: 'v8::MicrotasksCompletedCallback': Use *WithData version. [C:\Users\Jon\Personal Projects\pa-beta\node_modules\gl\build\webgl.vcxproj]
+C:\Users\Jon\Personal Projects\pa-beta\node_modules\gl\src\native\webgl.cc(466,37): warning C4312: 'reinterpret_cast': conversion from 'GLint' to 'GLvoid *' of greater size [C:\Users\Jon\Personal Projects\pa-beta\node_modules\gl\build\webgl.vcxproj]
+  procs.cc
+C:\Users\Jon\.electron-gyp\11.3.0\include\node\v8.h(9182,39): warning C4996: 'v8::MicrotasksCompletedCallback': Use *WithData version. [C:\Users\Jon\Personal Projects\pa-beta\node_modules\gl\build\webgl.vcxproj]
+C:\Users\Jon\.electron-gyp\11.3.0\include\node\v8.h(9190,42): warning C4996: 'v8::MicrotasksCompletedCallback': Use *WithData version. [C:\Users\Jon\Personal Projects\pa-beta\node_modules\gl\build\webgl.vcxproj]
+  win_delay_load_hook.cc
+     Creating library C:\Users\Jon\Personal Projects\pa-beta\node_modules\gl\build\Release\webgl.lib and object C:\Users\Jon\Personal Projects\pa-beta\node_modules\gl\build\Release\webgl.exp
+webgl.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) public: class std::shared_ptr<class v8::BackingStore> __cdecl v8::ArrayBuffer::GetBackingStore(void)" (__imp_?GetBackingStore@ArrayBuffer@v8@@QEAA?AV?$shared_ptr@VBackingStore@v8@@@std@@XZ) referenced in function "public: __cdecl Nan::TypedArrayContents<char>::TypedArrayContents<char>(class v8::Local<class v8::Value>)" (??0?$TypedArrayContents@D@Nan@@QEAA@V?$Local@VValue@v8@@@v8@@@Z) [C:\Users\Jon\Personal Projects\pa-beta\node_modules\gl\build\webgl.vcxproj]
+C:\Users\Jon\Personal Projects\pa-beta\node_modules\gl\build\Release\webgl.node : fatal error LNK1120: 1 unresolved externals [C:\Users\Jon\Personal Projects\pa-beta\node_modules\gl\build\webgl.vcxproj]
