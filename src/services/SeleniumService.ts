@@ -219,7 +219,7 @@ class SeleniumService{
     this.driver = await new Builder().forBrowser('firefox')
       .setFirefoxOptions(
         new firefox.Options()
-          // .headless()
+          .headless()
           .setProfile(process.env.FIREFOX_PROFILE)
       ).build()
 

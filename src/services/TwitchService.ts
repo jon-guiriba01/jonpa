@@ -30,7 +30,6 @@ class TwitchService{
 
 
 	async postMixCompilation(params){
-		try{
 		console.log("preparing dirs... ")
 		await this.prepareDirs(params.channels, CLEAN_DIRS)
 
@@ -56,44 +55,36 @@ class TwitchService{
 			let clip = randomizedClips[i]
 			let channel = clip.broadcaster.display_name
 			console.log("processing clip", channel + " " + clip.views)
-			let clipOut = await this.downloadClip(clip.filePath, clip.slug)
+			// let clipOut = await this.downloadClip(clip.filePath, clip.slug)
+			// // console.log("clipOut", clipOut)
 
-			params.backdrop = await this.getBgFromVid(clipOut) //ddddddddddddddddddddddddddddddddd
-			break
-
-			if(i == 1){
-				params.thumb.primary = `${UtilService.getPath()}\\assets\\imgs\\thumbs\\primary\\${channel.toLowerCase()}-primary-${UtilService.getRandomInt(1,1)}.png`
-			}
-			if(i == 3){
-				params.thumb.secondary = `${UtilService.getPath()}\\assets\\imgs\\thumbs\\secondary\\${channel.toLowerCase()}-secondary-${UtilService.getRandomInt(1,1)}.png`
-			}
-			if(i == 3){
-				params.backdrop = await this.getBgFromVid(clipOut)
-			}
+			// if(i == 1){
+			// 	params.thumb.primary = `${UtilService.getPath()}\\assets\\imgs\\thumbs\\primary\\${channel.toLowerCase()}-primary-${UtilService.getRandomInt(1,1)}.png`
+			// }
+			// if(i == 3){
+			// 	params.thumb.secondary = `${UtilService.getPath()}\\assets\\imgs\\thumbs\\secondary\\${channel.toLowerCase()}-secondary-${UtilService.getRandomInt(1,1)}.png`
+			// }
+			// if(i == 3){
+			// 	params.backdrop = await this.getBgFromVid(clipOut)
+			// }
 
 		}
 
-		return // ddddddddddddddddddddddddddddddddddd
+		// let outDir = `${UtilService.getPath()}\\twitch\\${MIX_PATH}`
+		// this.generateCompilation(randomizedClips, outDir).then((outPath)=>{
 
-		let outDir = `${UtilService.getPath()}\\twitch\\${MIX_PATH}`
-		this.generateCompilation(randomizedClips, outDir).then((outPath)=>{
+		// 	let uploadData = this.makeYTMeta(randomizedClips, params)
+		// 	console.log("compiling randomized clips ", uploadData)
 
-			let uploadData = this.makeYTMeta(randomizedClips, params)
-			console.log("compiling randomized clips ", uploadData)
+		// 	if(params.upload)
+		// 		YoutubeService.upload({
+		// 			filePath:outPath,
+		// 			...uploadData
+		// 		})
 
-			if(params.upload)
-				YoutubeService.upload({
-					filePath:outPath,
-					...uploadData
-				})
-
-		}).catch((err)=>{
-			console.log("err", err)
-		})
-
-		}catch(err){
-			console.log(err)
-		}
+		// }).catch((err)=>{
+		// 	console.log("err", err)
+		// })
 
 	}
 
@@ -111,25 +102,24 @@ class TwitchService{
 		notify = opts.notify
 		//intro
 		timestamps.push(
-			`${moment().date("2015-01-01").minutes(totalDuration / 60).seconds(totalDuration % 60).format("mm:ss")} Intro\n`
+			`${moment().date("2015-01-01").minutes( totalDuration/60 ).seconds(totalDuration % 60).format("mm:ss")} Intro\n`
 		)
 		totalDuration += 6
 
+		let names = ['xqc', 'yuno', 'poki']
 		for(let clip of compilationClips){
 		  let fileDir = `src/twitch/${clip.broadcaster.name}`
 
-			if(!title.includes(clip.title)){
-				let source = titleCase(clip.broadcaster.display_name) + " "
+			let source = titleCase(clip.broadcaster.display_name) + " "
 
-				if(clip.title.includes(clip.broadcaster.display_name) || clip.title.toLowerCase().includes('xqc')){
-					source = ""
-				}
-
-				title += source + clip.title + " | "
+			if(clip.title.includes(clip.broadcaster.display_name) || names.includes(clip.title.toLowerCase())){
+				source = ""
 			}
 
+			title += source + clip.title + " | "
+
 		  timestamps.push(
-		  	`${moment().date("2015-01-01").minutes(totalDuration / 60).seconds(totalDuration % 60).format("mm:ss")} ${clip.title.toUpperCase()}\n`
+		  	`${moment().date("2015-01-01").minutes( totalDuration/60 ).seconds(totalDuration % 60).format("mm:ss")} ${source + clip.title.toUpperCase()}\n`
 		  )
 		  totalDuration += clip.duration
 
@@ -214,37 +204,37 @@ class TwitchService{
 		return res.clips
 	}
 
-	makeCompilationData(channelData, channel, maxVideoLength){
+	// makeCompilationData(channelData, channel, maxVideoLength){
 		
-		let totalDuration = 0
-		let res = []
-		let titlesMem = []
+	// 	let totalDuration = 0
+	// 	let res = []
+	// 	let titlesMem = []
 
-		for(let clip of channelData[channel]['clips']){
+	// 	for(let clip of channelData[channel]['clips']){
 
-			let fileName = `${clip.slug.substr(clip.slug - 16)}.mp4`
-			clip.filePath = `${UtilService.getPath()}\\twitch\\${channel}\\${fileName}`
-			clip.title = 
-				clip.title.length > 50 ? 
-				clip.title.substring(0,50) : 
-				clip.title
-			clip.title = clip.title.replace(/[^\x00-\x7F]|<|>/g, "")
+	// 		let fileName = `${clip.slug.substr(clip.slug - 16)}.mp4`
+	// 		clip.filePath = `${UtilService.getPath()}\\twitch\\${channel}\\${fileName}`
+	// 		clip.title = 
+	// 			clip.title.length > 50 ? 
+	// 			clip.title.substring(0,50) : 
+	// 			clip.title
+	// 		clip.title = clip.title.replace(/[^\x00-\x7F]|<|>/g, "")
 
-			totalDuration += clip.duration
-
-
-			if(!titlesMem.includes(clip.title)){
-				console.log("adding " + clip.title + " | total duration: clips.duration")
-				titlesMem.push(clip.title)
-				res.push(clip)
-			}
+	// 		totalDuration += clip.duration
 
 
-			if(totalDuration >= maxVideoLength)
-				break
-		}
-		return res
-	}
+	// 		if(!titlesMem.includes(clip.title)){
+	// 			console.log("adding " + clip.title + " | total duration: clips.duration")
+	// 			titlesMem.push(clip.title)
+	// 			res.push(clip)
+	// 		}
+
+
+	// 		if(totalDuration >= maxVideoLength)
+	// 			break
+	// 	}
+	// 	return res
+	// }
 
 	makeRandomizedCompilationData(channelData, maxVideoLength){
 		
@@ -262,9 +252,20 @@ class TwitchService{
 		// console.log("using clips from", cdKeys)
 
 		let clips = []
+		let count = {}
 
 		for(let channel in cdClone){
 			for(let clip of cdClone[channel]['clips']){
+		  	let channel = clip.broadcaster.display_name
+
+		  	if(!count[channel])
+		  		count[channel] = 0
+		  	count[channel]++
+
+	  	  if(count[channel] >= 5){
+	  	  	continue
+	  	  } 
+
 				clips.push(clip)
 			}
 		}
@@ -273,36 +274,29 @@ class TwitchService{
 		clips.sort(function(a, b){return b.views-a.views})
 
 		let identical = 0
-		let count = {}
 
 		for(let i = 0; i < clips.length-1; i++){
 		  let channel = clips[i].broadcaster.display_name
 
-		  if(!count[channel])
-		  	count[channel] = 0
-
-		  count[channel]++
-
-		  if(count[channel] == 5) continue
-
 			if(channel == clips[i+1].broadcaster.display_name){
 				identical++
-
-				if(identical == 1){
-					let t = clips[i]
-					clips[i] = clips[i+1]
-					clips[i+1] = t
-					identical = 0
-				}
-
 			}else{
+
+				if(identical != 0){
+					let toShift = clips.splice(i - identical, identical)
+					clips.splice(i, 0, ...toShift)
+					i--
+				}
 				identical = 0
 			}
 			
 		}
 
+		// console.log(111111)
+		// console.log(clips)
+
 		for(let c of clips){
-			console.log(`${c.broadcaster.display_name} - ${c.views}`)
+			console.log(`${c.broadcaster.display_name} - ${c.views} - ${c.slug}`)
 		}
 
 		while(totalDuration <= maxVideoLength){
@@ -352,7 +346,10 @@ class TwitchService{
 
 	async downloadClip(outPath,slug){
 			
-		if (await fs.existsSync(outPath)) return
+		if (await fs.existsSync(outPath)){
+			console.log("clip already exists.. ", outPath)
+			return outPath
+		} 
 
 		let clip = await this.getClipData(slug)
 		console.log("clipData", clip)
@@ -372,23 +369,23 @@ class TwitchService{
 
 	async downloadFile(downloadUrl, filePath){
 
-		return await fetch(`${downloadUrl}`, {
-		  headers: {
-		    "client-id": process.env.TWITCH_CLIENT_ID,
-		    "Authorization": `Bearer ${process.env.TWITCH_OAUTH}`, 
-		  },
-			method: 'GET',
-		}).then(res => {
-			const fileStream = fs.createWriteStream(filePath)
-			return new Promise((resolve, reject) => {
-		     res.body.pipe(fileStream);
-		     res.body.on("error", reject);
-		     fileStream.on("finish", ()=>{
-					console.log("download success!")
-		     	resolve(filePath)
-		     });
-		   });
-		})
+		return new Promise(async(resolve, reject) => {
+			 await fetch(`${downloadUrl}`, {
+			  headers: {
+			    "client-id": process.env.TWITCH_CLIENT_ID,
+			    "Authorization": `Bearer ${process.env.TWITCH_OAUTH}`, 
+			  },
+				method: 'GET',
+			}).then(res => {
+				const fileStream = fs.createWriteStream(filePath)
+			     res.body.pipe(fileStream);
+			     res.body.on("error", reject);
+			     fileStream.on("finish", ()=>{
+						console.log("download success!.. ", filePath)
+			     	resolve(filePath)
+			     });
+			})
+	   });
 
 	}
 
@@ -513,11 +510,21 @@ class TwitchService{
 	}
 
 	getBgFromVid(vid){
-		let bg 
 		return new Promise(async (resolve,reject)=>{
-			let duration = await VideoService.getInformation(vid, 'duration')
-			console.log("duration", duration)
-			resolve(bg)
+			let durationStr = await VideoService.getInformation(vid, 'duration')
+			console.log('durationStr',durationStr)
+			let duration = durationStr.substring(durationStr.indexOf('duration='), durationStr.length)
+			duration = Math.ceil(parseFloat(durationStr.replace(/[^\d.-]/g,'')))
+			duration = duration / 2
+
+			let outPath = `${UtilService.getPath()}\\assets\\imgs\\thumbs\\bg.jpg`
+
+			if (await fs.existsSync(outPath)) 
+				await fs.unlinkSync(outPath)
+
+			await VideoService.screenshot(vid, moment().date("2015-01-01").minutes( duration/60 ).seconds(duration % 60).format("00:mm:ss"), outPath)
+
+			resolve(outPath)
 		})
 	}
 

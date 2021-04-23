@@ -83,7 +83,7 @@ class VideoService{
 					'ffmpeg', [
 							'-i', `concat:${temps.join('|')}`, '-c', 'copy', 
 							rawOutPath
-					], {log:true})
+					], {log:false})
 
 				// ffmpeg -i "concat:temp1.ts|temp2.ts" -c copy -bsf:a aac_adtstoasc -r 60 testout.mp4
 				try{
@@ -106,9 +106,9 @@ class VideoService{
 
 				// "subtitles=\'C:/Users/Jon/Personal Projects/pa-beta/src/twitch/mix/compilation.srt\':fontsdir='./fonts':force_style='FontName=Patchwork Stitchlings,FontSize=21,Alignment=7'" compilation2.mp4
 				await ScriptService.cmd(
-					`ffmpeg -i src\\twitch\\mix\\raw_compilation.mp4 -vf "subtitles='src/twitch/mix/compilation.srt':force_style='FontName=Sweet Talk,FontSize=23,Alignment=7'" -b:v 8000k -b:a 160k -ar 44100 src\\twitch\\mix\\compilation.mp4`,
+					`ffmpeg -i src\\twitch\\mix\\raw_compilation.mp4 -vf "subtitles='src/twitch/mix/compilation.srt':force_style='FontName=Bouncy PERSONAL USE ONLY,FontSize=23,Alignment=7'" -b:v 8000k -b:a 160k -ar 44100 src\\twitch\\mix\\compilation.mp4`,
 					 [], 
-					 {log:true, shell:true}
+					 {log:false, shell:true}
 				)
 
 				console.log(">> Added subs..")
@@ -147,15 +147,27 @@ class VideoService{
 		return outFile
 	}
 
+	screenshot(vid, time, outPath){
+		console.log("ss v", vid)
+		console.log("ss t", time)
+		console.log("ss o", outPath)
+		return ScriptService.execa(
+			`ffmpeg`,
+			 ['-ss', time, '-i', vid, '-vframes', '1', '-q:v', '2', outPath], 
+			 {log:false}
+		)
+	}
+
 	getInformation(vid, format){
 		return new Promise(async (resolve,reject)=>{
-			let res = await ScriptService.cmd(
-				`ffprobe -i ${vid} -show_entries format=${format} -v quiet -of csv="p=0"`,
-				 [], 
-				 {log:true, shell:true}
-			)
 
-			resolve(res)
+			let {stdout} = await ScriptService.execa(
+				`ffprobe`,
+				 ['-v', 'error', '-show_entries', `stream=${format}`, '-select_streams', 'v', '-of', 'compact=p=0', '-v', '0', vid], 
+				 {log:false}
+			)
+			   
+			resolve(stdout)
 			
 		})
 	}

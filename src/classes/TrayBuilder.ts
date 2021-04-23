@@ -214,7 +214,7 @@ export default class TrayBuilder{
 		      				"peterparktv", 
 		      				"kristoferyee", 
 		      				"pokimane", 
-		      				// "Jinnytty", 
+		      				"Jinnytty", 
 		      				// "amouranth", 
 		      				// "melina", 
 		      				// "kiaraakitty",

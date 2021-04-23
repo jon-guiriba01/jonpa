@@ -14,3 +14,233 @@ Starting Main Process...
 > cross-env NODE_ENV=development electron -r ./.erb/scripts/BabelRegister ./src/main.dev.ts
 
 
+[34mi[39m [90m｢wdm｣[39m: Compiled successfully.
+(node:12016) ExtensionLoadWarning: Warnings loading extension at C:\Users\Jon\AppData\Roaming\Electron\extensions\fmkadmapgofadopljbjfkapdkoienihi: Unrecognized manifest key 'browser_action'. Unrecognized manifest key 'minimum_chrome_version'. Unrecognized manifest key 'update_url'. Cannot load extension with file or directory name _metadata. Filenames starting with "_" are reserved for use by the system. 
+22:03:01.969 > Skip checkForUpdatesAndNotify because application is not packed
+(node:12016) electron: The default of contextIsolation is deprecated and will be changing from false to true in a future release of Electron.  See https://github.com/electron/electron/issues/23506 for more information
+preparing dirs... 
+TwitchService.downloadClip
+
+getting clips... 
+0> xQcOW - 66167 - AlluringDignifiedKoalaLitty-4bCGtzdieBMMqTuo
+1> xQcOW - 30887 - DarlingPreciousTubersSoBayed--N94Qe_2gFUbMb-3
+2> xQcOW - 21072 - CarelessAuspiciousSquidWutFace-t4Pf6kGzaVYmH67B
+3> xQcOW - 9907 - InterestingSolidCaribouJonCarnage-vYyYtRzTh9tgcVAD
+3> xQcOW - 66167 - AlluringDignifiedKoalaLitty-4bCGtzdieBMMqTuo
+4> xQcOW - 30887 - DarlingPreciousTubersSoBayed--N94Qe_2gFUbMb-3
+5> xQcOW - 21072 - CarelessAuspiciousSquidWutFace-t4Pf6kGzaVYmH67B
+5> xQcOW - 66167 - AlluringDignifiedKoalaLitty-4bCGtzdieBMMqTuo
+6> xQcOW - 30887 - DarlingPreciousTubersSoBayed--N94Qe_2gFUbMb-3
+6> xQcOW - 66167 - AlluringDignifiedKoalaLitty-4bCGtzdieBMMqTuo
+7> Sykkuno - 1488 - CredulousPluckyChickenKappa-KmO6NpqmtYcxRUwN
+8> Sykkuno - 1370 - TalentedLazyAsparagusOpieOP-O3YX9q8w7w3Y94jt
+8> Sykkuno - 1488 - CredulousPluckyChickenKappa-KmO6NpqmtYcxRUwN
+9> xChocoBars - 1083 - OnerousBoringOysterBleedPurple-a4wavUmighaHYwCH
+10> SteveSuptic - 1005 - CuteStylishWalletMcaT-YtnuH0jX7yX0Gzd4
+11> xChocoBars - 832 - OpenCalmHumanTwitchRaid-ogG0KNS_hWeFmKcB
+12> SteveSuptic - 804 - TastyCovertAubergineMingLee-g9wa_rjc_YQ5TI2K
+13> SteveSuptic - 769 - ZanyMistyLobsterOMGScoots-xM0rMSvsVa6-YJ1Y
+13> SteveSuptic - 804 - TastyCovertAubergineMingLee-g9wa_rjc_YQ5TI2K
+14> lilypichu - 700 - ElegantCovertHumanOptimizePrime-6rz1sRdVhwAFQvXJ
+15> xChocoBars - 673 - PlumpDependableBottleVoHiYo-QYJNZjg9gV1hpHdP
+16> Jinnytty - 598 - BloodyCrepuscularCrowItsBoshyTime-Tv3f-Fn4HNsS5hJ3
+17> SteveSuptic - 565 - StylishSillyAnisePunchTrees--iLVUlqi1IUHm-W4
+18> kkatamina - 555 - CleanThirstyWombatHeyGuys-AfDudMDCjmbP7cUO
+19> Natsumiii - 543 - MiniatureConcernedStarlingTheTarFu-sP3TLMNRKfSIWO8J
+20> fuslie - 457 - ScrumptiousProtectiveSrirachaFeelsBadMan-6VUeoJC0aropeR1p
+21> Jinnytty - 424 - CrackyPerfectBearPraiseIt-P4pq0tgBr5Y6dGBw
+22> xChocoBars - 390 - BlatantNastyGarlicFloof-ke_beMx_UsW8hfin
+23> fuslie - 389 - BenevolentHedonisticPartridgeBloodTrail-MpbHrqszlCbmGjB2
+24> peterparkTV - 360 - CrispyBoredTroutSmoocherZ-Tsgsh7DWeegu6Rdc
+25> fuslie - 292 - CrispyFlaccidAnacondaOneHand-8Mwpof0GWYJnfDRh
+26> fuslie - 282 - CrypticStormyTrollYee-e-Lj6TAmjExrmTjC
+26> fuslie - 292 - CrispyFlaccidAnacondaOneHand-8Mwpof0GWYJnfDRh
+27> KristoferYee - 279 - OilyAbnegateClintmullinsMingLee-IiAEntlWFNuiw3We
+28> Natsumiii - 242 - SpunkyHelpfulGerbilDogFace-GVpdAn938Hcm5fUf
+29> Masayoshi - 234 - HealthyEnthusiasticPepperoniShazBotstix-KCNml4AxiEH_7V_V
+30> Jinnytty - 233 - MushyWittyBorkTBTacoRight-M63xUwoBKYfaLNXG
+31> KristoferYee - 217 - ObedientBeautifulSoymilkSMOrc-CVBUy6GsNAifEsxJ
+32> Masayoshi - 215 - TrustworthySullenCocoaCoolStoryBro-22sMPc05S3MZbkpi
+33> Jinnytty - 211 - VictoriousBlushingRutabagaOhMyDog-3wOvTIlj5-enBW3Y
+34> Natsumiii - 209 - ImpartialModernPassionfruitHumbleLife-aoPGzf8uUkxZLAfo
+35> kkatamina - 208 - NurturingCarefulAxeHassaanChop-vP99wegGGaJbXtJ8
+36> Masayoshi - 185 - WrongPuzzledWoodcockSuperVinlin-gnggbwES1kjyucss
+37> KristoferYee - 172 - GrossSparklingTortoiseBatChest-XN2XNycwL39bsJ2A
+38> Masayoshi - 150 - SpinelessSullenAlpacaSaltBae-EaDF_Lg8GYHvTwv4
+39> Natsumiii - 149 - HonestDaintyWolverineVoHiYo-ALm7B0FNamfghQ3T
+40> QuarterJade - 149 - AlluringUnsightlySharkNinjaGrumpy-5EQ8yr9GVAj2Nl62
+41> kkatamina - 130 - GrotesquePoisedWrenDatSheffy-fm0jO_9XBGs7QDmZ
+42> QuarterJade - 113 - WimpyBoredQueleaLitFam-9dg74S0wiaODK0QW
+43> 39daph - 94 - WealthySmellyPepperJonCarnage-o0zXiE17sN1eGGMr
+44> KristoferYee - 90 - DarlingVibrantOpossumTebowing-2LDhx-wLY7FPlaVr
+45> pokimane - 87 - PoliteDirtyBeefMrDestructoid-uwBNrNQyOFzW_1tw
+46> AriaSaki - 64 - WiseDepressedTroutDancingBanana-6hADWEH_tb-KtrTf
+47> QuarterJade - 63 - ResilientAgileChinchillaKappa-RZxjF32YEyYnHkoG
+48> TinaKitten - 62 - RichCautiousVelociraptorLeeroyJenkins-ABWDhm8xa3054BiH
+49> QuarterJade - 52 - AbstemiousLachrymoseWatercressBudStar-AtG2HNlyHezaFopi
+50> 39daph - 45 - JollySoftGaurTakeNRG-C31UoxHUQZ6jt2pl
+51> pokimane - 43 - LongKindAntMikeHogu-YBubuMVzlMlIS94R
+52> AriaSaki - 41 - ScrumptiousAmazingWoodpeckerRlyTho-zFNnV0LhPOBZ2v3-
+53> pokimane - 40 - GenerousBlindingLaptopFailFish-aBSHsRUCNEIJsU5j
+54> pokimane - 35 - GorgeousCredulousKittenWholeWheat-ulPqLRvu4HidSr17
+54> pokimane - 40 - GenerousBlindingLaptopFailFish-aBSHsRUCNEIJsU5j
+55> AriaSaki - 33 - ZanyAssiduousBarracudaHumbleLife-K6RzWLWNy-Y0RXmx
+56> lilypichu - 30 - SavageAstuteTrayHeyGuys-rR28_9PZ-zAqp9G5
+57> 39daph - 28 - TenderElegantCheetahShazBotstix-yiRcE1AyQdcysGeI
+58> 39daph - 27 - MildCleverRavenStrawBeary-E3KYe5np4vzB8RRM
+58> 39daph - 28 - TenderElegantCheetahShazBotstix-yiRcE1AyQdcysGeI
+59> lilypichu - 25 - ClumsySplendidLeopardLitty-_IVipGJs-SIfgs9O
+60> AriaSaki - 24 - IntelligentColdPonyMrDestructoid-5BV6H3nhfWlokklm
+61> lilypichu - 17 - AntsyJollyZebraFUNgineer-9ih937818FiguPzr
+62> TinaKitten - 9 - TiredSpineyGuanacoOptimizePrime-xzddsYlx9jtXScg2
+63> TinaKitten - 5 - CourageousToughPhoneOpieOP-mEhVvLfujTus-uB2
+64> TinaKitten - 4 - ThankfulSquarePlumTBTacoRight-Pnzt2f1N3talzhGN
+64> TinaKitten - 9 - TiredSpineyGuanacoOptimizePrime-xzddsYlx9jtXScg2
+65> TinaKitten - 5 - CourageousToughPhoneOpieOP-mEhVvLfujTus-uB2
+65> TinaKitten - 9 - TiredSpineyGuanacoOptimizePrime-xzddsYlx9jtXScg2
+66> peterparkTV - 3 - PlumpObservantToothMrDestructoid-kAIjU7pV1aFj-CoJ
+xQcOW - 9907 - InterestingSolidCaribouJonCarnage-vYyYtRzTh9tgcVAD
+kkatamina - 7521 - ExuberantTenuousAlbatrossDoritosChip-G7zz7ZGv5_In7rcC
+Sykkuno - 6900 - AbrasiveRenownedDonkeyJonCarnage-5TPL_W3F1bXRyGpm
+xQcOW - 21072 - CarelessAuspiciousSquidWutFace-t4Pf6kGzaVYmH67B
+Sykkuno - 5135 - HeadstrongUgliestPangolinCharlietheUnicorn-8o9JcBfIkC7kWusg
+xQcOW - 30887 - DarlingPreciousTubersSoBayed--N94Qe_2gFUbMb-3
+xQcOW - 66167 - AlluringDignifiedKoalaLitty-4bCGtzdieBMMqTuo
+Sykkuno - 1370 - TalentedLazyAsparagusOpieOP-O3YX9q8w7w3Y94jt
+Sykkuno - 1488 - CredulousPluckyChickenKappa-KmO6NpqmtYcxRUwN
+xChocoBars - 1083 - OnerousBoringOysterBleedPurple-a4wavUmighaHYwCH
+SteveSuptic - 1005 - CuteStylishWalletMcaT-YtnuH0jX7yX0Gzd4
+xChocoBars - 832 - OpenCalmHumanTwitchRaid-ogG0KNS_hWeFmKcB
+SteveSuptic - 769 - ZanyMistyLobsterOMGScoots-xM0rMSvsVa6-YJ1Y
+SteveSuptic - 804 - TastyCovertAubergineMingLee-g9wa_rjc_YQ5TI2K
+lilypichu - 700 - ElegantCovertHumanOptimizePrime-6rz1sRdVhwAFQvXJ
+xChocoBars - 673 - PlumpDependableBottleVoHiYo-QYJNZjg9gV1hpHdP
+Jinnytty - 598 - BloodyCrepuscularCrowItsBoshyTime-Tv3f-Fn4HNsS5hJ3
+SteveSuptic - 565 - StylishSillyAnisePunchTrees--iLVUlqi1IUHm-W4
+kkatamina - 555 - CleanThirstyWombatHeyGuys-AfDudMDCjmbP7cUO
+Natsumiii - 543 - MiniatureConcernedStarlingTheTarFu-sP3TLMNRKfSIWO8J
+fuslie - 457 - ScrumptiousProtectiveSrirachaFeelsBadMan-6VUeoJC0aropeR1p
+Jinnytty - 424 - CrackyPerfectBearPraiseIt-P4pq0tgBr5Y6dGBw
+xChocoBars - 390 - BlatantNastyGarlicFloof-ke_beMx_UsW8hfin
+fuslie - 389 - BenevolentHedonisticPartridgeBloodTrail-MpbHrqszlCbmGjB2
+peterparkTV - 360 - CrispyBoredTroutSmoocherZ-Tsgsh7DWeegu6Rdc
+fuslie - 282 - CrypticStormyTrollYee-e-Lj6TAmjExrmTjC
+fuslie - 292 - CrispyFlaccidAnacondaOneHand-8Mwpof0GWYJnfDRh
+KristoferYee - 279 - OilyAbnegateClintmullinsMingLee-IiAEntlWFNuiw3We
+Natsumiii - 242 - SpunkyHelpfulGerbilDogFace-GVpdAn938Hcm5fUf
+Masayoshi - 234 - HealthyEnthusiasticPepperoniShazBotstix-KCNml4AxiEH_7V_V
+Jinnytty - 233 - MushyWittyBorkTBTacoRight-M63xUwoBKYfaLNXG
+KristoferYee - 217 - ObedientBeautifulSoymilkSMOrc-CVBUy6GsNAifEsxJ
+Masayoshi - 215 - TrustworthySullenCocoaCoolStoryBro-22sMPc05S3MZbkpi
+Jinnytty - 211 - VictoriousBlushingRutabagaOhMyDog-3wOvTIlj5-enBW3Y
+Natsumiii - 209 - ImpartialModernPassionfruitHumbleLife-aoPGzf8uUkxZLAfo
+kkatamina - 208 - NurturingCarefulAxeHassaanChop-vP99wegGGaJbXtJ8
+Masayoshi - 185 - WrongPuzzledWoodcockSuperVinlin-gnggbwES1kjyucss
+KristoferYee - 172 - GrossSparklingTortoiseBatChest-XN2XNycwL39bsJ2A
+Masayoshi - 150 - SpinelessSullenAlpacaSaltBae-EaDF_Lg8GYHvTwv4
+Natsumiii - 149 - HonestDaintyWolverineVoHiYo-ALm7B0FNamfghQ3T
+QuarterJade - 149 - AlluringUnsightlySharkNinjaGrumpy-5EQ8yr9GVAj2Nl62
+kkatamina - 130 - GrotesquePoisedWrenDatSheffy-fm0jO_9XBGs7QDmZ
+QuarterJade - 113 - WimpyBoredQueleaLitFam-9dg74S0wiaODK0QW
+39daph - 94 - WealthySmellyPepperJonCarnage-o0zXiE17sN1eGGMr
+KristoferYee - 90 - DarlingVibrantOpossumTebowing-2LDhx-wLY7FPlaVr
+pokimane - 87 - PoliteDirtyBeefMrDestructoid-uwBNrNQyOFzW_1tw
+AriaSaki - 64 - WiseDepressedTroutDancingBanana-6hADWEH_tb-KtrTf
+QuarterJade - 63 - ResilientAgileChinchillaKappa-RZxjF32YEyYnHkoG
+TinaKitten - 62 - RichCautiousVelociraptorLeeroyJenkins-ABWDhm8xa3054BiH
+QuarterJade - 52 - AbstemiousLachrymoseWatercressBudStar-AtG2HNlyHezaFopi
+39daph - 45 - JollySoftGaurTakeNRG-C31UoxHUQZ6jt2pl
+pokimane - 43 - LongKindAntMikeHogu-YBubuMVzlMlIS94R
+AriaSaki - 41 - ScrumptiousAmazingWoodpeckerRlyTho-zFNnV0LhPOBZ2v3-
+pokimane - 35 - GorgeousCredulousKittenWholeWheat-ulPqLRvu4HidSr17
+pokimane - 40 - GenerousBlindingLaptopFailFish-aBSHsRUCNEIJsU5j
+AriaSaki - 33 - ZanyAssiduousBarracudaHumbleLife-K6RzWLWNy-Y0RXmx
+lilypichu - 30 - SavageAstuteTrayHeyGuys-rR28_9PZ-zAqp9G5
+39daph - 27 - MildCleverRavenStrawBeary-E3KYe5np4vzB8RRM
+39daph - 28 - TenderElegantCheetahShazBotstix-yiRcE1AyQdcysGeI
+lilypichu - 25 - ClumsySplendidLeopardLitty-_IVipGJs-SIfgs9O
+AriaSaki - 24 - IntelligentColdPonyMrDestructoid-5BV6H3nhfWlokklm
+lilypichu - 17 - AntsyJollyZebraFUNgineer-9ih937818FiguPzr
+TinaKitten - 4 - ThankfulSquarePlumTBTacoRight-Pnzt2f1N3talzhGN
+peterparkTV - 4 - TameDirtyEggPeanutButterJellyTime-mmDhb4b1aIeHDMr2
+TinaKitten - 5 - CourageousToughPhoneOpieOP-mEhVvLfujTus-uB2
+TinaKitten - 9 - TiredSpineyGuanacoOptimizePrime-xzddsYlx9jtXScg2
+peterparkTV - 3 - PlumpObservantToothMrDestructoid-kAIjU7pV1aFj-CoJ
+peterparkTV - 2 - SourResourcefulTitanOSsloth-o5CevT6tWTIEuYQp
+channel..  xQcOW
+adding title | total duration: 22.75
+channel..  kkatamina
+adding Mic finally working! | total duration: 46.49
+channel..  Sykkuno
+adding Sykkuno on crims rp | total duration: 51.35
+channel..  xQcOW
+adding xqc on pokimane | total duration: 32.15
+channel..  Sykkuno
+adding Yuno's hidden car tactic | total duration: 32.59
+channel..  xQcOW
+adding SAYS YOU | total duration: 26
+channel..  xQcOW
+adding RARE GAMBA STREAM (PLEASE DONT GAMBLE EVER)(DONT U | total duration: 30
+channel..  Sykkuno
+adding yuno feels bad | total duration: 26
+channel..  Sykkuno
+adding no crime today | total duration: 30
+channel..  xChocoBars
+adding pitty janet | total duration: 19.65
+channel..  SteveSuptic
+adding kimi is to much for steve | total duration: 43.75
+channel..  xChocoBars
+adding Dumbdog pulls a toast play, high-pitched Janet and | total duration: 60
+channel..  SteveSuptic
+adding STE----SEE?! | total duration: 29.78
+channel..  SteveSuptic
+adding dumbdog scream laugh | total duration: 20.19
+channel..  lilypichu
+adding Lilypichu, the voice actress, lands another role!  | total duration: 10.95
+channel..  xChocoBars
+adding 5000$????? | total duration: 26.98
+channel..  Jinnytty
+adding DRUNKARDS QUARREL | total duration: 18.19
+channel..  SteveSuptic
+adding hey don't go up there | total duration: 12.15
+channel..  kkatamina
+adding GTA??! | Kate Minaj  | total duration: 28
+channel..  Natsumiii
+adding Kermits Play Valorant | total duration: 59.95
+channel..  fuslie
+adding jake resub | total duration: 19.25
+channel..  Jinnytty
+adding Bruh... | total duration: 18.75
+channel..  xChocoBars
+adding janet ride or die | total duration: 21.75
+channel..  fuslie
+adding Smooth John | total duration: 15.5
+channel..  peterparkTV
+adding Team TOAST! From 4-10 to 13-10! (VALORANT TOURNAME | total duration: 46.75
+processing clip xQcOW 9907
+processing clip kkatamina 7521
+processing clip Sykkuno 6900
+processing clip xQcOW 21072
+processing clip Sykkuno 5135
+processing clip xQcOW 30887
+processing clip xQcOW 66167
+processing clip Sykkuno 1370
+processing clip Sykkuno 1488
+processing clip xChocoBars 1083
+processing clip SteveSuptic 1005
+processing clip xChocoBars 832
+processing clip SteveSuptic 769
+processing clip SteveSuptic 804
+processing clip lilypichu 700
+processing clip xChocoBars 673
+processing clip Jinnytty 598
+processing clip SteveSuptic 565
+processing clip kkatamina 555
+processing clip Natsumiii 543
+processing clip fuslie 457
+processing clip Jinnytty 424
+processing clip xChocoBars 390
+processing clip fuslie 389
+processing clip peterparkTV 360
+[34mi[39m [90m｢wdm｣[39m: Compiling...
+[34mi[39m [90m｢wdm｣[39m: Compiled successfully.

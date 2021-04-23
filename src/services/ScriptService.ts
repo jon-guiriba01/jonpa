@@ -3,6 +3,7 @@ import * as electron from 'electron';
 import path from 'path';
 import {spawn} from 'child_process'
 
+import execa from 'execa'
 var instance = null
 
 
@@ -21,7 +22,9 @@ class ScriptService{
 		}
 	}	
 
-
+	execa(command,args,opts){
+		return execa(command,args)
+	}
 	// This function will output the lines from the script 
 	// and will return the full combined output
 	// as well as exit code when it's done (using the callback).
@@ -57,27 +60,27 @@ class ScriptService{
 
 				child.on('close', (code) => {
 			    if(opts?.log){
-			    	console.log('spawn[close]\n')
+			    	console.log('spawn[close]\n', code)
 			    }      
-					resolve(true)
+					resolve(code)
 				});
 				child.on('disconnect', (code) => {
 			    if(opts?.log){
-				    console.log('spawn[disconnect]\n');
+				    console.log('spawn[disconnect]\n', code);
 				  }
-					reject()
+					reject(code)
 				});
 				child.on('error', (error) => {
 			    if(opts?.log){
-			    	console.log( 'spawn[error]\r\n' + error)
+			    	console.log( 'spawn[error]\n' + error)
 				  }
-					reject()
+					reject(error)
 				});
 				child.on('exit', (code) => {
 			    if(opts?.log){
-				    console.log('spawn[exit]\n');  
+				    console.log('spawn[exit]\n', code);  
 				  }    
-					resolve(true)
+					resolve(code)
 				});
 	
 
