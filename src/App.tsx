@@ -1,62 +1,46 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import icon from './assets/icon.svg';
+import icon from '../assets/icon.svg';
 import './App.global.css';
-import electron, {ipcRenderer} from 'electron';
-import TrelloService from './services/TrelloService';
-import ViewService from './services/ViewService';
-import EventService from './services/EventService';
-import fetch from 'node-fetch';
-import { encode, decode } from 'js-base64';
-
-
 
 const Hello = () => {
-  const [emails, setEmails] = useState([]);
-  const [test, setTest] = useState('test');
-
-
-  useEffect(() => {
-
-    ipcRenderer.on('gauth', async (event, authUrl) => {
-      window.open(authUrl, '_blank');
-
-    });
-
-    ipcRenderer.on('emails', async (event, res) => {
-      console.log("emails",res)
-      setEmails(res)
-    });
-    ipcRenderer.on('test', async (event, res) => {
-      console.log("test",res)
-    });
-
-
-    ipcRenderer.on('context-menu:settings',()=>{
-      console.log("context-menu:settings")
-      setTest("context-menu:settings")
-    })
-  }, []);
-
-
   return (
     <div>
-      <div>{test}</div>
-      {
-        emails.map((value, index) => {
-          let html = decode(value.html)
-          return (
-            <div key={index} dangerouslySetInnerHTML={{ __html: html}}>
-            </div>
-          )
-        })
-      }
+      <div className="Hello">
+        <img width="200px" alt="icon" src={icon} />
+      </div>
+      <h1>electron-react-boilerplate</h1>
+      <div className="Hello">
+        <a
+          href="https://electron-react-boilerplate.js.org/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <button type="button">
+            <span role="img" aria-label="books">
+              📚
+            </span>
+            Read our docs
+          </button>
+        </a>
+        <a
+          href="https://github.com/sponsors/electron-react-boilerplate"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <button type="button">
+            <span role="img" aria-label="books">
+              🙏
+            </span>
+            Donate
+          </button>
+        </a>
+      </div>
     </div>
   );
 };
 
 export default function App() {
-
   return (
     <Router>
       <Switch>

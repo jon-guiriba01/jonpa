@@ -14,21 +14,3 @@ Starting Main Process...
 > cross-env NODE_ENV=development electron -r ./.erb/scripts/BabelRegister ./src/main.dev.ts
 
 
-App threw an error during load
-Error: The module '\\?\C:\Users\Jon\Personal Projects\pa-beta\node_modules\gl\build\Release\webgl.node'
-was compiled against a different Node.js version using
-NODE_MODULE_VERSION 72. This version of Node.js requires
-NODE_MODULE_VERSION 85. Please try re-compiling or re-installing
-the module (for instance, using `npm rebuild` or `npm install`).
-    at process.func [as dlopen] (electron/js2c/asar_bundle.js:5:1812)
-    at Object.Module._extensions..node (internal/modules/cjs/loader.js:1203:18)
-    at Object.func [as .node] (electron/js2c/asar_bundle.js:5:1812)
-    at Module.load (internal/modules/cjs/loader.js:992:32)
-    at Module._load (internal/modules/cjs/loader.js:885:14)
-    at Function.f._load (electron/js2c/asar_bundle.js:5:12738)
-    at Module.require (internal/modules/cjs/loader.js:1032:19)
-    at require (internal/modules/cjs/helpers.js:72:18)
-    at bindings (C:\Users\Jon\Personal Projects\pa-beta\node_modules\bindings\bindings.js:112:48)
-    at Object.<anonymous> (C:\Users\Jon\Personal Projects\pa-beta\node_modules\gl\src\javascript\native-gl.js:1:40)
-[34mi[39m [90m｢wdm｣[39m: Compiled successfully.
-Terminate batch job (Y/N)? 

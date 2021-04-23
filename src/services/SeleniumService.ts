@@ -29,11 +29,8 @@ import EventService from './EventService'
 import { encode, decode } from 'js-base64';
 
 var instance = null
-import youtubedl from 'youtube-dl-exec'
 import {Builder, By, Key, until} from 'selenium-webdriver'
 import firefox from 'selenium-webdriver/firefox'
-
-
 
 const UPLOAD_URL = 'https://www.youtube.com/upload'
 const WAIT_DURATION = 2 * 1000

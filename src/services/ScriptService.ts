@@ -30,7 +30,7 @@ class ScriptService{
 			try{
 				var child = spawn(command, args, {
 				    encoding: 'utf8',
-				    shell: false
+				    shell: opts.shell
 				});
 				// You can also use a variable to save the output for when the script closes later
 

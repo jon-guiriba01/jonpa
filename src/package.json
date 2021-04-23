@@ -14,5 +14,8 @@
     "postinstall": "yarn electron-rebuild"
   },
   "license": "MIT",
-  "dependencies": {}
+  "dependencies": {
+    "selenium-webdriver": "^4.0.0-beta.3",
+    "youtube-dl-exec": "^1.2.1"
+  }
 }

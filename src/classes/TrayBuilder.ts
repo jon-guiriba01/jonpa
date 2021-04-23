@@ -49,44 +49,49 @@ export default class TrayBuilder{
 	}
 
 	buildTray(){
-		this.tray.setImage(this.ASSETS.trayIcon)
-		this.tray.setToolTip("Jon's PA")
-		this.updateTrayMenu()
+		try{
+			this.tray.setImage(this.ASSETS.trayIcon)
+			this.tray.setToolTip("Jon's PA")
+			this.updateTrayMenu()
+
+		}catch(err){
+			console.log(err)
+		}
 	}
 
 	async updateTrayMenu(){
 
 	  let smTrelloMenu = []
-			let smCards:any
-	  		smCards = await TrelloService.getCardsOfList("Smart Meter", "To Do")
+			// let smCards:any
+	  // 		smCards = await TrelloService.getCardsOfList("Smart Meter", "To Do")
 
-	  	for(let card of smCards){
-	  		var self = this
-	  	  smTrelloMenu.push({
-	  	    label: card.name, 
-	  	    submenu:[
-	  	      {label:'ask',type:'normal', click:(menuItem, BrowserWindow, event)=>{
+	  // 	for(let card of smCards){
+	  // 		var self = this
+	  // 	  smTrelloMenu.push({
+	  // 	    label: card.name, 
+	  // 	    submenu:[
+	  // 	      {label:'ask',type:'normal', click:(menuItem, BrowserWindow, event)=>{
 
-	  	        GChatService.publishToWebhook(
-	  	          process.env.GCHAT_WALLY_WEBHOOK
-	  	          , "Wasssap, can I ask more about ["+ card.name +"] in Trello?"
-	  	        )
+	  // 	        GChatService.publishToWebhook(
+	  // 	          process.env.GCHAT_WALLY_WEBHOOK
+	  // 	          , "Wasssap, can I ask more about ["+ card.name +"] in Trello?"
+	  // 	        )
 
-	  	      }},
-	  	      {label:'done',type:'normal', click: async (menuItem, BrowserWindow, event)=>{
-	  	        let toList = "Pending"
+	  // 	      }},
+	  // 	      {label:'done',type:'normal', click: async (menuItem, BrowserWindow, event)=>{
+	  // 	        let toList = "Pending"
 
-	  	        await TrelloService.moveCardToList("Smart Meter",card.id, toList)
-	  	        GChatService.publishToWebhook(
-	  	          process.env.GCHAT_WALLY_WEBHOOK
-	  	          , `Moved Trello card "${card.name}" to "${toList}" list`
-	  	        )
-	  	        self.updateTrayMenu()
+	  // 	        await TrelloService.moveCardToList("Smart Meter",card.id, toList)
+	  // 	        GChatService.publishToWebhook(
+	  // 	          process.env.GCHAT_WALLY_WEBHOOK
+	  // 	          , `Moved Trello card "${card.name}" to "${toList}" list`
+	  // 	        )
+	  // 	        self.updateTrayMenu()
 
-	  	      }},
-	  	    ]
-	  	  })
-	  	}
+	  // 	      }},
+	  // 	    ]
+	  // 	  })
+	  // 	}
 
 	  var contextMenu = Menu.buildFromTemplate([
 	    { label: 'smartmeter', icon: this.buildStatusIcon, 'submenu':[
@@ -181,18 +186,7 @@ export default class TrayBuilder{
 	          ScriptService.run('../local/run_smartmeter.bat')
 	        } 
 	      },   
-	    ]},    
-	    { 
-	      label: 'show window', type: 'normal', click:(menuItem, BrowserWindow, event)=>{
-	        this.mainWindow.show();
-	      } 
-	    },    
-	    { 
-	      label: 'exit', type: 'normal', click:(menuItem, BrowserWindow, event)=>{
-	      app.isQuiting = true
-	      app.quit()
-	      } 
-	    },    
+	    ]}, 
 	    { 
 	      label:'settings',type:'normal',click:(menuItem, BrowserWindow, event)=>{
 	      	EventService.pub('context-menu:settings')
@@ -202,27 +196,37 @@ export default class TrayBuilder{
 	      label: 'twitch', 'submenu':[
 	      	{
 	      		label: 'postTopClips', type:'normal', click: async(menuItem, BrowserWindow, event)=>{
-
-	      			TwitchService.postTopClips({
+	      			TwitchService.postMixCompilation({
 	      				channels:[
-		      				// "xQcOW",
-		      				// "kkatamina",
-		      				// "39daph", 
-		      				// "TinaKitten", 
-		      				// "stevesuptic", 
-		      				// "Sykkuno",
-		      				// "xchocobars", 
-		      				// "lilypichu", 
+		      				"TinaKitten", 
+		      				"39daph", 
+		      				"kkatamina",
+		      				"xQcOW",
+		      				"Sykkuno",
+		      				"stevesuptic", 
+		      				"xchocobars", 
+		      				"lilypichu", 
+		      				"fuslie", 
+		      				"natsumiii",
+		      				"ariasaki", 
+		      				"masayoshi", 
+		      				"quarterjade", 
+		      				"peterparktv", 
+		      				"kristoferyee", 
+		      				"pokimane", 
 		      				// "Jinnytty", 
-		      				// "fuslie", 
-		      				// "pokimane", 
 		      				// "amouranth", 
-		      				// "evaanna", 
 		      				// "melina", 
-		      				// "kiaraakitty"
-		      				"natsumiii"
+		      				// "kiaraakitty",
+		      				// "imjasmine",
+		      				// "indiefoxx", 
+		      				// "evaanna", 
 	      				],
-	      				maxVideoLength: 5 * 60
+	      				maxVideoLength: 12 * 60,
+	      				// maxVideoLength: 0,
+	      				uploadClips:false,
+	      				notify:true,
+	      				upload:true
 
 	      			})
 
@@ -266,7 +270,18 @@ export default class TrayBuilder{
   			    }
   			  }
 	      ]
-	    }
+	    },    
+	    { 
+	      label: 'show window', type: 'normal', click:(menuItem, BrowserWindow, event)=>{
+	        this.mainWindow.show();
+	      } 
+	    },    
+	    { 
+	      label: 'exit', type: 'normal', click:(menuItem, BrowserWindow, event)=>{
+	      app.isQuiting = true
+	      app.quit()
+	      } 
+	    },   
 	  ])
 
 	  this.tray.setContextMenu(contextMenu)
