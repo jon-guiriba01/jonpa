@@ -2,6 +2,7 @@ var instance = null
 import {shell, app, ipcMain} from 'electron';
 import path from 'path';
 import ScriptService from './ScriptService'
+import UtilService from './UtilService'
 import * as fs from 'fs';
 import moment from 'moment';
 
@@ -106,7 +107,7 @@ class VideoService{
 
 				// "subtitles=\'C:/Users/Jon/Personal Projects/pa-beta/src/twitch/mix/compilation.srt\':fontsdir='./fonts':force_style='FontName=Patchwork Stitchlings,FontSize=21,Alignment=7'" compilation2.mp4
 				await ScriptService.cmd(
-					`ffmpeg -i src\\twitch\\mix\\raw_compilation.mp4 -vf "subtitles='src/twitch/mix/compilation.srt':force_style='FontName=Bouncy PERSONAL USE ONLY,FontSize=23,Alignment=7'" -b:v 8000k -b:a 160k -ar 44100 src\\twitch\\mix\\compilation.mp4`,
+					`ffmpeg -i src\\twitch\\mix\\raw_compilation.mp4 -vf "subtitles='src/twitch/mix/compilation.srt':force_style='FontName=Bouncy Black PERSONAL USE ONLY,FontSize=20,Alignment=7'" -b:v 8000k -b:a 160k -ar 44100 src\\twitch\\mix\\compilation.mp4`,
 					 [], 
 					 {log:false, shell:true}
 				)
@@ -172,7 +173,41 @@ class VideoService{
 		})
 	}
 
+	generateThumbnail(thumb){
+		return new Promise(async (resolve,reject)=>{
+			let fontPath = UtilService.getPath()+"\\assets\\fonts\\Bouncy.otf"
+			let fontSize =  15
 
+			thumb.primary.text = thumb.primary.text.substring(0,22) + "!!"
+			
+			if(thumb.secondary.text.length > 18){
+				let temp = thumb.secondary.text.substring(0,18)
+				let cut = temp.lastIndexOf(" ")
+				let firstline = thumb.secondary.text.substring(0, cut) + "\n"
+				let secondline = thumb.secondary.text.substring(cut, thumb.secondary.text.length - cut > 18 ? cut+18 : thumb.secondary.text.length)
+				thumb.secondary.text = firstline + secondline
+			}
+			console.log('thumb.secondary.text', thumb.secondary.text)
+
+			let {stdout} = await ScriptService.execa(
+				`ffmpeg`,
+				 ['-i', thumb.backdrop, '-i', thumb.primary.image, '-i', thumb.secondary.image, '-i', thumb.bubble_long, '-i', thumb.bubble,'-filter_complex',
+				  '[0]scale=360:200[0a];[0]scale=360:200[0b];[0a][0b]overlay=80:0[0c];[0c][1]overlay=0:0[step1];[step1][2]overlay=240:0[step2];'
+				  + '[step2][3]overlay=80:main_h-overlay_h-10[step3];[4]hflip[4a];'
+				  + '[step3][4a]overlay=main_w-overlay_w-10:main_h-overlay_h-60[step4];' 
+				  + `[step4]drawtext=text='${thumb.primary.text}':fontfile='${fontPath}':fontcolor=black:fontsize=${fontSize}:x=100+(((w-120)-text_w)/2):y=(h-text_h)-20[step5];`
+				  + `[step5]drawtext=text='${thumb.secondary.text}':fontfile='${fontPath}':fontcolor=black:fontsize=${fontSize}:x=140:y=105[step6]`
+				  // 'drawtext="fontfile=/path/to/font.ttf:text='Stack Overflow': fontcolor=white: fontsize=24: box=1: 
+				  // boxcolor=black@0.5:boxborderw=5: x=(w-text_w)/2: y=(h-text_h)/2'
+				  , '-map', '[step6]', thumb.path], 
+				 {log:false}
+			)
+			// main_w-overlay_w-10:main_h-overlay_h-10
+			// ffmpeg -i input -i logo -filter_complex 'overlay=10:main_h-overlay_h-10' output
+			
+			resolve(thumb.path)
+		})	
+	}
 	static get(){
 		if(instance == null)
 			instance =  new VideoService()

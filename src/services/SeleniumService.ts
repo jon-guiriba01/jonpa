@@ -72,7 +72,6 @@ class SeleniumService{
         //get modal
         let eModal = await this.driver.findElement(By.css("#dialog.ytcp-uploads-dialog"))
         await this.sleep(WAIT_DURATION)
-
         // select and input title
         let eTitle = await eModal.findElement(By.id('textbox'))
         await eTitle.click()
@@ -85,14 +84,32 @@ class SeleniumService{
 
         // select and input description
         if (params.description){
-          let container = eModal.findElement(By.xpath(
+          let container = await eModal.findElement(By.xpath(
               "/html/body/ytcp-uploads-dialog/tp-yt-paper-dialog/div/ytcp-animatable[1]/ytcp-video-metadata-editor/div/ytcp-video-metadata-editor-basics/div[2]/ytcp-mention-textbox/ytcp-form-input-container/div[1]/div[2]/ytcp-mention-input"
             )
           )
-            let eDescription = await container.findElement(By.id('textbox'))
+          let eDescription = await container.findElement(By.id('textbox'))
           await eDescription.click()
           await eDescription.clear()
           await eDescription.sendKeys(params.description)
+        }
+
+        // aapply thumbnail
+        if(params.thumbnail){
+          try{
+            let container = await eModal.findElement(
+              By.css(
+                ".remove-default-style.style-scope.ytcp-thumbnails-compact-editor-uploader"
+              )
+            ).sendKeys(params.thumbnail)
+
+            await this.sleep(2000)
+
+          }catch(err){
+            console.log("thumbnail err", err)
+          }
+        // style-scope ytcp-thumbnails-compact-editor-uploader
+
         }
         
         if(params.playlist){
@@ -219,7 +236,7 @@ class SeleniumService{
     this.driver = await new Builder().forBrowser('firefox')
       .setFirefoxOptions(
         new firefox.Options()
-          .headless()
+          // .headless()
           .setProfile(process.env.FIREFOX_PROFILE)
       ).build()
 
