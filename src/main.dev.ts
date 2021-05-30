@@ -27,6 +27,8 @@ import GmailService from './services/GmailService'
 import EventService from './services/EventService'
 import AuthService from './services/AuthService'
 import YoutubeService from './services/YoutubeService'
+import TwitchService from './services/TwitchService'
+import TwitchTubeService from './services/TwitchTubeService'
 import fetch from 'node-fetch';
 
 export default class AppUpdater {
@@ -134,8 +136,8 @@ const createWindow = async () => {
 
   mainWindow.on('close', function (event) {
       if(!app.isQuiting){
-          event.preventDefault();
-          mainWindow.hide();
+        event.preventDefault();
+        mainWindow.hide();
       }
       return false;
   });
@@ -153,15 +155,19 @@ const createWindow = async () => {
   new AppUpdater();
 
   mainWindow.webContents.on('did-finish-load', async() => {
-
+    console.log("FINISHED LOAD \n\n\n")
     let menuBuilder = new MenuBuilder(mainWindow) 
     menuBuilder.buildMenu()
     let trayBuilder = new TrayBuilder(mainWindow) 
     trayBuilder.buildTray()
 
-    // AuthService.googleAuth('src/credentials.json')
+    process.on('uncaughtException', function (err) {
+      console.log("GLOBAL ERROR CAUGHT..", err.stack);
+    });
+
 
     EventService.sub('auth:success', async(oAuth2Client)=>{
+      console.log("auth:success")
       GmailService.init(mainWindow,oAuth2Client)
       YoutubeService.init(mainWindow,oAuth2Client)
       // YoutubeService.enableAutoClipoboardDownload()
@@ -178,10 +184,12 @@ const createWindow = async () => {
       mainWindow.webContents.send('context-menu:settings', res);
     })
     EventService.sub("gauth", (authUrl)=>{
+      console.log("sent: ", authUrl)
       mainWindow.webContents.send('gauth', authUrl);
     })
     
 
+    AuthService.googleAuth('src/credentials.json')
   })
 
   

@@ -103,50 +103,59 @@ class YoutubeService{
   }
 
   apiUpload(videoPath, thumbPath = null, opts){
-    this.youtube.videos.insert({
-      auth:this.oAuth2Client,
-      part: 'snippet,status',
-      requestBody:{
-        snippet:{
-          title:opts.title,
-          description:"",
-          categoryIds: 24, //entertainment
-          defaultLanguage: 'en',
-          defaultAudioLanguage: 'en',
-          tags:opts.tags
-        },
-        status:{
-          privacyStatus: "public",
-          selfDeclaredMadeForKids: false
-        }
-      }, 
-      media: {
-        body: fs.createReadStream(videoPath),
-      },
-    },(err, response)=>{
-      if (err) {
-        console.log('The API returned an error: ' + err);
-        return;
-      }
-      console.log(response.data)
-
-      console.log('Video uploaded. Uploading the thumbnail now.')
-
-      if(thumbPath)
-        this.youtube.thumbnails.set({
-          auth: this.oAuth2Client,
-          videoId: response.data.id,
-          media: {
-            body: fs.createReadStream(thumbPath)
+    return new Promise((resolve,reject)=>{
+      this.youtube.videos.insert({
+        auth:this.oAuth2Client,
+        part: 'snippet,status',
+        requestBody:{
+          snippet:{
+            title:opts.title,
+            description:"",
+            categoryIds: 24, //entertainment
+            defaultLanguage: 'en',
+            defaultAudioLanguage: 'en',
+            tags:opts.tags
           },
-        }, function(err, response) {
-          if (err) {
-            console.log('The API returned an error: ' + err);
-            return;
+          status:{
+            privacyStatus: "public",
+            selfDeclaredMadeForKids: false
           }
-          console.log(response.data)
-        })
+        }, 
+        media: {
+          body: fs.createReadStream(videoPath),
+        },
+      },(err, response)=>{
+        if (err) {
+          console.log('The API returned an error: ' + err);
+          return;
+        }
+        console.log(response.data)
+
+        console.log('Video uploaded. Uploading the thumbnail now.')
+
+        if(thumbPath){
+          this.youtube.thumbnails.set({
+            auth: this.oAuth2Client,
+            videoId: response.data.id,
+            media: {
+              body: fs.createReadStream(thumbPath)
+            },
+          }, function(err, response) {
+            if (err) {
+              console.log('The API returned an error: ' + err);
+              return;
+            }
+            resolve(true)
+            console.log(response.data)
+          })
+        }else{
+          resolve(true)
+        }
+
+
+      })
     })
+  
   }
 
   enableAutoClipoboardDownload(){

@@ -1,3 +1,4 @@
+import { titleCase } from "title-case";
 
 export default class DescriptionBuilder{
 	timestamps
@@ -20,14 +21,14 @@ export default class DescriptionBuilder{
 			description += t
 		}
 
-		description += "Credits:\n\n"
+		description += "\nCredits:\n\n"
 
 		for(let c of this.credits){
 			description += c
 		}
 
-		description += "\n" + this.hashtags
-
+		description += "\n" + titleCase(this.hashtags)
+		
 		return  description
 	}
 

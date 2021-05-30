@@ -5,8 +5,8 @@ import {
   shell,
   BrowserWindow,
   MenuItemConstructorOptions,
+  Notification,
 } from 'electron';
-
 import path from 'path';
 import GChatService from '../services/GChatService';
 import ScriptService from '../services/ScriptService';
@@ -14,11 +14,16 @@ import TrelloService from '../services/TrelloService';
 import AwsService from '../services/AwsService';
 import ViewService from '../services/ViewService';
 import EventService from '../services/EventService'
+import TwitchTubeService from '../services/TwitchTubeService'
 import TwitchService from '../services/TwitchService'
 import YoutubeService from '../services/YoutubeService'
+import VideoService from '../services/VideoService'
+import UtilService from '../services/UtilService'
+import SeleniumService from '../services/SeleniumService'
 import AuthService from '../services/AuthService'
 import checkInternetConnected from 'check-internet-connected';
-
+import sound from "sound-play"
+import { v5 as uuidv5 } from 'uuid';
 export default class TrayBuilder{
 	tray:Tray
 
@@ -46,6 +51,7 @@ export default class TrayBuilder{
 	constructor(mainWindow: BrowserWindow){
 		this.mainWindow = mainWindow
 		this.tray = new Tray(this.ASSETS.offlineTrayIcon)
+
 	}
 
 	buildTray(){
@@ -92,7 +98,7 @@ export default class TrayBuilder{
 	  // 	    ]
 	  // 	  })
 	  // 	}
-
+	  let watcherInterval
 	  var contextMenu = Menu.buildFromTemplate([
 	    { label: 'smartmeter', icon: this.buildStatusIcon, 'submenu':[
 	      { 
@@ -180,7 +186,7 @@ export default class TrayBuilder{
 	            } 
 	          },         
 	        ]
-	      },    
+	      },
 	      { 
 	        label: 'run', type: 'normal', click:(menuItem, BrowserWindow, event)=>{
 	          ScriptService.run('../local/run_smartmeter.bat')
@@ -194,60 +200,220 @@ export default class TrayBuilder{
 	    },    
 	    {
 	      label: 'twitch', 'submenu':[
+		      {
+		        label: 'special','submenu':[
+	      			{label: 'special-39daph', type:'normal', click: async(menuItem, BrowserWindow, event)=>{this.postSpecialCompilation(["39daph"])}},
+	      			{label: 'special-xQcOW', type:'normal', click: async(menuItem, BrowserWindow, event)=>{this.postSpecialCompilation(["xQcOW"])}},
+	      			{label: 'special-TinaKitten', type:'normal', click: async(menuItem, BrowserWindow, event)=>{this.postSpecialCompilation(["TinaKitten"])}},
+	      			{label: 'special-xchocobars', type:'normal', click: async(menuItem, BrowserWindow, event)=>{this.postSpecialCompilation(["xchocobars"])}},
+	      			{label: 'special-itshafu', type:'normal', click: async(menuItem, BrowserWindow, event)=>{this.postSpecialCompilation(["itshafu"])}},
+	      			{label: 'special-lilypichu', type:'normal', click: async(menuItem, BrowserWindow, event)=>{this.postSpecialCompilation(["lilypichu"])}},
+	      			{label: 'special-fuslie', type:'normal', click: async(menuItem, BrowserWindow, event)=>{this.postSpecialCompilation(["fuslie"])}},
+	      			{label: 'special-peterparktv', type:'normal', click: async(menuItem, BrowserWindow, event)=>{this.postSpecialCompilation(["peterparktv"])}},
+	      			{label: 'special-quarterjade', type:'normal', click: async(menuItem, BrowserWindow, event)=>{this.postSpecialCompilation(["quarterjade"])}},
+	      			{label: 'special-kristoferyee', type:'normal', click: async(menuItem, BrowserWindow, event)=>{this.postSpecialCompilation(["kristoferyee"])}},
+	      			{label: 'special-kkatamina', type:'normal', click: async(menuItem, BrowserWindow, event)=>{this.postSpecialCompilation(["kkatamina"])}},
+
+		        ]
+		      },    
 	      	{
-	      		label: 'postTopClips', type:'normal', click: async(menuItem, BrowserWindow, event)=>{
-	      			TwitchService.postMixCompilation({
-	      				channels:[
-		      				// "TinaKitten", 
-		      				// "stevesuptic", 
-		      				// "xchocobars", 
-		      				// "brookeab", 
-		      				// "5uppp", 
-		      				// "karlnetwork", 
-		      				// "itshafu", 
+	      		label: 'postTopClips-All', type:'normal', click: async(menuItem, BrowserWindow, event)=>{
+	      			await this.postMixCompilation([
+      					"xQcOW",
+      					"39daph", 
+      					"pokimane", 
+      					"kkatamina",
+      					"Sykkuno",
+      					"kristoferyee", 
+      				])
 
-		      				"xQcOW",
-		      				"39daph", 
-		      				"pokimane", 
-		      				"Jinnytty", 
-		      				"kkatamina",
-		      				"Sykkuno",
+	      			await this.postMixCompilation([
+      					"TinaKitten", 
+      					"stevesuptic", 
+      					"xchocobars", 
+      					"brookeab", 
+      					"5uppp", 
+      					"karlnetwork", 
+      					"itshafu", 
+      				])
 
-		      				// "lilypichu", 
-		      				// "fuslie", 
-		      				// "natsumiii",
-		      				// "ariasaki", 
-		      				// "masayoshi", 
-		      				// "quarterjade", 
-		      				// "peterparktv", 
-		      				// "kristoferyee", 
+	      			await this.postMixCompilation([
+      					"lilypichu", 
+      					"fuslie", 
+      					"natsumiii",
+      					"ariasaki", 
+      					"masayoshi", 
+      					"quarterjade", 
+      					"peterparktv", 
+      				])
 
-		      				// "amouranth", 
-		      				// "melina", 
-		      				// "kiaraakitty",
-		      				// "imjasmine",
-		      				// "indiefoxx", 
-		      				// "evaanna", 
-	      				],
-	      				maxVideoLength: 12 * 60,
-	      				minVideoLength: 3 * 60,
-	      				// maxVideoLength: 0,
-	      				uploadClips:false,
-	      				notify:true,
-	      				upload:true
+  			    	console.log("postTopClips-SaladGang\n")
+  			    }
+  			  },    
+	      	{
+	      		label: 'postTopClips-Top', type:'normal', click: async(menuItem, BrowserWindow, event)=>{
+	      			await this.postMixCompilation([
+      					"xQcOW",
+      					"39daph", 
+      					"kkatamina",
+      					"Sykkuno",
+      					"kristoferyee", 
 
-	      			})
+      					"TinaKitten", 
+      					"xchocobars", 
+      					"brookeab", 
+      					"itshafu",       					
 
-  			    	console.log("TwitchService.downloadClip\n")
-  			    	// EventService.pub('test', res)
+      					"pokimane", 
+      					"lilypichu", 
+      					"fuslie", 
+      					"natsumiii",
+      					"masayoshi", 
+      					"quarterjade", 
+      					"peterparktv", 
+      				])
 
+  			    	console.log("postTopClips-SaladGang\n")
   			    }
   			  },
 	      	{
-	      		label: 'test', type:'normal', click: async(menuItem, BrowserWindow, event)=>{
-	      			// TwitchService.testSelenium()
+	      		label: 'postTopClips-SaladGang', type:'normal', click: async(menuItem, BrowserWindow, event)=>{
+	      			await this.postMixCompilation([
+      					"TinaKitten", 
+      					"stevesuptic", 
+      					"xchocobars", 
+      					"brookeab", 
+      					"5uppp", 
+      					"karlnetwork", 
+      					"itshafu", 
+      				])
 
-							console.log("test ä< test".replace(/[^\x00-\x7F]/g, ""))
+  			    	console.log("postTopClips-SaladGang\n")
+  			    }
+  			  },
+	      	{
+	      		label: 'postTopClips-OTV', type:'normal', click: async(menuItem, BrowserWindow, event)=>{
+	      			await this.postMixCompilation([
+      					"pokimane", 
+      					"lilypichu", 
+      					"fuslie", 
+      					"natsumiii",
+      					"ariasaki", 
+      					"masayoshi", 
+      					"quarterjade", 
+      					"peterparktv", 
+      				])
+
+  			    	console.log("postTopClips-SaladGang\n")
+  			    }
+  			  },
+	      	{
+	      		label: 'make shorts', type:'normal', click: async(menuItem, BrowserWindow, event)=>{
+	      			let channels = [
+      			    "TinaKitten", 
+      			    "stevesuptic", 
+      			    "xchocobars", 
+      			    "brookeab", 
+      			    "5uppp", 
+      			    "karlnetwork", 
+      			    "itshafu", 
+
+      			    "xQcOW",
+      			    "39daph", 
+      			    "pokimane", 
+      			    "kkatamina",
+      			    "Sykkuno",
+      			    "disguisedtoast",
+      			    "ludwig",
+      			    "yvonnie",
+
+      			    "lilypichu", 
+      			    "fuslie", 
+      			    "natsumiii",
+      			    "ariasaki", 
+      			    "masayoshi", 
+      			    "quarterjade", 
+      			    "peterparktv", 
+      			    "kristoferyee", 
+      			    "kyedae_",
+      			    // "amouranth", 
+      			    "melina", 
+      			    "imjasmine",
+      			    // "indiefoxx", 
+      			    "Jinnytty", 
+      			    "justaminx", 
+      			  ]
+
+      			  for(let channel of channels){
+
+      			  	await TwitchTubeService.makeShorts2({
+      			  	  channel:channel,
+      			  	  viewThreshold:500,
+      			  	  notify:false,
+      			  	  upload:true
+      			  	})
+
+      			  }
+
+
+	      		}
+					},
+	      	{
+	      		label: 'stop twitch watcher', type:'normal', click: async(menuItem, BrowserWindow, event)=>{
+	      			console.log("stopping twitch watcher..")
+	      			if(watcherInterval) clearInterval(watcherInterval)
+	      		}
+	      	},
+	      	{
+	      		label: 'mockThumbnail', type:'normal', click: async(menuItem, BrowserWindow, event)=>{
+							await TwitchTubeService.mockThumbnail({
+								channels:[	      			      
+									"pokimane", 
+									"lilypichu", 
+									"fuslie", 
+									"natsumiii",
+									"ariasaki", 
+									"masayoshi", 
+									"quarterjade", 
+									"peterparktv", 
+								],
+								maxVideoLength: 5 * 60,
+								minVideoLength: 3 * 60,
+								interval:'week', //day|month
+								treshold:100,
+								uploadClips:false,
+								notify:false,
+								upload:false
+
+							})
+
+
+	      		}
+	      	},
+	      	{
+	      		label: 'test', type:'normal', click: async(menuItem, BrowserWindow, event)=>{
+							let introFile = `${UtilService.PATH.ASSETS}\\vids\\intro1.mp4`
+	      			let tempIntroRawFile = `${UtilService.PATH.LOCAL}\\test\\raw_temp_intro1.ts`
+	      			let tempIntroFile = `${UtilService.PATH.LOCAL}\\test\\temp_intro1.ts`
+	      			let introSS1 = `${UtilService.PATH.LOCAL}\\test\\introSS_zz_1.png`
+	      			let testFile = `${UtilService.PATH.LOCAL}\\twitch\\39daph\\FuriousGlutenFreeAlligatorMcaT-bneglbq2fwoqmeH6.mp4`
+	      			let testRawFile = `${UtilService.PATH.LOCAL}\\twitch\\39daph\\test1.ts`
+
+
+	      			await ScriptService.cmd(
+	      					`ffmpeg`,
+	      					 ['-ss', "00:00:00", '-i', testFile, '-vframes', '1', '-q:v', '2', introSS1], 
+	      					 {log:true}
+	      				)
+	      			await ScriptService.cmd('ffmpeg', [
+	      				'-i', introFile, '-c', 'copy', '-bsf:v', 'h264_mp4toannexb', '-f', 'mpegts', tempIntroRawFile
+	      			], {log:true})
+
+	      			await ScriptService.cmd('ffmpeg', [
+	      				'-i', tempIntroRawFile, '-i', introSS1, '-filter_complex',
+	      				`[1]scale=1920:1080,setdar=16/9[1a];[1a][0]overlay=0:0[a]`,
+	      				'-map', '[a]', '-map', '0:a', '-b:v', '8000k', '-b:a', '160k', '-ar', '44100',  '-c:v', 'libx264', '-c:a', 'aac',  tempIntroFile
+	      			], {log:true})
 
 	      		}
 	      	}
@@ -285,9 +451,10 @@ export default class TrayBuilder{
 	      } 
 	    },    
 	    { 
-	      label: 'exit', type: 'normal', click:(menuItem, BrowserWindow, event)=>{
-	      app.isQuiting = true
-	      app.quit()
+	      label: 'exit', type: 'normal', click:async (menuItem, BrowserWindow, event)=>{
+		      app.isQuiting = true
+		      await SeleniumService.closeAll()
+		      app.quit()
 	      } 
 	    },   
 	  ])
@@ -295,4 +462,79 @@ export default class TrayBuilder{
 	  this.tray.setContextMenu(contextMenu)
 	}
 
+	async postMixCompilation(channels){
+		await TwitchTubeService.postMixCompilation({
+			channels,
+			maxVideoLength: 2 * 60,
+			minVideoLength: 2 * 60,
+			interval:'day', //day|month
+			treshold:100,
+			uploadClips:false,
+			notify:true,
+			upload:false
+
+		})
+
+		const notification = {
+		  title: 'postMixCompilation Done',
+		  body: channels.join(',')
+		}
+		new Notification(notification).show()
+
+		await sound.play(`${UtilService.getLocalPath()}/assets/audio/ring1.mp3`, 1);
+	}
+
+	async postSpecialCompilation(channels){
+		await TwitchTubeService.postMixCompilation({
+			channels,
+			maxVideoLength: 5 * 60,
+			minVideoLength: 3 * 60,
+			interval:'week', //day|month
+			treshold:100,
+			uploadClips:false,
+			notify:true,
+			upload:true
+
+		})
+
+		const notification = {
+		  title: 'postSpecialCompilation Done',
+		  body: channels.join(',')
+		}
+		new Notification(notification).show()
+
+		await sound.play(`${UtilService.getLocalPath()}/assets/audio/ring1.mp3`, 1);
+	}
+
+
+	// channels:[
+	// 	"TinaKitten", 
+	// 	"stevesuptic", 
+	// 	"xchocobars", 
+	// 	"brookeab", 
+	// 	"5uppp", 
+	// 	"karlnetwork", 
+	// 	"itshafu", 
+
+	// 	// "xQcOW",
+	// 	// "39daph", 
+	// 	// "pokimane", 
+	// 	// "kkatamina",
+	// 	// "Sykkuno",
+
+	// 	// "lilypichu", 
+	// 	// "fuslie", 
+	// 	// "natsumiii",
+	// 	// "ariasaki", 
+	// 	// "masayoshi", 
+	// 	// "quarterjade", 
+	// 	// "peterparktv", 
+	// 	// "kristoferyee", 
+
+	// 	// "amouranth", 
+	// 	// "melina", 
+	// 	// "imjasmine",
+	// 	// "indiefoxx", 
+	// 	// "Jinnytty", 
+	// ],
 }

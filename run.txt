@@ -15,232 +15,3328 @@ Starting Main Process...
 
 
 [34mi[39m [90m｢wdm｣[39m: Compiled successfully.
-(node:12016) ExtensionLoadWarning: Warnings loading extension at C:\Users\Jon\AppData\Roaming\Electron\extensions\fmkadmapgofadopljbjfkapdkoienihi: Unrecognized manifest key 'browser_action'. Unrecognized manifest key 'minimum_chrome_version'. Unrecognized manifest key 'update_url'. Cannot load extension with file or directory name _metadata. Filenames starting with "_" are reserved for use by the system. 
-22:03:01.969 > Skip checkForUpdatesAndNotify because application is not packed
-(node:12016) electron: The default of contextIsolation is deprecated and will be changing from false to true in a future release of Electron.  See https://github.com/electron/electron/issues/23506 for more information
-preparing dirs... 
-TwitchService.downloadClip
+(node:21640) ExtensionLoadWarning: Warnings loading extension at C:\Users\Jon\AppData\Roaming\Electron\extensions\fmkadmapgofadopljbjfkapdkoienihi: Unrecognized manifest key 'browser_action'. Unrecognized manifest key 'minimum_chrome_version'. Unrecognized manifest key 'update_url'. Cannot load extension with file or directory name _metadata. Filenames starting with "_" are reserved for use by the system. 
+20:04:33.016 > Skip checkForUpdatesAndNotify because application is not packed
+(node:21640) electron: The default of contextIsolation is deprecated and will be changing from false to true in a future release of Electron.  See https://github.com/electron/electron/issues/23506 for more information
+FINISHED LOAD 
 
-getting clips... 
-0> xQcOW - 66167 - AlluringDignifiedKoalaLitty-4bCGtzdieBMMqTuo
-1> xQcOW - 30887 - DarlingPreciousTubersSoBayed--N94Qe_2gFUbMb-3
-2> xQcOW - 21072 - CarelessAuspiciousSquidWutFace-t4Pf6kGzaVYmH67B
-3> xQcOW - 9907 - InterestingSolidCaribouJonCarnage-vYyYtRzTh9tgcVAD
-3> xQcOW - 66167 - AlluringDignifiedKoalaLitty-4bCGtzdieBMMqTuo
-4> xQcOW - 30887 - DarlingPreciousTubersSoBayed--N94Qe_2gFUbMb-3
-5> xQcOW - 21072 - CarelessAuspiciousSquidWutFace-t4Pf6kGzaVYmH67B
-5> xQcOW - 66167 - AlluringDignifiedKoalaLitty-4bCGtzdieBMMqTuo
-6> xQcOW - 30887 - DarlingPreciousTubersSoBayed--N94Qe_2gFUbMb-3
-6> xQcOW - 66167 - AlluringDignifiedKoalaLitty-4bCGtzdieBMMqTuo
-7> Sykkuno - 1488 - CredulousPluckyChickenKappa-KmO6NpqmtYcxRUwN
-8> Sykkuno - 1370 - TalentedLazyAsparagusOpieOP-O3YX9q8w7w3Y94jt
-8> Sykkuno - 1488 - CredulousPluckyChickenKappa-KmO6NpqmtYcxRUwN
-9> xChocoBars - 1083 - OnerousBoringOysterBleedPurple-a4wavUmighaHYwCH
-10> SteveSuptic - 1005 - CuteStylishWalletMcaT-YtnuH0jX7yX0Gzd4
-11> xChocoBars - 832 - OpenCalmHumanTwitchRaid-ogG0KNS_hWeFmKcB
-12> SteveSuptic - 804 - TastyCovertAubergineMingLee-g9wa_rjc_YQ5TI2K
-13> SteveSuptic - 769 - ZanyMistyLobsterOMGScoots-xM0rMSvsVa6-YJ1Y
-13> SteveSuptic - 804 - TastyCovertAubergineMingLee-g9wa_rjc_YQ5TI2K
-14> lilypichu - 700 - ElegantCovertHumanOptimizePrime-6rz1sRdVhwAFQvXJ
-15> xChocoBars - 673 - PlumpDependableBottleVoHiYo-QYJNZjg9gV1hpHdP
-16> Jinnytty - 598 - BloodyCrepuscularCrowItsBoshyTime-Tv3f-Fn4HNsS5hJ3
-17> SteveSuptic - 565 - StylishSillyAnisePunchTrees--iLVUlqi1IUHm-W4
-18> kkatamina - 555 - CleanThirstyWombatHeyGuys-AfDudMDCjmbP7cUO
-19> Natsumiii - 543 - MiniatureConcernedStarlingTheTarFu-sP3TLMNRKfSIWO8J
-20> fuslie - 457 - ScrumptiousProtectiveSrirachaFeelsBadMan-6VUeoJC0aropeR1p
-21> Jinnytty - 424 - CrackyPerfectBearPraiseIt-P4pq0tgBr5Y6dGBw
-22> xChocoBars - 390 - BlatantNastyGarlicFloof-ke_beMx_UsW8hfin
-23> fuslie - 389 - BenevolentHedonisticPartridgeBloodTrail-MpbHrqszlCbmGjB2
-24> peterparkTV - 360 - CrispyBoredTroutSmoocherZ-Tsgsh7DWeegu6Rdc
-25> fuslie - 292 - CrispyFlaccidAnacondaOneHand-8Mwpof0GWYJnfDRh
-26> fuslie - 282 - CrypticStormyTrollYee-e-Lj6TAmjExrmTjC
-26> fuslie - 292 - CrispyFlaccidAnacondaOneHand-8Mwpof0GWYJnfDRh
-27> KristoferYee - 279 - OilyAbnegateClintmullinsMingLee-IiAEntlWFNuiw3We
-28> Natsumiii - 242 - SpunkyHelpfulGerbilDogFace-GVpdAn938Hcm5fUf
-29> Masayoshi - 234 - HealthyEnthusiasticPepperoniShazBotstix-KCNml4AxiEH_7V_V
-30> Jinnytty - 233 - MushyWittyBorkTBTacoRight-M63xUwoBKYfaLNXG
-31> KristoferYee - 217 - ObedientBeautifulSoymilkSMOrc-CVBUy6GsNAifEsxJ
-32> Masayoshi - 215 - TrustworthySullenCocoaCoolStoryBro-22sMPc05S3MZbkpi
-33> Jinnytty - 211 - VictoriousBlushingRutabagaOhMyDog-3wOvTIlj5-enBW3Y
-34> Natsumiii - 209 - ImpartialModernPassionfruitHumbleLife-aoPGzf8uUkxZLAfo
-35> kkatamina - 208 - NurturingCarefulAxeHassaanChop-vP99wegGGaJbXtJ8
-36> Masayoshi - 185 - WrongPuzzledWoodcockSuperVinlin-gnggbwES1kjyucss
-37> KristoferYee - 172 - GrossSparklingTortoiseBatChest-XN2XNycwL39bsJ2A
-38> Masayoshi - 150 - SpinelessSullenAlpacaSaltBae-EaDF_Lg8GYHvTwv4
-39> Natsumiii - 149 - HonestDaintyWolverineVoHiYo-ALm7B0FNamfghQ3T
-40> QuarterJade - 149 - AlluringUnsightlySharkNinjaGrumpy-5EQ8yr9GVAj2Nl62
-41> kkatamina - 130 - GrotesquePoisedWrenDatSheffy-fm0jO_9XBGs7QDmZ
-42> QuarterJade - 113 - WimpyBoredQueleaLitFam-9dg74S0wiaODK0QW
-43> 39daph - 94 - WealthySmellyPepperJonCarnage-o0zXiE17sN1eGGMr
-44> KristoferYee - 90 - DarlingVibrantOpossumTebowing-2LDhx-wLY7FPlaVr
-45> pokimane - 87 - PoliteDirtyBeefMrDestructoid-uwBNrNQyOFzW_1tw
-46> AriaSaki - 64 - WiseDepressedTroutDancingBanana-6hADWEH_tb-KtrTf
-47> QuarterJade - 63 - ResilientAgileChinchillaKappa-RZxjF32YEyYnHkoG
-48> TinaKitten - 62 - RichCautiousVelociraptorLeeroyJenkins-ABWDhm8xa3054BiH
-49> QuarterJade - 52 - AbstemiousLachrymoseWatercressBudStar-AtG2HNlyHezaFopi
-50> 39daph - 45 - JollySoftGaurTakeNRG-C31UoxHUQZ6jt2pl
-51> pokimane - 43 - LongKindAntMikeHogu-YBubuMVzlMlIS94R
-52> AriaSaki - 41 - ScrumptiousAmazingWoodpeckerRlyTho-zFNnV0LhPOBZ2v3-
-53> pokimane - 40 - GenerousBlindingLaptopFailFish-aBSHsRUCNEIJsU5j
-54> pokimane - 35 - GorgeousCredulousKittenWholeWheat-ulPqLRvu4HidSr17
-54> pokimane - 40 - GenerousBlindingLaptopFailFish-aBSHsRUCNEIJsU5j
-55> AriaSaki - 33 - ZanyAssiduousBarracudaHumbleLife-K6RzWLWNy-Y0RXmx
-56> lilypichu - 30 - SavageAstuteTrayHeyGuys-rR28_9PZ-zAqp9G5
-57> 39daph - 28 - TenderElegantCheetahShazBotstix-yiRcE1AyQdcysGeI
-58> 39daph - 27 - MildCleverRavenStrawBeary-E3KYe5np4vzB8RRM
-58> 39daph - 28 - TenderElegantCheetahShazBotstix-yiRcE1AyQdcysGeI
-59> lilypichu - 25 - ClumsySplendidLeopardLitty-_IVipGJs-SIfgs9O
-60> AriaSaki - 24 - IntelligentColdPonyMrDestructoid-5BV6H3nhfWlokklm
-61> lilypichu - 17 - AntsyJollyZebraFUNgineer-9ih937818FiguPzr
-62> TinaKitten - 9 - TiredSpineyGuanacoOptimizePrime-xzddsYlx9jtXScg2
-63> TinaKitten - 5 - CourageousToughPhoneOpieOP-mEhVvLfujTus-uB2
-64> TinaKitten - 4 - ThankfulSquarePlumTBTacoRight-Pnzt2f1N3talzhGN
-64> TinaKitten - 9 - TiredSpineyGuanacoOptimizePrime-xzddsYlx9jtXScg2
-65> TinaKitten - 5 - CourageousToughPhoneOpieOP-mEhVvLfujTus-uB2
-65> TinaKitten - 9 - TiredSpineyGuanacoOptimizePrime-xzddsYlx9jtXScg2
-66> peterparkTV - 3 - PlumpObservantToothMrDestructoid-kAIjU7pV1aFj-CoJ
-xQcOW - 9907 - InterestingSolidCaribouJonCarnage-vYyYtRzTh9tgcVAD
-kkatamina - 7521 - ExuberantTenuousAlbatrossDoritosChip-G7zz7ZGv5_In7rcC
-Sykkuno - 6900 - AbrasiveRenownedDonkeyJonCarnage-5TPL_W3F1bXRyGpm
-xQcOW - 21072 - CarelessAuspiciousSquidWutFace-t4Pf6kGzaVYmH67B
-Sykkuno - 5135 - HeadstrongUgliestPangolinCharlietheUnicorn-8o9JcBfIkC7kWusg
-xQcOW - 30887 - DarlingPreciousTubersSoBayed--N94Qe_2gFUbMb-3
-xQcOW - 66167 - AlluringDignifiedKoalaLitty-4bCGtzdieBMMqTuo
-Sykkuno - 1370 - TalentedLazyAsparagusOpieOP-O3YX9q8w7w3Y94jt
-Sykkuno - 1488 - CredulousPluckyChickenKappa-KmO6NpqmtYcxRUwN
-xChocoBars - 1083 - OnerousBoringOysterBleedPurple-a4wavUmighaHYwCH
-SteveSuptic - 1005 - CuteStylishWalletMcaT-YtnuH0jX7yX0Gzd4
-xChocoBars - 832 - OpenCalmHumanTwitchRaid-ogG0KNS_hWeFmKcB
-SteveSuptic - 769 - ZanyMistyLobsterOMGScoots-xM0rMSvsVa6-YJ1Y
-SteveSuptic - 804 - TastyCovertAubergineMingLee-g9wa_rjc_YQ5TI2K
-lilypichu - 700 - ElegantCovertHumanOptimizePrime-6rz1sRdVhwAFQvXJ
-xChocoBars - 673 - PlumpDependableBottleVoHiYo-QYJNZjg9gV1hpHdP
-Jinnytty - 598 - BloodyCrepuscularCrowItsBoshyTime-Tv3f-Fn4HNsS5hJ3
-SteveSuptic - 565 - StylishSillyAnisePunchTrees--iLVUlqi1IUHm-W4
-kkatamina - 555 - CleanThirstyWombatHeyGuys-AfDudMDCjmbP7cUO
-Natsumiii - 543 - MiniatureConcernedStarlingTheTarFu-sP3TLMNRKfSIWO8J
-fuslie - 457 - ScrumptiousProtectiveSrirachaFeelsBadMan-6VUeoJC0aropeR1p
-Jinnytty - 424 - CrackyPerfectBearPraiseIt-P4pq0tgBr5Y6dGBw
-xChocoBars - 390 - BlatantNastyGarlicFloof-ke_beMx_UsW8hfin
-fuslie - 389 - BenevolentHedonisticPartridgeBloodTrail-MpbHrqszlCbmGjB2
-peterparkTV - 360 - CrispyBoredTroutSmoocherZ-Tsgsh7DWeegu6Rdc
-fuslie - 282 - CrypticStormyTrollYee-e-Lj6TAmjExrmTjC
-fuslie - 292 - CrispyFlaccidAnacondaOneHand-8Mwpof0GWYJnfDRh
-KristoferYee - 279 - OilyAbnegateClintmullinsMingLee-IiAEntlWFNuiw3We
-Natsumiii - 242 - SpunkyHelpfulGerbilDogFace-GVpdAn938Hcm5fUf
-Masayoshi - 234 - HealthyEnthusiasticPepperoniShazBotstix-KCNml4AxiEH_7V_V
-Jinnytty - 233 - MushyWittyBorkTBTacoRight-M63xUwoBKYfaLNXG
-KristoferYee - 217 - ObedientBeautifulSoymilkSMOrc-CVBUy6GsNAifEsxJ
-Masayoshi - 215 - TrustworthySullenCocoaCoolStoryBro-22sMPc05S3MZbkpi
-Jinnytty - 211 - VictoriousBlushingRutabagaOhMyDog-3wOvTIlj5-enBW3Y
-Natsumiii - 209 - ImpartialModernPassionfruitHumbleLife-aoPGzf8uUkxZLAfo
-kkatamina - 208 - NurturingCarefulAxeHassaanChop-vP99wegGGaJbXtJ8
-Masayoshi - 185 - WrongPuzzledWoodcockSuperVinlin-gnggbwES1kjyucss
-KristoferYee - 172 - GrossSparklingTortoiseBatChest-XN2XNycwL39bsJ2A
-Masayoshi - 150 - SpinelessSullenAlpacaSaltBae-EaDF_Lg8GYHvTwv4
-Natsumiii - 149 - HonestDaintyWolverineVoHiYo-ALm7B0FNamfghQ3T
-QuarterJade - 149 - AlluringUnsightlySharkNinjaGrumpy-5EQ8yr9GVAj2Nl62
-kkatamina - 130 - GrotesquePoisedWrenDatSheffy-fm0jO_9XBGs7QDmZ
-QuarterJade - 113 - WimpyBoredQueleaLitFam-9dg74S0wiaODK0QW
-39daph - 94 - WealthySmellyPepperJonCarnage-o0zXiE17sN1eGGMr
-KristoferYee - 90 - DarlingVibrantOpossumTebowing-2LDhx-wLY7FPlaVr
-pokimane - 87 - PoliteDirtyBeefMrDestructoid-uwBNrNQyOFzW_1tw
-AriaSaki - 64 - WiseDepressedTroutDancingBanana-6hADWEH_tb-KtrTf
-QuarterJade - 63 - ResilientAgileChinchillaKappa-RZxjF32YEyYnHkoG
-TinaKitten - 62 - RichCautiousVelociraptorLeeroyJenkins-ABWDhm8xa3054BiH
-QuarterJade - 52 - AbstemiousLachrymoseWatercressBudStar-AtG2HNlyHezaFopi
-39daph - 45 - JollySoftGaurTakeNRG-C31UoxHUQZ6jt2pl
-pokimane - 43 - LongKindAntMikeHogu-YBubuMVzlMlIS94R
-AriaSaki - 41 - ScrumptiousAmazingWoodpeckerRlyTho-zFNnV0LhPOBZ2v3-
-pokimane - 35 - GorgeousCredulousKittenWholeWheat-ulPqLRvu4HidSr17
-pokimane - 40 - GenerousBlindingLaptopFailFish-aBSHsRUCNEIJsU5j
-AriaSaki - 33 - ZanyAssiduousBarracudaHumbleLife-K6RzWLWNy-Y0RXmx
-lilypichu - 30 - SavageAstuteTrayHeyGuys-rR28_9PZ-zAqp9G5
-39daph - 27 - MildCleverRavenStrawBeary-E3KYe5np4vzB8RRM
-39daph - 28 - TenderElegantCheetahShazBotstix-yiRcE1AyQdcysGeI
-lilypichu - 25 - ClumsySplendidLeopardLitty-_IVipGJs-SIfgs9O
-AriaSaki - 24 - IntelligentColdPonyMrDestructoid-5BV6H3nhfWlokklm
-lilypichu - 17 - AntsyJollyZebraFUNgineer-9ih937818FiguPzr
-TinaKitten - 4 - ThankfulSquarePlumTBTacoRight-Pnzt2f1N3talzhGN
-peterparkTV - 4 - TameDirtyEggPeanutButterJellyTime-mmDhb4b1aIeHDMr2
-TinaKitten - 5 - CourageousToughPhoneOpieOP-mEhVvLfujTus-uB2
-TinaKitten - 9 - TiredSpineyGuanacoOptimizePrime-xzddsYlx9jtXScg2
-peterparkTV - 3 - PlumpObservantToothMrDestructoid-kAIjU7pV1aFj-CoJ
-peterparkTV - 2 - SourResourcefulTitanOSsloth-o5CevT6tWTIEuYQp
-channel..  xQcOW
-adding title | total duration: 22.75
-channel..  kkatamina
-adding Mic finally working! | total duration: 46.49
-channel..  Sykkuno
-adding Sykkuno on crims rp | total duration: 51.35
-channel..  xQcOW
-adding xqc on pokimane | total duration: 32.15
-channel..  Sykkuno
-adding Yuno's hidden car tactic | total duration: 32.59
-channel..  xQcOW
-adding SAYS YOU | total duration: 26
-channel..  xQcOW
-adding RARE GAMBA STREAM (PLEASE DONT GAMBLE EVER)(DONT U | total duration: 30
-channel..  Sykkuno
-adding yuno feels bad | total duration: 26
-channel..  Sykkuno
-adding no crime today | total duration: 30
-channel..  xChocoBars
-adding pitty janet | total duration: 19.65
-channel..  SteveSuptic
-adding kimi is to much for steve | total duration: 43.75
-channel..  xChocoBars
-adding Dumbdog pulls a toast play, high-pitched Janet and | total duration: 60
-channel..  SteveSuptic
-adding STE----SEE?! | total duration: 29.78
-channel..  SteveSuptic
-adding dumbdog scream laugh | total duration: 20.19
-channel..  lilypichu
-adding Lilypichu, the voice actress, lands another role!  | total duration: 10.95
-channel..  xChocoBars
-adding 5000$????? | total duration: 26.98
-channel..  Jinnytty
-adding DRUNKARDS QUARREL | total duration: 18.19
-channel..  SteveSuptic
-adding hey don't go up there | total duration: 12.15
-channel..  kkatamina
-adding GTA??! | Kate Minaj  | total duration: 28
-channel..  Natsumiii
-adding Kermits Play Valorant | total duration: 59.95
-channel..  fuslie
-adding jake resub | total duration: 19.25
-channel..  Jinnytty
-adding Bruh... | total duration: 18.75
-channel..  xChocoBars
-adding janet ride or die | total duration: 21.75
-channel..  fuslie
-adding Smooth John | total duration: 15.5
-channel..  peterparkTV
-adding Team TOAST! From 4-10 to 13-10! (VALORANT TOURNAME | total duration: 46.75
-processing clip xQcOW 9907
-processing clip kkatamina 7521
-processing clip Sykkuno 6900
-processing clip xQcOW 21072
-processing clip Sykkuno 5135
-processing clip xQcOW 30887
-processing clip xQcOW 66167
-processing clip Sykkuno 1370
-processing clip Sykkuno 1488
-processing clip xChocoBars 1083
-processing clip SteveSuptic 1005
-processing clip xChocoBars 832
-processing clip SteveSuptic 769
-processing clip SteveSuptic 804
-processing clip lilypichu 700
-processing clip xChocoBars 673
-processing clip Jinnytty 598
-processing clip SteveSuptic 565
-processing clip kkatamina 555
-processing clip Natsumiii 543
-processing clip fuslie 457
-processing clip Jinnytty 424
-processing clip xChocoBars 390
-processing clip fuslie 389
-processing clip peterparkTV 360
-[34mi[39m [90m｢wdm｣[39m: Compiling...
-[34mi[39m [90m｢wdm｣[39m: Compiled successfully.
+
+
+preparing dirs... 
+TwitchTubeService.downloadClip
+
+getting channel data... 
+TinaKitten - 30
+stevesuptic - 24
+xchocobars - 15
+brookeab - 0
+5uppp - 24
+karlnetwork - 29
+itshafu - 20
+xQcOW - 24
+39daph - 25
+pokimane - 24
+kkatamina - 29
+Sykkuno - 21
+lilypichu - 28
+fuslie - 28
+natsumiii - 27
+ariasaki - 27
+masayoshi - 18
+quarterjade - 19
+peterparktv - 10
+kristoferyee - 25
+filterCompilationClips..
+valid clips.. 95
+39daph - 146561 - YOH 
+xQcOW - 55394 - Canadians 
+xQcOW - 30597 - xqc checks adepts Instagram 
+xQcOW - 15747 - Pepega 
+xQcOW - 13348 - Twitch Doesn't Let xQc Put "WIZARD" In his Title... 
+Sykkuno - 8791 - New update makes for insane get aways... 
+SteveSuptic - 5327 - Steve knows months really well. 
+Sykkuno - 3002 - YUNO THE BIRD KILLA 
+KristoferYee - 2443 - Gun out? 
+Sykkuno - 2291 - No shootsu 
+KristoferYee - 1481 - Dear Ludwig...Prayge 
+itsHafu - 1333 - Busted! 
+pokimane - 1307 - True 
+Sykkuno - 1292 - What perfect landing  
+xQcOW - 1276 - OMEGALUL BitCoin 
+5uppp - 1123 - ELLUM?HUHHHHHHHHHHHHHH] 
+KristoferYee - 1093 - Crims 
+pokimane - 960 - I'M FULLY VACCINATED LET'S GOOOOO 💉 NEW VALO PATCH LET'S GOOOOOOOOO 🔫 
+SteveSuptic - 933 - 2 dudes and me 
+Sykkuno - 917 - Sasuke uses fireball jutsu  
+SteveSuptic - 914 - Steve bodies 5up twice - reaction reenactment 
+itsHafu - 836 - hafu saw 5up on top of the body 
+pokimane - 736 - 32 
+Masayoshi - 728 - LMAOOO 
+SteveSuptic - 500 - steve losing his mind 
+itsHafu - 486 - Rat Resfu 
+SteveSuptic - 475 - Steve Tongue 
+pokimane - 428 - dfdsf 
+5uppp - 425 - steve and 5up are toxic lovers 
+Masayoshi - 381 - John freaks out  
+5uppp - 374 - 5up lying about his height to his lover partner 
+5uppp - 337 - 5up giving a little kiss to Steve 
+KristoferYee - 314 - easiest sign of Mr.K 
+karlnetwork - 309 - R.I.P. that pu$$y xD 
+KristoferYee - 308 - "i only need about 60 seconds" 
+pokimane - 305 - her mans 
+Masayoshi - 304 - "I'll FRONTLINE....."  
+itsHafu - 287 - 5up doesn't realise he wasn't voted out 
+5uppp - 280 - bully 5up 
+itsHafu - 273 - Hafu and DK share a braincell 
+Masayoshi - 264 - slick hits puberty 
+lilypichu - 224 - Lily playing Loxodon?? 
+Masayoshi - 199 - The bullet didnt even hit him???? 
+fuslie - 188 - Leslie is people 
+fuslie - 178 - Toast? 
+lilypichu - 168 - Dnd math 
+QuarterJade - 142 - Jodi SCREAMING 
+Natsumiii - 139 - rae ace + phoenix walking by her with ult 
+karlnetwork - 136 - cute? 
+lilypichu - 131 - it takes two with michael 
+QuarterJade - 128 - Jodi reacts to John ASMR 
+fuslie - 123 - Fuslie Reacts Pog  
+AriaSaki - 117 - MY FRIEND IS FAMOUS NOW 
+39daph - 114 - lol 
+fuslie - 107 - The three amigos  
+karlnetwork - 105 - Emily is Away with Corpse & 5Up 
+karlnetwork - 95 - weeeee 
+QuarterJade - 90 - Marshall 4k  
+fuslie - 83 - why use stairs if you have a first aid kit??  
+xChocoBars - 82 - WATER BUFFALO | !merch 
+39daph - 82 - Trashchute 
+QuarterJade - 73 - She's a bunny 
+QuarterJade - 67 - jodi? 
+karlnetwork - 66 - TINA FINALLY SCORES 
+39daph - 65 - daph made me cheat 
+39daph - 58 - "whatever" 
+kkatamina - 45 - they lost it omegalul 
+Natsumiii - 44 - I wonder about this sometimes too 
+TinaKitten - 43 - she threw for funsies 
+peterparkTV - 42 - GTA RP fix phone 
+Natsumiii - 41 - natsuD 
+Natsumiii - 38 - any askers? 
+xChocoBars - 33 - What are these games today??!?!?!?!?! 
+AriaSaki - 32 - The Wolf Among us for the first time :D 
+Natsumiii - 29 - John doesn't know how OT works 
+xChocoBars - 27 - 911, Come Pick Me Up!!!!!! 
+kkatamina - 22 - the twins echoing lmao 
+xChocoBars - 17 - SHE'S GONNA GET ME AGAIN!!!!!! 
+lilypichu - 16 - Apply Logic 
+TinaKitten - 15 - gogy isnt cracked 
+xChocoBars - 15 - Janet outsmarts the Assassin!!!!! 
+kkatamina - 15 - his laugh lmaooo 
+peterparkTV - 13 - update 
+lilypichu - 12 - "I was your roomba~" 
+AriaSaki - 12 - The Wolf Among us for the first time :D [No Spoilers] 
+TinaKitten - 11 - hooded tina 
+kkatamina - 11 - VALO!?  
+kkatamina - 11 - tekau papa pt.3 
+AriaSaki - 11 - The Wolf Among us for the first time :D [No Spoilers] 
+TinaKitten - 8 - SALAD GANG GOGY GOLFIN HAHA 
+AriaSaki - 8 - The Wolf Among us for the first time :D [No Spoilers] 
+TinaKitten - 7 - dsf 
+peterparkTV - 3 - day 2 of Peener Pogue | in queue for GTA RP 
+peterparkTV - 3 - update 
+peterparkTV - 2 - update 
+
+final clips to be used..
+xQcOW - 55394 - Canadians
+39daph - 146561 - YOH
+5uppp - 280 - bully 5up
+lilypichu - 168 - Dnd math
+peterparkTV - 3 - day 2 of Peener Pogue | in queue for GTA RP
+TinaKitten - 43 - she threw for funsies
+xChocoBars - 17 - SHE'S GONNA GET ME AGAIN!!!!!!
+xChocoBars - 15 - Janet outsmarts the Assassin!!!!!
+Sykkuno - 917 - Sasuke uses fireball jutsu 
+AriaSaki - 32 - The Wolf Among us for the first time :D
+itsHafu - 287 - 5up doesn't realise he wasn't voted out
+kkatamina - 11 - tekau papa pt.3
+xQcOW - 15747 - Pepega
+TinaKitten - 15 - gogy isnt cracked
+pokimane - 428 - dfdsf
+AriaSaki - 11 - The Wolf Among us for the first time :D [No Spoilers]
+Sykkuno - 2291 - No shootsu
+lilypichu - 12 - "I was your roomba~"
+peterparkTV - 3 - update
+xChocoBars - 82 - WATER BUFFALO | !merch
+SteveSuptic - 933 - 2 dudes and me
+TinaKitten - 7 - dsf
+xChocoBars - 33 - What are these games today??!?!?!?!?!
+TinaKitten - 8 - SALAD GANG GOGY GOLFIN HAHA
+karlnetwork - 309 - R.I.P. that pu$$y xD
+Sykkuno - 3002 - YUNO THE BIRD KILLA
+AriaSaki - 117 - MY FRIEND IS FAMOUS NOW
+xQcOW - 1276 - OMEGALUL BitCoin
+QuarterJade - 142 - Jodi SCREAMING
+39daph - 114 - lol
+5uppp - 1123 - ELLUM?HUHHHHHHHHHHHHHH]
+kkatamina - 22 - the twins echoing lmao
+lilypichu - 224 - Lily playing Loxodon??
+kkatamina - 15 - his laugh lmaooo
+Masayoshi - 264 - slick hits puberty
+QuarterJade - 128 - Jodi reacts to John ASMR
+Natsumiii - 38 - any askers?
+KristoferYee - 1481 - Dear Ludwig...Prayge
+39daph - 82 - Trashchute
+5uppp - 374 - 5up lying about his height to his lover partner
+pokimane - 1307 - True
+Sykkuno - 1292 - What perfect landing 
+QuarterJade - 67 - jodi?
+pokimane - 960 - I'M FULLY VACCINATED LET'S GOOOOO 💉 NEW VALO PATCH LET'S GOOOOOOOOO 🔫
+KristoferYee - 1093 - Crims
+Masayoshi - 304 - "I'll FRONTLINE....." 
+5uppp - 337 - 5up giving a little kiss to Steve
+xQcOW - 13348 - Twitch Doesn't Let xQc Put "WIZARD" In his Title...
+fuslie - 107 - The three amigos 
+karlnetwork - 66 - TINA FINALLY SCORES
+kkatamina - 11 - VALO!? 
+lilypichu - 131 - it takes two with michael
+SteveSuptic - 914 - Steve bodies 5up twice - reaction reenactment
+SteveSuptic - 5327 - Steve knows months really well.
+pokimane - 736 - 32
+kkatamina - 45 - they lost it omegalul
+itsHafu - 486 - Rat Resfu
+39daph - 65 - daph made me cheat
+KristoferYee - 2443 - Gun out?
+TinaKitten - 11 - hooded tina
+karlnetwork - 105 - Emily is Away with Corpse & 5Up
+itsHafu - 273 - Hafu and DK share a braincell
+39daph - 58 - "whatever"
+karlnetwork - 95 - weeeee
+Sykkuno - 8791 - New update makes for insane get aways...
+peterparkTV - 2 - update
+karlnetwork - 136 - cute?
+fuslie - 188 - Leslie is people
+itsHafu - 1333 - Busted!
+Natsumiii - 29 - John doesn't know how OT works
+xQcOW - 30597 - xqc checks adepts Instagram
+lilypichu - 16 - Apply Logic
+Masayoshi - 728 - LMAOOO
+Natsumiii - 139 - rae ace + phoenix walking by her with ult
+AriaSaki - 12 - The Wolf Among us for the first time :D [No Spoilers]
+Natsumiii - 44 - I wonder about this sometimes too
+SteveSuptic - 475 - Steve Tongue
+Natsumiii - 41 - natsuD
+fuslie - 123 - Fuslie Reacts Pog 
+Masayoshi - 381 - John freaks out 
+KristoferYee - 314 - easiest sign of Mr.K
+QuarterJade - 90 - Marshall 4k 
+Masayoshi - 199 - The bullet didnt even hit him????
+peterparkTV - 42 - GTA RP fix phone
+fuslie - 83 - why use stairs if you have a first aid kit?? 
+peterparkTV - 13 - update
+QuarterJade - 73 - She's a bunny
+KristoferYee - 308 - "i only need about 60 seconds"
+xChocoBars - 27 - 911, Come Pick Me Up!!!!!!
+fuslie - 178 - Toast?
+AriaSaki - 8 - The Wolf Among us for the first time :D [No Spoilers]
+5uppp - 425 - steve and 5up are toxic lovers
+pokimane - 305 - her mans
+itsHafu - 836 - hafu saw 5up on top of the body
+SteveSuptic - 500 - steve losing his mind
+channel..  xQcOW Canadians
+adding Canadians | clip duration: 47.25 | totat_duration: 0
+channel..  39daph YOH
+adding YOH | clip duration: 28 | totat_duration: 47.25
+channel..  5uppp bully 5up
+adding bully 5up | clip duration: 14.05 | totat_duration: 75.25
+channel..  lilypichu Dnd math
+adding Dnd math | clip duration: 60 | totat_duration: 89.3
+channel..  peterparkTV day 2 of Peener Pogue | in queue for GTA RP
+adding day 2 of Peener Pogue | in queue for GTA RP | clip duration: 30 | totat_duration: 149.3
+channel..  TinaKitten she threw for funsies
+adding she threw for funsies | clip duration: 30 | totat_duration: 179.3
+channel..  xChocoBars SHE'S GONNA GET ME AGAIN!!!!!!
+adding SHE'S GONNA GET ME AGAIN!!!!!! | clip duration: 30 | totat_duration: 209.3
+channel..  xChocoBars Janet outsmarts the Assassin!!!!!
+adding Janet outsmarts the Assassin!!!!! | clip duration: 59.98 | totat_duration: 239.3
+channel..  Sykkuno Sasuke uses fireball jutsu 
+adding Sasuke uses fireball jutsu  | clip duration: 29.39 | totat_duration: 299.28000000000003
+channel..  AriaSaki The Wolf Among us for the first time :D
+adding The Wolf Among us for the first time :D | clip duration: 30 | totat_duration: 328.67
+channel..  itsHafu 5up doesn't realise he wasn't voted out
+adding 5up doesn't realise he wasn't voted out | clip duration: 26 | totat_duration: 358.67
+channel..  kkatamina tekau papa pt.3
+adding tekau papa pt.3 | clip duration: 59.95 | totat_duration: 384.67
+channel..  xQcOW Pepega
+adding Pepega | clip duration: 26 | totat_duration: 444.62
+channel..  TinaKitten gogy isnt cracked
+adding gogy isnt cracked | clip duration: 30 | totat_duration: 470.62
+channel..  pokimane dfdsf
+adding dfdsf | clip duration: 26 | totat_duration: 500.62
+channel..  AriaSaki The Wolf Among us for the first time :D [No Spoilers]
+adding The Wolf Among us for the first time :D [No Spoile | clip duration: 30 | totat_duration: 526.62
+channel..  Sykkuno No shootsu
+adding No shootsu | clip duration: 47.7 | totat_duration: 556.62
+channel..  lilypichu "I was your roomba~"
+adding "I was your roomba~" | clip duration: 48.55 | totat_duration: 604.32
+channel..  peterparkTV update
+adding update | clip duration: 30 | totat_duration: 652.87
+channel..  xChocoBars WATER BUFFALO | !merch
+adding WATER BUFFALO | !merch | clip duration: 30 | totat_duration: 682.87
+channel..  SteveSuptic 2 dudes and me
+adding 2 dudes and me | clip duration: 29.78 | totat_duration: 712.87
+reached max video length.. 742.65 > 720
+download clips..
+downloading clip..  xQcOW 55394
+clipData {
+  data: [
+    {
+      id: 'PeacefulMildNikudonDoritosChip-Yg_yTQ38eTAgRBNs',
+      url: 'https://clips.twitch.tv/PeacefulMildNikudonDoritosChip-Yg_yTQ38eTAgRBNs',
+      embed_url: 'https://clips.twitch.tv/embed?clip=PeacefulMildNikudonDoritosChip-Yg_yTQ38eTAgRBNs',
+      broadcaster_id: '71092938',
+      broadcaster_name: 'xQcOW',
+      creator_id: '158674404',
+      creator_name: 'shmurkles',
+      video_id: '1003136559',
+      game_id: '369588',
+      language: 'en',
+      title: 'Canadians',
+      view_count: 55394,
+      created_at: '2021-04-28T04:32:07Z',
+      thumbnail_url: 'https://clips-media-assets2.twitch.tv/AT-cm%7C1155012710-preview-480x272.jpg',
+      duration: 47.2
+    }
+  ],
+  pagination: {}
+}
+>> downloading..  https://clips-media-assets2.twitch.tv/AT-cm%7C1155012710.mp4
+download success!..  C:\Users\Jon\Personal Projects\pa-beta\src\twitch\xQcOW\PeacefulMildNikudonDoritosChip-Yg_yTQ38eTAgRBNs.mp4
+downloading clip..  39daph 146561
+clipData {
+  data: [
+    {
+      id: 'PoisedAlertGoblinSquadGoals-Ebe8frfcJhssusL3',
+      url: 'https://clips.twitch.tv/PoisedAlertGoblinSquadGoals-Ebe8frfcJhssusL3',
+      embed_url: 'https://clips.twitch.tv/embed?clip=PoisedAlertGoblinSquadGoals-Ebe8frfcJhssusL3',
+      broadcaster_id: '160504245',
+      broadcaster_name: '39daph',
+      creator_id: '159018462',
+      creator_name: 'LeMapleMoose',
+      video_id: '1002504707',
+      game_id: '509660',
+      language: 'en',
+      title: 'YOH',
+      view_count: 146561,
+      created_at: '2021-04-27T12:22:04Z',
+      thumbnail_url: 'https://clips-media-assets2.twitch.tv/42442596190-offset-8700-preview-480x272.jpg',
+      duration: 28
+    }
+  ],
+  pagination: {}
+}
+>> downloading..  https://clips-media-assets2.twitch.tv/42442596190-offset-8700.mp4
+starting twitch watcher..
+download success!..  C:\Users\Jon\Personal Projects\pa-beta\src\twitch\39daph\PoisedAlertGoblinSquadGoals-Ebe8frfcJhssusL3.mp4
+downloading clip..  5uppp 280
+clipData {
+  data: [
+    {
+      id: 'ImpartialUnusualPieHotPokket-xnDiV83W7dILTf7c',
+      url: 'https://clips.twitch.tv/ImpartialUnusualPieHotPokket-xnDiV83W7dILTf7c',
+      embed_url: 'https://clips.twitch.tv/embed?clip=ImpartialUnusualPieHotPokket-xnDiV83W7dILTf7c',
+      broadcaster_id: '86061418',
+      broadcaster_name: '5uppp',
+      creator_id: '582269243',
+      creator_name: 'slytherclaw01_',
+      video_id: '1002677747',
+      game_id: '510218',
+      language: 'en',
+      title: 'bully 5up',
+      view_count: 280,
+      created_at: '2021-04-27T16:27:58Z',
+      thumbnail_url: 'https://clips-media-assets2.twitch.tv/AT-cm%7C1154072296-preview-480x272.jpg',
+      duration: 14
+    }
+  ],
+  pagination: {}
+}
+>> downloading..  https://clips-media-assets2.twitch.tv/AT-cm%7C1154072296.mp4
+download success!..  C:\Users\Jon\Personal Projects\pa-beta\src\twitch\5uppp\ImpartialUnusualPieHotPokket-xnDiV83W7dILTf7c.mp4
+downloading clip..  lilypichu 168
+clipData {
+  data: [
+    {
+      id: 'PolishedPerfectIcecreamHoneyBadger-ZdM7wtuHeuWyvM82',
+      url: 'https://clips.twitch.tv/PolishedPerfectIcecreamHoneyBadger-ZdM7wtuHeuWyvM82',
+      embed_url: 'https://clips.twitch.tv/embed?clip=PolishedPerfectIcecreamHoneyBadger-ZdM7wtuHeuWyvM82',
+      broadcaster_id: '31106024',
+      broadcaster_name: 'lilypichu',
+      creator_id: '166223133',
+      creator_name: 'tarki',
+      video_id: '999524733',
+      game_id: '509660',
+      language: 'en',
+      title: 'Dnd math',
+      view_count: 168,
+      created_at: '2021-04-27T19:59:44Z',
+      thumbnail_url: 'https://clips-media-assets2.twitch.tv/AT-cm%7C1154353939-preview-480x272.jpg',
+      duration: 60
+    }
+  ],
+  pagination: {}
+}
+>> downloading..  https://clips-media-assets2.twitch.tv/AT-cm%7C1154353939.mp4
+download success!..  C:\Users\Jon\Personal Projects\pa-beta\src\twitch\lilypichu\PolishedPerfectIcecreamHoneyBadger-ZdM7wtuHeuWyvM82.mp4
+downloading clip..  peterparkTV 3
+clipData {
+  data: [
+    {
+      id: 'HumbleNurturingCakeNotATK-PRXnrGcYPw7aTlWb',
+      url: 'https://clips.twitch.tv/HumbleNurturingCakeNotATK-PRXnrGcYPw7aTlWb',
+      embed_url: 'https://clips.twitch.tv/embed?clip=HumbleNurturingCakeNotATK-PRXnrGcYPw7aTlWb',
+      broadcaster_id: '124494583',
+      broadcaster_name: 'peterparkTV',
+      creator_id: '603419343',
+      creator_name: 'realmadrid63',
+      video_id: '987896864',
+      game_id: '509658',
+      language: 'en',
+      title: 'day 2 of Peener Pogue | in queue for GTA RP',
+      view_count: 3,
+      created_at: '2021-04-27T16:08:04Z',
+      thumbnail_url: 'https://clips-media-assets2.twitch.tv/vod-987896864-offset-14428-preview-480x272.jpg',
+      duration: 30
+    }
+  ],
+  pagination: {}
+}
+>> downloading..  https://clips-media-assets2.twitch.tv/vod-987896864-offset-14428.mp4
+download success!..  C:\Users\Jon\Personal Projects\pa-beta\src\twitch\peterparkTV\HumbleNurturingCakeNotATK-PRXnrGcYPw7aTlWb.mp4
+downloading clip..  TinaKitten 43
+clipData {
+  data: [
+    {
+      id: 'SpeedyCrowdedSalamanderRedCoat-tRVVRQb6HvxwqcQU',
+      url: 'https://clips.twitch.tv/SpeedyCrowdedSalamanderRedCoat-tRVVRQb6HvxwqcQU',
+      embed_url: 'https://clips.twitch.tv/embed?clip=SpeedyCrowdedSalamanderRedCoat-tRVVRQb6HvxwqcQU',
+      broadcaster_id: '42032495',
+      broadcaster_name: 'TinaKitten',
+      creator_id: '609016069',
+      creator_name: 'jokarevs',
+      video_id: '998652285',
+      game_id: '491381',
+      language: 'en',
+      title: 'she threw for funsies',
+      view_count: 46,
+      created_at: '2021-04-27T12:22:03Z',
+      thumbnail_url: 'https://clips-media-assets2.twitch.tv/vod-998652285-offset-1170-preview-480x272.jpg',
+      duration: 30
+    }
+  ],
+  pagination: {}
+}
+>> downloading..  https://clips-media-assets2.twitch.tv/vod-998652285-offset-1170.mp4
+download success!..  C:\Users\Jon\Personal Projects\pa-beta\src\twitch\TinaKitten\SpeedyCrowdedSalamanderRedCoat-tRVVRQb6HvxwqcQU.mp4
+downloading clip..  xChocoBars 17
+clipData {
+  data: [
+    {
+      id: 'ZanySoftAsparagusSaltBae-00vVKxPjozxgiUcW',
+      url: 'https://clips.twitch.tv/ZanySoftAsparagusSaltBae-00vVKxPjozxgiUcW',
+      embed_url: 'https://clips.twitch.tv/embed?clip=ZanySoftAsparagusSaltBae-00vVKxPjozxgiUcW',
+      broadcaster_id: '42583390',
+      broadcaster_name: 'xChocoBars',
+      creator_id: '170889151',
+      creator_name: 'CommonOmar',
+      video_id: '1001564120',
+      game_id: '510218',
+      language: 'en',
+      title: "SHE'S GONNA GET ME AGAIN!!!!!!",
+      view_count: 17,
+      created_at: '2021-04-27T13:58:40Z',
+      thumbnail_url: 'https://clips-media-assets2.twitch.tv/vod-1001564120-offset-9652-preview-480x272.jpg',
+      duration: 30
+    }
+  ],
+  pagination: {}
+}
+>> downloading..  https://clips-media-assets2.twitch.tv/vod-1001564120-offset-9652.mp4
+download success!..  C:\Users\Jon\Personal Projects\pa-beta\src\twitch\xChocoBars\ZanySoftAsparagusSaltBae-00vVKxPjozxgiUcW.mp4
+downloading clip..  xChocoBars 15
+clipData {
+  data: [
+    {
+      id: 'AttractiveColdSpaghettiResidentSleeper--PRDGhkzBiYpSylX',
+      url: 'https://clips.twitch.tv/AttractiveColdSpaghettiResidentSleeper--PRDGhkzBiYpSylX',
+      embed_url: 'https://clips.twitch.tv/embed?clip=AttractiveColdSpaghettiResidentSleeper--PRDGhkzBiYpSylX',
+      broadcaster_id: '42583390',
+      broadcaster_name: 'xChocoBars',
+      creator_id: '170889151',
+      creator_name: 'CommonOmar',
+      video_id: '1001564120',
+      game_id: '510218',
+      language: 'en',
+      title: 'Janet outsmarts the Assassin!!!!!',
+      view_count: 15,
+      created_at: '2021-04-27T13:26:34Z',
+      thumbnail_url: 'https://clips-media-assets2.twitch.tv/AT-cm%7C1153898265-preview-480x272.jpg',
+      duration: 59.9
+    }
+  ],
+  pagination: {}
+}
+>> downloading..  https://clips-media-assets2.twitch.tv/AT-cm%7C1153898265.mp4
+download success!..  C:\Users\Jon\Personal Projects\pa-beta\src\twitch\xChocoBars\AttractiveColdSpaghettiResidentSleeper--PRDGhkzBiYpSylX.mp4
+downloading clip..  Sykkuno 917
+clipData {
+  data: [
+    {
+      id: 'ConcernedSmoothBaguetteDoubleRainbow-fkEjrcrUjm2A56KS',
+      url: 'https://clips.twitch.tv/ConcernedSmoothBaguetteDoubleRainbow-fkEjrcrUjm2A56KS',
+      embed_url: 'https://clips.twitch.tv/embed?clip=ConcernedSmoothBaguetteDoubleRainbow-fkEjrcrUjm2A56KS',
+      broadcaster_id: '26154978',
+      broadcaster_name: 'Sykkuno',
+      creator_id: '99211251',
+      creator_name: 'Gonchaplayz',
+      video_id: '1003227565',
+      game_id: '32982',
+      language: 'en',
+      title: 'Sasuke uses fireball jutsu ',
+      view_count: 933,
+      created_at: '2021-04-28T05:10:28Z',
+      thumbnail_url: 'https://clips-media-assets2.twitch.tv/AT-cm%7C1155042376-preview-480x272.jpg',
+      duration: 29.3
+    }
+  ],
+  pagination: {}
+}
+>> downloading..  https://clips-media-assets2.twitch.tv/AT-cm%7C1155042376.mp4
+download success!..  C:\Users\Jon\Personal Projects\pa-beta\src\twitch\Sykkuno\ConcernedSmoothBaguetteDoubleRainbow-fkEjrcrUjm2A56KS.mp4
+downloading clip..  AriaSaki 32
+clipData {
+  data: [
+    {
+      id: 'EntertainingSquareMangetoutPogChamp-_jPr_yKS1NokjNmZ',
+      url: 'https://clips.twitch.tv/EntertainingSquareMangetoutPogChamp-_jPr_yKS1NokjNmZ',
+      embed_url: 'https://clips.twitch.tv/embed?clip=EntertainingSquareMangetoutPogChamp-_jPr_yKS1NokjNmZ',
+      broadcaster_id: '62510206',
+      broadcaster_name: 'AriaSaki',
+      creator_id: '100670543',
+      creator_name: 'XTorShun_',
+      video_id: '1003369983',
+      game_id: '30720',
+      language: 'en',
+      title: 'The Wolf Among us for the first time :D',
+      view_count: 32,
+      created_at: '2021-04-28T03:06:34Z',
+      thumbnail_url: 'https://clips-media-assets2.twitch.tv/vod-1003369983-offset-628-preview-480x272.jpg',
+      duration: 30
+    }
+  ],
+  pagination: {}
+}
+>> downloading..  https://clips-media-assets2.twitch.tv/vod-1003369983-offset-628.mp4
+download success!..  C:\Users\Jon\Personal Projects\pa-beta\src\twitch\AriaSaki\EntertainingSquareMangetoutPogChamp-_jPr_yKS1NokjNmZ.mp4
+downloading clip..  itsHafu 287
+clipData {
+  data: [
+    {
+      id: 'SwissIcyMonkeyPMSTwin-58GRkO9h0GjLUN44',
+      url: 'https://clips.twitch.tv/SwissIcyMonkeyPMSTwin-58GRkO9h0GjLUN44',
+      embed_url: 'https://clips.twitch.tv/embed?clip=SwissIcyMonkeyPMSTwin-58GRkO9h0GjLUN44',
+      broadcaster_id: '30777889',
+      broadcaster_name: 'itsHafu',
+      creator_id: '91890668',
+      creator_name: 'GiftofFear',
+      video_id: '1002652818',
+      game_id: '510218',
+      language: 'en',
+      title: "5up doesn't realise he wasn't voted out",
+      view_count: 287,
+      created_at: '2021-04-27T16:40:02Z',
+      thumbnail_url: 'https://clips-media-assets2.twitch.tv/41598248909-offset-7690-preview-480x272.jpg',
+      duration: 26
+    }
+  ],
+  pagination: {}
+}
+>> downloading..  https://clips-media-assets2.twitch.tv/41598248909-offset-7690.mp4
+download success!..  C:\Users\Jon\Personal Projects\pa-beta\src\twitch\itsHafu\SwissIcyMonkeyPMSTwin-58GRkO9h0GjLUN44.mp4
+downloading clip..  kkatamina 11
+clipData {
+  data: [
+    {
+      id: 'DeafDarkChamoisPanicBasket-Xj5AtBBdWoRVnNlA',
+      url: 'https://clips.twitch.tv/DeafDarkChamoisPanicBasket-Xj5AtBBdWoRVnNlA',
+      embed_url: 'https://clips.twitch.tv/embed?clip=DeafDarkChamoisPanicBasket-Xj5AtBBdWoRVnNlA',
+      broadcaster_id: '526763937',
+      broadcaster_name: 'kkatamina',
+      creator_id: '584656784',
+      creator_name: 'ploreraaa',
+      video_id: '',
+      game_id: '504471',
+      language: 'en',
+      title: 'tekau papa pt.3',
+      view_count: 11,
+      created_at: '2021-04-28T00:31:21Z',
+      thumbnail_url: 'https://clips-media-assets2.twitch.tv/AT-cm%7C1154744503-preview-480x272.jpg',
+      duration: 59.9
+    }
+  ],
+  pagination: {}
+}
+>> downloading..  https://clips-media-assets2.twitch.tv/AT-cm%7C1154744503.mp4
+download success!..  C:\Users\Jon\Personal Projects\pa-beta\src\twitch\kkatamina\DeafDarkChamoisPanicBasket-Xj5AtBBdWoRVnNlA.mp4
+downloading clip..  xQcOW 15747
+clipData {
+  data: [
+    {
+      id: 'NurturingFrailStarItsBoshyTime-aFSiN8085qiC2aP_',
+      url: 'https://clips.twitch.tv/NurturingFrailStarItsBoshyTime-aFSiN8085qiC2aP_',
+      embed_url: 'https://clips.twitch.tv/embed?clip=NurturingFrailStarItsBoshyTime-aFSiN8085qiC2aP_',
+      broadcaster_id: '71092938',
+      broadcaster_name: 'xQcOW',
+      creator_id: '26841200',
+      creator_name: 'AnsonX10',
+      video_id: '1003136559',
+      game_id: '509658',
+      language: 'en',
+      title: 'Pepega',
+      view_count: 16029,
+      created_at: '2021-04-28T05:09:43Z',
+      thumbnail_url: 'https://clips-media-assets2.twitch.tv/41603355021-offset-23922-preview-480x272.jpg',
+      duration: 26
+    }
+  ],
+  pagination: {}
+}
+>> downloading..  https://clips-media-assets2.twitch.tv/41603355021-offset-23922.mp4
+download success!..  C:\Users\Jon\Personal Projects\pa-beta\src\twitch\xQcOW\NurturingFrailStarItsBoshyTime-aFSiN8085qiC2aP_.mp4
+downloading clip..  TinaKitten 15
+clipData {
+  data: [
+    {
+      id: 'SparklingEsteemedWaterM4xHeh-qrWCyk5Xr1i0f0lA',
+      url: 'https://clips.twitch.tv/SparklingEsteemedWaterM4xHeh-qrWCyk5Xr1i0f0lA',
+      embed_url: 'https://clips.twitch.tv/embed?clip=SparklingEsteemedWaterM4xHeh-qrWCyk5Xr1i0f0lA',
+      broadcaster_id: '42032495',
+      broadcaster_name: 'TinaKitten',
+      creator_id: '609016069',
+      creator_name: 'jokarevs',
+      video_id: '1000022185',
+      game_id: '278888515',
+      language: 'en',
+      title: 'gogy isnt cracked',
+      view_count: 16,
+      created_at: '2021-04-27T18:57:24Z',
+      thumbnail_url: 'https://clips-media-assets2.twitch.tv/vod-1000022185-offset-320-preview-480x272.jpg',
+      duration: 30
+    }
+  ],
+  pagination: {}
+}
+>> downloading..  https://clips-media-assets2.twitch.tv/vod-1000022185-offset-320.mp4
+download success!..  C:\Users\Jon\Personal Projects\pa-beta\src\twitch\TinaKitten\SparklingEsteemedWaterM4xHeh-qrWCyk5Xr1i0f0lA.mp4
+downloading clip..  pokimane 428
+clipData {
+  data: [
+    {
+      id: 'HilariousSecretivePangolinOhMyDog-pYJDGWOaTcSi20Ag',
+      url: 'https://clips.twitch.tv/HilariousSecretivePangolinOhMyDog-pYJDGWOaTcSi20Ag',
+      embed_url: 'https://clips.twitch.tv/embed?clip=HilariousSecretivePangolinOhMyDog-pYJDGWOaTcSi20Ag',
+      broadcaster_id: '44445592',
+      broadcaster_name: 'pokimane',
+      creator_id: '248945953',
+      creator_name: 'ch1ll_town',
+      video_id: '1002900314',
+      game_id: '516575',
+      language: 'en',
+      title: 'dfdsf',
+      view_count: 428,
+      created_at: '2021-04-27T19:18:35Z',
+      thumbnail_url: 'https://clips-media-assets2.twitch.tv/41600938669-offset-1686-preview-480x272.jpg',
+      duration: 26
+    }
+  ],
+  pagination: {}
+}
+>> downloading..  https://clips-media-assets2.twitch.tv/41600938669-offset-1686.mp4
+download success!..  C:\Users\Jon\Personal Projects\pa-beta\src\twitch\pokimane\HilariousSecretivePangolinOhMyDog-pYJDGWOaTcSi20Ag.mp4
+downloading clip..  AriaSaki 11
+clipData {
+  data: [
+    {
+      id: 'UninterestedGleamingYakinikuBlargNaut-gGKkT7T2ymAbXhf2',
+      url: 'https://clips.twitch.tv/UninterestedGleamingYakinikuBlargNaut-gGKkT7T2ymAbXhf2',
+      embed_url: 'https://clips.twitch.tv/embed?clip=UninterestedGleamingYakinikuBlargNaut-gGKkT7T2ymAbXhf2',
+      broadcaster_id: '62510206',
+      broadcaster_name: 'AriaSaki',
+      creator_id: '570868543',
+      creator_name: 'xephxdev',
+      video_id: '1003369983',
+      game_id: '30720',
+      language: 'en',
+      title: 'The Wolf Among us for the first time :D [No Spoilers]',
+      view_count: 11,
+      created_at: '2021-04-28T02:44:39Z',
+      thumbnail_url: 'https://clips-media-assets2.twitch.tv/41605663949-offset-2786-preview-480x272.jpg',
+      duration: 30
+    }
+  ],
+  pagination: {}
+}
+>> downloading..  https://clips-media-assets2.twitch.tv/41605663949-offset-2786.mp4
+download success!..  C:\Users\Jon\Personal Projects\pa-beta\src\twitch\AriaSaki\UninterestedGleamingYakinikuBlargNaut-gGKkT7T2ymAbXhf2.mp4
+downloading clip..  Sykkuno 2291
+clipData {
+  data: [
+    {
+      id: 'DreamySpotlessConsoleBatChest-HvFsPvQ-9h43q0jU',
+      url: 'https://clips.twitch.tv/DreamySpotlessConsoleBatChest-HvFsPvQ-9h43q0jU',
+      embed_url: 'https://clips.twitch.tv/embed?clip=DreamySpotlessConsoleBatChest-HvFsPvQ-9h43q0jU',
+      broadcaster_id: '26154978',
+      broadcaster_name: 'Sykkuno',
+      creator_id: '47091873',
+      creator_name: 'ScumbagStreamer',
+      video_id: '1003227565',
+      game_id: '32982',
+      language: 'en',
+      title: 'No shootsu',
+      view_count: 2356,
+      created_at: '2021-04-28T05:09:55Z',
+      thumbnail_url: 'https://clips-media-assets2.twitch.tv/AT-cm%7C1155041837-preview-480x272.jpg',
+      duration: 47.7
+    }
+  ],
+  pagination: {}
+}
+>> downloading..  https://clips-media-assets2.twitch.tv/AT-cm%7C1155041837.mp4
+download success!..  C:\Users\Jon\Personal Projects\pa-beta\src\twitch\Sykkuno\DreamySpotlessConsoleBatChest-HvFsPvQ-9h43q0jU.mp4
+downloading clip..  lilypichu 12
+clipData {
+  data: [
+    {
+      id: 'GoldenBoldDonutBibleThump-WXnwVLEkJwPYjOmC',
+      url: 'https://clips.twitch.tv/GoldenBoldDonutBibleThump-WXnwVLEkJwPYjOmC',
+      embed_url: 'https://clips.twitch.tv/embed?clip=GoldenBoldDonutBibleThump-WXnwVLEkJwPYjOmC',
+      broadcaster_id: '31106024',
+      broadcaster_name: 'lilypichu',
+      creator_id: '53239406',
+      creator_name: 'BirdsWithoutWings',
+      video_id: '1001025636',
+      game_id: '518213',
+      language: 'en',
+      title: '"I was your roomba~"',
+      view_count: 12,
+      created_at: '2021-04-27T22:35:39Z',
+      thumbnail_url: 'https://clips-media-assets2.twitch.tv/AT-cm%7C1154595631-preview-480x272.jpg',
+      duration: 48.5
+    }
+  ],
+  pagination: {}
+}
+>> downloading..  https://clips-media-assets2.twitch.tv/AT-cm%7C1154595631.mp4
+download success!..  C:\Users\Jon\Personal Projects\pa-beta\src\twitch\lilypichu\GoldenBoldDonutBibleThump-WXnwVLEkJwPYjOmC.mp4
+downloading clip..  peterparkTV 3
+clipData {
+  data: [
+    {
+      id: 'ExquisiteObservantPassionfruitShadyLulu-SQmQhpTt0mAxG22v',
+      url: 'https://clips.twitch.tv/ExquisiteObservantPassionfruitShadyLulu-SQmQhpTt0mAxG22v',
+      embed_url: 'https://clips.twitch.tv/embed?clip=ExquisiteObservantPassionfruitShadyLulu-SQmQhpTt0mAxG22v',
+      broadcaster_id: '124494583',
+      broadcaster_name: 'peterparkTV',
+      creator_id: '653233577',
+      creator_name: 'alexious14',
+      video_id: '1002075776',
+      game_id: '509658',
+      language: 'en',
+      title: 'update',
+      view_count: 3,
+      created_at: '2021-04-28T01:29:13Z',
+      thumbnail_url: 'https://clips-media-assets2.twitch.tv/vod-1002075776-offset-100-preview-480x272.jpg',
+      duration: 30
+    }
+  ],
+  pagination: {}
+}
+>> downloading..  https://clips-media-assets2.twitch.tv/vod-1002075776-offset-100.mp4
+download success!..  C:\Users\Jon\Personal Projects\pa-beta\src\twitch\peterparkTV\ExquisiteObservantPassionfruitShadyLulu-SQmQhpTt0mAxG22v.mp4
+downloading clip..  xChocoBars 82
+clipData {
+  data: [
+    {
+      id: 'TrustworthyToughIguanaJKanStyle-rvxEz1lyQRkPtipg',
+      url: 'https://clips.twitch.tv/TrustworthyToughIguanaJKanStyle-rvxEz1lyQRkPtipg',
+      embed_url: 'https://clips.twitch.tv/embed?clip=TrustworthyToughIguanaJKanStyle-rvxEz1lyQRkPtipg',
+      broadcaster_id: '42583390',
+      broadcaster_name: 'xChocoBars',
+      creator_id: '412931399',
+      creator_name: 'nonoletaureau',
+      video_id: '1000477688',
+      game_id: '508509',
+      language: 'en',
+      title: 'WATER BUFFALO | !merch',
+      view_count: 82,
+      created_at: '2021-04-27T18:24:17Z',
+      thumbnail_url: 'https://clips-media-assets2.twitch.tv/vod-1000477688-offset-11920-preview-480x272.jpg',
+      duration: 30
+    }
+  ],
+  pagination: {}
+}
+>> downloading..  https://clips-media-assets2.twitch.tv/vod-1000477688-offset-11920.mp4
+download success!..  C:\Users\Jon\Personal Projects\pa-beta\src\twitch\xChocoBars\TrustworthyToughIguanaJKanStyle-rvxEz1lyQRkPtipg.mp4
+downloading clip..  SteveSuptic 933
+clipData {
+  data: [
+    {
+      id: 'DeadResourcefulNarwhalJonCarnage-vbhgNu85vTABXJrR',
+      url: 'https://clips.twitch.tv/DeadResourcefulNarwhalJonCarnage-vbhgNu85vTABXJrR',
+      embed_url: 'https://clips.twitch.tv/embed?clip=DeadResourcefulNarwhalJonCarnage-vbhgNu85vTABXJrR',
+      broadcaster_id: '10180005',
+      broadcaster_name: 'SteveSuptic',
+      creator_id: '57779750',
+      creator_name: 'oryanz',
+      video_id: '1002651624',
+      game_id: '510218',
+      language: 'en',
+      title: '2 dudes and me',
+      view_count: 933,
+      created_at: '2021-04-27T15:15:58Z',
+      thumbnail_url: 'https://clips-media-assets2.twitch.tv/41598235949-offset-2744-preview-480x272.jpg',
+      duration: 29.7
+    }
+  ],
+  pagination: {}
+}
+>> downloading..  https://clips-media-assets2.twitch.tv/41598235949-offset-2744.mp4
+download success!..  C:\Users\Jon\Personal Projects\pa-beta\src\twitch\SteveSuptic\DeadResourcefulNarwhalJonCarnage-vbhgNu85vTABXJrR.mp4
+generate compilation..
+videos [
+  'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\xQcOW\\PeacefulMildNikudonDoritosChip-Yg_yTQ38eTAgRBNs.mp4',
+  'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\39daph\\PoisedAlertGoblinSquadGoals-Ebe8frfcJhssusL3.mp4',
+  'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\5uppp\\ImpartialUnusualPieHotPokket-xnDiV83W7dILTf7c.mp4',
+  'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\lilypichu\\PolishedPerfectIcecreamHoneyBadger-ZdM7wtuHeuWyvM82.mp4',
+  'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\peterparkTV\\HumbleNurturingCakeNotATK-PRXnrGcYPw7aTlWb.mp4',
+  'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\TinaKitten\\SpeedyCrowdedSalamanderRedCoat-tRVVRQb6HvxwqcQU.mp4',
+  'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\xChocoBars\\ZanySoftAsparagusSaltBae-00vVKxPjozxgiUcW.mp4',
+  'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\xChocoBars\\AttractiveColdSpaghettiResidentSleeper--PRDGhkzBiYpSylX.mp4',
+  'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\Sykkuno\\ConcernedSmoothBaguetteDoubleRainbow-fkEjrcrUjm2A56KS.mp4',
+  'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\AriaSaki\\EntertainingSquareMangetoutPogChamp-_jPr_yKS1NokjNmZ.mp4',
+  'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\itsHafu\\SwissIcyMonkeyPMSTwin-58GRkO9h0GjLUN44.mp4',
+  'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\kkatamina\\DeafDarkChamoisPanicBasket-Xj5AtBBdWoRVnNlA.mp4',
+  'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\xQcOW\\NurturingFrailStarItsBoshyTime-aFSiN8085qiC2aP_.mp4',
+  'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\TinaKitten\\SparklingEsteemedWaterM4xHeh-qrWCyk5Xr1i0f0lA.mp4',
+  'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\pokimane\\HilariousSecretivePangolinOhMyDog-pYJDGWOaTcSi20Ag.mp4',
+  'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\AriaSaki\\UninterestedGleamingYakinikuBlargNaut-gGKkT7T2ymAbXhf2.mp4',
+  'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\Sykkuno\\DreamySpotlessConsoleBatChest-HvFsPvQ-9h43q0jU.mp4',
+  'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\lilypichu\\GoldenBoldDonutBibleThump-WXnwVLEkJwPYjOmC.mp4',
+  'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\peterparkTV\\ExquisiteObservantPassionfruitShadyLulu-SQmQhpTt0mAxG22v.mp4',
+  'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\xChocoBars\\TrustworthyToughIguanaJKanStyle-rvxEz1lyQRkPtipg.mp4',
+  'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\SteveSuptic\\DeadResourcefulNarwhalJonCarnage-vbhgNu85vTABXJrR.mp4'
+]
+compile begin with config  {
+  outDir: 'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\mix',
+  outName: 'compilation.mp4',
+  videos: [
+    'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\xQcOW\\PeacefulMildNikudonDoritosChip-Yg_yTQ38eTAgRBNs.mp4',
+    'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\39daph\\PoisedAlertGoblinSquadGoals-Ebe8frfcJhssusL3.mp4',
+    'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\5uppp\\ImpartialUnusualPieHotPokket-xnDiV83W7dILTf7c.mp4',
+    'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\lilypichu\\PolishedPerfectIcecreamHoneyBadger-ZdM7wtuHeuWyvM82.mp4',
+    'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\peterparkTV\\HumbleNurturingCakeNotATK-PRXnrGcYPw7aTlWb.mp4',
+    'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\TinaKitten\\SpeedyCrowdedSalamanderRedCoat-tRVVRQb6HvxwqcQU.mp4',
+    'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\xChocoBars\\ZanySoftAsparagusSaltBae-00vVKxPjozxgiUcW.mp4',
+    'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\xChocoBars\\AttractiveColdSpaghettiResidentSleeper--PRDGhkzBiYpSylX.mp4',
+    'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\Sykkuno\\ConcernedSmoothBaguetteDoubleRainbow-fkEjrcrUjm2A56KS.mp4',
+    'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\AriaSaki\\EntertainingSquareMangetoutPogChamp-_jPr_yKS1NokjNmZ.mp4',
+    'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\itsHafu\\SwissIcyMonkeyPMSTwin-58GRkO9h0GjLUN44.mp4',
+    'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\kkatamina\\DeafDarkChamoisPanicBasket-Xj5AtBBdWoRVnNlA.mp4',
+    'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\xQcOW\\NurturingFrailStarItsBoshyTime-aFSiN8085qiC2aP_.mp4',
+    'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\TinaKitten\\SparklingEsteemedWaterM4xHeh-qrWCyk5Xr1i0f0lA.mp4',
+    'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\pokimane\\HilariousSecretivePangolinOhMyDog-pYJDGWOaTcSi20Ag.mp4',
+    'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\AriaSaki\\UninterestedGleamingYakinikuBlargNaut-gGKkT7T2ymAbXhf2.mp4',
+    'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\Sykkuno\\DreamySpotlessConsoleBatChest-HvFsPvQ-9h43q0jU.mp4',
+    'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\lilypichu\\GoldenBoldDonutBibleThump-WXnwVLEkJwPYjOmC.mp4',
+    'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\peterparkTV\\ExquisiteObservantPassionfruitShadyLulu-SQmQhpTt0mAxG22v.mp4',
+    'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\xChocoBars\\TrustworthyToughIguanaJKanStyle-rvxEz1lyQRkPtipg.mp4',
+    'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\SteveSuptic\\DeadResourcefulNarwhalJonCarnage-vbhgNu85vTABXJrR.mp4'
+  ],
+  timestamps: [
+    { time: 0, title: 'Intro' },
+    { time: 8, title: 'Canadians' },
+    { time: 55.25, title: 'YOH' },
+    { time: 83.25, title: 'bully 5up' },
+    { time: 97.3, title: 'Dnd math' },
+    {
+      time: 157.3,
+      title: 'day 2 of Peener Pogue | in queue for GTA RP'
+    },
+    { time: 187.3, title: 'she threw for funsies' },
+    { time: 217.3, title: "SHE'S GONNA GET ME AGAIN!!!!!!" },
+    { time: 247.3, title: 'Janet outsmarts the Assassin!!!!!' },
+    { time: 307.28000000000003, title: 'Sasuke uses fireball jutsu ' },
+    { time: 336.67, title: 'The Wolf Among us for the first time :D' },
+    { time: 366.67, title: "5up doesn't realise he wasn't voted out" },
+    { time: 392.67, title: 'tekau papa pt.3' },
+    { time: 452.62, title: 'Pepega' },
+    { time: 478.62, title: 'gogy isnt cracked' },
+    { time: 508.62, title: 'dfdsf' },
+    {
+      time: 534.62,
+      title: 'The Wolf Among us for the first time :D [No Spoile'
+    },
+    { time: 564.62, title: 'No shootsu' },
+    { time: 612.32, title: '"I was your roomba~"' },
+    { time: 660.87, title: 'update' },
+    { time: 690.87, title: 'WATER BUFFALO | !merch' },
+    { time: 720.87, title: '2 dudes and me' }
+  ]
+}
+creating temp for C:\Users\Jon\Personal Projects\pa-beta\src\twitch\xQcOW\PeacefulMildNikudonDoritosChip-Yg_yTQ38eTAgRBNs.mp4
+creating temp for C:\Users\Jon\Personal Projects\pa-beta\src\twitch\39daph\PoisedAlertGoblinSquadGoals-Ebe8frfcJhssusL3.mp4
+creating temp for C:\Users\Jon\Personal Projects\pa-beta\src\twitch\5uppp\ImpartialUnusualPieHotPokket-xnDiV83W7dILTf7c.mp4
+creating temp for C:\Users\Jon\Personal Projects\pa-beta\src\twitch\lilypichu\PolishedPerfectIcecreamHoneyBadger-ZdM7wtuHeuWyvM82.mp4
+creating temp for C:\Users\Jon\Personal Projects\pa-beta\src\twitch\peterparkTV\HumbleNurturingCakeNotATK-PRXnrGcYPw7aTlWb.mp4
+creating temp for C:\Users\Jon\Personal Projects\pa-beta\src\twitch\TinaKitten\SpeedyCrowdedSalamanderRedCoat-tRVVRQb6HvxwqcQU.mp4
+creating temp for C:\Users\Jon\Personal Projects\pa-beta\src\twitch\xChocoBars\ZanySoftAsparagusSaltBae-00vVKxPjozxgiUcW.mp4
+creating temp for C:\Users\Jon\Personal Projects\pa-beta\src\twitch\xChocoBars\AttractiveColdSpaghettiResidentSleeper--PRDGhkzBiYpSylX.mp4
+creating temp for C:\Users\Jon\Personal Projects\pa-beta\src\twitch\Sykkuno\ConcernedSmoothBaguetteDoubleRainbow-fkEjrcrUjm2A56KS.mp4
+creating temp for C:\Users\Jon\Personal Projects\pa-beta\src\twitch\AriaSaki\EntertainingSquareMangetoutPogChamp-_jPr_yKS1NokjNmZ.mp4
+creating temp for C:\Users\Jon\Personal Projects\pa-beta\src\twitch\itsHafu\SwissIcyMonkeyPMSTwin-58GRkO9h0GjLUN44.mp4
+creating temp for C:\Users\Jon\Personal Projects\pa-beta\src\twitch\kkatamina\DeafDarkChamoisPanicBasket-Xj5AtBBdWoRVnNlA.mp4
+creating temp for C:\Users\Jon\Personal Projects\pa-beta\src\twitch\xQcOW\NurturingFrailStarItsBoshyTime-aFSiN8085qiC2aP_.mp4
+creating temp for C:\Users\Jon\Personal Projects\pa-beta\src\twitch\TinaKitten\SparklingEsteemedWaterM4xHeh-qrWCyk5Xr1i0f0lA.mp4
+creating temp for C:\Users\Jon\Personal Projects\pa-beta\src\twitch\pokimane\HilariousSecretivePangolinOhMyDog-pYJDGWOaTcSi20Ag.mp4
+creating temp for C:\Users\Jon\Personal Projects\pa-beta\src\twitch\AriaSaki\UninterestedGleamingYakinikuBlargNaut-gGKkT7T2ymAbXhf2.mp4
+creating temp for C:\Users\Jon\Personal Projects\pa-beta\src\twitch\Sykkuno\DreamySpotlessConsoleBatChest-HvFsPvQ-9h43q0jU.mp4
+creating temp for C:\Users\Jon\Personal Projects\pa-beta\src\twitch\lilypichu\GoldenBoldDonutBibleThump-WXnwVLEkJwPYjOmC.mp4
+creating temp for C:\Users\Jon\Personal Projects\pa-beta\src\twitch\peterparkTV\ExquisiteObservantPassionfruitShadyLulu-SQmQhpTt0mAxG22v.mp4
+creating temp for C:\Users\Jon\Personal Projects\pa-beta\src\twitch\xChocoBars\TrustworthyToughIguanaJKanStyle-rvxEz1lyQRkPtipg.mp4
+creating temp for C:\Users\Jon\Personal Projects\pa-beta\src\twitch\SteveSuptic\DeadResourcefulNarwhalJonCarnage-vbhgNu85vTABXJrR.mp4
+>> Concat action started
+>> Concat finished..
+>> Adding subs..
+getLiveChannels [
+  'TinaKitten',     'stevesuptic',
+  'xchocobars',     'brookeab',
+  '5uppp',          'karlnetwork',
+  'itshafu',        'xQcOW',
+  '39daph',         'pokimane',
+  'kkatamina',      'Sykkuno',
+  'disguisedtoast', 'ludwig',
+  'yvonnie',        'lilypichu',
+  'fuslie',         'natsumiii',
+  'ariasaki',       'masayoshi',
+  'quarterjade',    'peterparktv',
+  'kristoferyee',   'amouranth',
+  'melina',         'imjasmine',
+  'indiefoxx',      'Jinnytty'
+]
+followChannel res {
+  data: [
+    {
+      id: '42449626638',
+      user_id: '125387632',
+      user_login: 'amouranth',
+      user_name: 'Amouranth',
+      game_id: '509658',
+      game_name: 'Just Chatting',
+      type: 'live',
+      title: '💦🍑HOT TUB BAN APPEALS🍑 $1000 GIVEAWAY💦BIKINI TRY ON💦4K💦SHAMELESS💦!instagram: amouranth 💦!socials💦!gfuel',
+      viewer_count: 14239,
+      started_at: '2021-04-28T04:17:30Z',
+      language: 'en',
+      thumbnail_url: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_amouranth-{width}x{height}.jpg',
+      tag_ids: [Array],
+      is_mature: false
+    },
+    {
+      id: '41605663949',
+      user_id: '62510206',
+      user_login: 'ariasaki',
+      user_name: 'AriaSaki',
+      game_id: '32513',
+      game_name: 'To the Moon',
+      type: 'live',
+      title: 'To the moon!',
+      viewer_count: 6326,
+      started_at: '2021-04-28T01:57:46Z',
+      language: 'en',
+      thumbnail_url: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_ariasaki-{width}x{height}.jpg',
+      tag_ids: [Array],
+      is_mature: false
+    },
+    {
+      id: '41604893405',
+      user_id: '254756234',
+      user_login: 'kristoferyee',
+      user_name: 'KristoferYee',
+      game_id: '32982',
+      game_name: 'Grand Theft Auto V',
+      type: 'live',
+      title: 'Jay Que the NEWEST Wu Chang Artist | GTA No Pixel 3.0 | @KristoferYee on socials !soundcloud',
+      viewer_count: 5838,
+      started_at: '2021-04-28T00:49:33Z',
+      language: 'en',
+      thumbnail_url: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_kristoferyee-{width}x{height}.jpg',
+      tag_ids: [Array],
+      is_mature: false
+    }
+  ],
+  pagination: {}
+}
+stream {
+  id: '42449626638',
+  user_id: '125387632',
+  user_login: 'amouranth',
+  user_name: 'Amouranth',
+  game_id: '509658',
+  game_name: 'Just Chatting',
+  type: 'live',
+  title: '💦🍑HOT TUB BAN APPEALS🍑 $1000 GIVEAWAY💦BIKINI TRY ON💦4K💦SHAMELESS💦!instagram: amouranth 💦!socials💦!gfuel',
+  viewer_count: 14239,
+  started_at: '2021-04-28T04:17:30Z',
+  language: 'en',
+  thumbnail_url: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_amouranth-{width}x{height}.jpg',
+  tag_ids: [ '6ea6bca4-4712-4ab9-a906-e3336a9d8039' ],
+  is_mature: false
+}
+stream {
+  id: '41605663949',
+  user_id: '62510206',
+  user_login: 'ariasaki',
+  user_name: 'AriaSaki',
+  game_id: '32513',
+  game_name: 'To the Moon',
+  type: 'live',
+  title: 'To the moon!',
+  viewer_count: 6326,
+  started_at: '2021-04-28T01:57:46Z',
+  language: 'en',
+  thumbnail_url: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_ariasaki-{width}x{height}.jpg',
+  tag_ids: [ '6ea6bca4-4712-4ab9-a906-e3336a9d8039' ],
+  is_mature: false
+}
+stream {
+  id: '41604893405',
+  user_id: '254756234',
+  user_login: 'kristoferyee',
+  user_name: 'KristoferYee',
+  game_id: '32982',
+  game_name: 'Grand Theft Auto V',
+  type: 'live',
+  title: 'Jay Que the NEWEST Wu Chang Artist | GTA No Pixel 3.0 | @KristoferYee on socials !soundcloud',
+  viewer_count: 5838,
+  started_at: '2021-04-28T00:49:33Z',
+  language: 'en',
+  thumbnail_url: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_kristoferyee-{width}x{height}.jpg',
+  tag_ids: [ '6ea6bca4-4712-4ab9-a906-e3336a9d8039' ],
+  is_mature: false
+}
+makeShorts..  {
+  channels: [ 'amouranth', 'ariasaki', 'kristoferyee' ],
+  viewThreshold: 100,
+  notify: false,
+  upload: true
+}
+starting shorts for amouranth.. count:0
+TypeError: Cannot read property 'views' of undefined
+    at TwitchTubeService._callee$ (C:\Users\Jon\Personal Projects\pa-beta\src\services\/TwitchTubeService.ts:68:63)
+    at tryCatch (C:\Users\Jon\Personal Projects\pa-beta\node_modules\regenerator-runtime\runtime.js:63:40)
+    at Generator.invoke [as _invoke] (C:\Users\Jon\Personal Projects\pa-beta\node_modules\regenerator-runtime\runtime.js:293:22)
+    at Generator.next (C:\Users\Jon\Personal Projects\pa-beta\node_modules\regenerator-runtime\runtime.js:118:21)
+    at asyncGeneratorStep (C:\Users\Jon\Personal Projects\pa-beta\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (C:\Users\Jon\Personal Projects\pa-beta\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+starting shorts for ariasaki.. count:27
+making video for ariasaki - 4 hi
+downloadClip.. {
+  slug: 'ShakingAliveLionCurseLit-steZRZo021tEWKh5',
+  tracking_id: '1155197919',
+  url: 'https://clips.twitch.tv/ShakingAliveLionCurseLit-steZRZo021tEWKh5?tt_medium=clips_api&tt_content=url',
+  embed_url: 'https://clips.twitch.tv/embed?clip=ShakingAliveLionCurseLit-steZRZo021tEWKh5&tt_medium=clips_api&tt_content=embed',
+  embed_html: "<iframe src='https://clips.twitch.tv/embed?clip=ShakingAliveLionCurseLit-steZRZo021tEWKh5&tt_medium=clips_api&tt_content=embed' width='640' height='360' frameborder='0' scrolling='no' allowfullscreen='true'></iframe>",
+  broadcaster: {
+    id: '62510206',
+    name: 'ariasaki',
+    display_name: 'AriaSaki',
+    channel_url: 'https://www.twitch.tv/ariasaki',
+    logo: 'https://static-cdn.jtvnw.net/jtv_user_pictures/6e5892f2-0336-4ec1-82df-4e89470fda3a-profile_image-300x300.png'
+  },
+  curator: {
+    id: '633306118',
+    name: 'nayahatesyou1',
+    display_name: 'nayahatesyou1',
+    channel_url: 'https://www.twitch.tv/nayahatesyou1',
+    logo: 'https://static-cdn.jtvnw.net/jtv_user_pictures/651260e4-f670-4177-99ef-230c6595f684-profile_image-150x150.png'
+  },
+  vod: {
+    id: '1003369983',
+    url: 'https://www.twitch.tv/videos/1003369983?t=7h57m44s',
+    offset: 28664,
+    preview_image_url: 'https://clips-media-assets2.twitch.tv/AT-cm%7C1155197919-preview.jpg'
+  },
+  broadcast_id: '41605663949',
+  game: 'The Wolf Among Us',
+  language: 'en',
+  title: 'hi',
+  views: 4,
+  duration: 9.39,
+  created_at: '2021-04-28T09:55:49Z',
+  thumbnails: {
+    medium: 'https://clips-media-assets2.twitch.tv/AT-cm%7C1155197919-preview-480x272.jpg',
+    small: 'https://clips-media-assets2.twitch.tv/AT-cm%7C1155197919-preview-260x147.jpg',
+    tiny: 'https://clips-media-assets2.twitch.tv/AT-cm%7C1155197919-preview-86x45.jpg'
+  }
+}
+downloading..  {
+  url: 'https://clips-media-assets2.twitch.tv/AT-cm%7C1155197919.mp4',
+  filePath: 'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\shorts\\AriaSaki\\ShakingAliveLionCurseLit-steZRZo021tEWKh5.mp4'
+}
+download success!..  C:\Users\Jon\Personal Projects\pa-beta\src\twitch\shorts\AriaSaki\ShakingAliveLionCurseLit-steZRZo021tEWKh5.mp4
+downloaded..   C:\Users\Jon\Personal Projects\pa-beta\src\twitch\shorts\AriaSaki\ShakingAliveLionCurseLit-steZRZo021tEWKh5.mp4
+YT Metadata  {
+  title: 'hi | AriaSaki #shorts',
+  description: '#AriaSaki \n' +
+    '\n' +
+    'Historical Date: Apr 28, 2021 05:55:49\n' +
+    '\n' +
+    'Vod Moment: https://www.twitch.tv/videos/1003369983?t=7h57m44s \n' +
+    '\n' +
+    'https://www.twitch.tv/AriaSaki \n' +
+    '\n',
+  playlist: null,
+  notify: false,
+  thumbnail: null
+}
+UPLOADING TO YOUTUBE WITH PARAMS {
+  filePath: 'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\shorts\\AriaSaki\\ShakingAliveLionCurseLit-steZRZo021tEWKh5.mp4',
+  title: 'hi | AriaSaki #shorts',
+  description: '#AriaSaki \n' +
+    '\n' +
+    'Historical Date: Apr 28, 2021 05:55:49\n' +
+    '\n' +
+    'Vod Moment: https://www.twitch.tv/videos/1003369983?t=7h57m44s \n' +
+    '\n' +
+    'https://www.twitch.tv/AriaSaki \n' +
+    '\n',
+  playlist: null,
+  notify: false,
+  thumbnail: null
+}
+starting shorts for kristoferyee.. count:26
+making video for kristoferyee - 45 Cars 3 will make a man kill himself
+downloadClip.. {
+  slug: 'KitschyBoxyDragonUnSane-Oejs3d5YP3F5vJ5D',
+  tracking_id: '1155265409',
+  url: 'https://clips.twitch.tv/KitschyBoxyDragonUnSane-Oejs3d5YP3F5vJ5D?tt_medium=clips_api&tt_content=url',
+  embed_url: 'https://clips.twitch.tv/embed?clip=KitschyBoxyDragonUnSane-Oejs3d5YP3F5vJ5D&tt_medium=clips_api&tt_content=embed',
+  embed_html: "<iframe src='https://clips.twitch.tv/embed?clip=KitschyBoxyDragonUnSane-Oejs3d5YP3F5vJ5D&tt_medium=clips_api&tt_content=embed' width='640' height='360' frameborder='0' scrolling='no' allowfullscreen='true'></iframe>",
+  broadcaster: {
+    id: '254756234',
+    name: 'kristoferyee',
+    display_name: 'KristoferYee',
+    channel_url: 'https://www.twitch.tv/kristoferyee',
+    logo: 'https://static-cdn.jtvnw.net/jtv_user_pictures/5e1cb0fd-9e2b-4033-a074-0d2391fba1eb-profile_image-300x300.jpg'
+  },
+  curator: {
+    id: '535314320',
+    name: 'silverarrows47',
+    display_name: 'silverarrows47',
+    channel_url: 'https://www.twitch.tv/silverarrows47',
+    logo: 'https://static-cdn.jtvnw.net/jtv_user_pictures/56eeab8d-7571-4bda-ba8e-fdd76238e2e0-profile_image-150x150.png'
+  },
+  vod: {
+    id: '1003292329',
+    url: 'https://www.twitch.tv/videos/1003292329?t=11h22m55s',
+    offset: 40975,
+    preview_image_url: 'https://clips-media-assets2.twitch.tv/AT-cm%7C1155265409-preview.jpg'
+  },
+  broadcast_id: '41604893405',
+  game: 'Grand Theft Auto V',
+  language: 'en',
+  title: 'Cars 3 will make a man kill himself',
+  views: 45,
+  duration: 42.58,
+  created_at: '2021-04-28T12:13:46Z',
+  thumbnails: {
+    medium: 'https://clips-media-assets2.twitch.tv/AT-cm%7C1155265409-preview-480x272.jpg',
+    small: 'https://clips-media-assets2.twitch.tv/AT-cm%7C1155265409-preview-260x147.jpg',
+    tiny: 'https://clips-media-assets2.twitch.tv/AT-cm%7C1155265409-preview-86x45.jpg'
+  }
+}
+downloading..  {
+  url: 'https://clips-media-assets2.twitch.tv/AT-cm%7C1155265409.mp4',
+  filePath: 'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\shorts\\KristoferYee\\KitschyBoxyDragonUnSane-Oejs3d5YP3F5vJ5D.mp4'
+}
+download success!..  C:\Users\Jon\Personal Projects\pa-beta\src\twitch\shorts\KristoferYee\KitschyBoxyDragonUnSane-Oejs3d5YP3F5vJ5D.mp4
+downloaded..   C:\Users\Jon\Personal Projects\pa-beta\src\twitch\shorts\KristoferYee\KitschyBoxyDragonUnSane-Oejs3d5YP3F5vJ5D.mp4
+YT Metadata  {
+  title: 'Cars 3 will make a man kill himself | KristoferYee #shorts',
+  description: '#KristoferYee \n' +
+    '\n' +
+    'Historical Date: Apr 28, 2021 08:13:46\n' +
+    '\n' +
+    'Vod Moment: https://www.twitch.tv/videos/1003292329?t=11h22m55s \n' +
+    '\n' +
+    'https://www.twitch.tv/KristoferYee \n' +
+    '\n',
+  playlist: null,
+  notify: false,
+  thumbnail: null
+}
+UPLOADING TO YOUTUBE WITH PARAMS {
+  filePath: 'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\shorts\\KristoferYee\\KitschyBoxyDragonUnSane-Oejs3d5YP3F5vJ5D.mp4',
+  title: 'Cars 3 will make a man kill himself | KristoferYee #shorts',
+  description: '#KristoferYee \n' +
+    '\n' +
+    'Historical Date: Apr 28, 2021 08:13:46\n' +
+    '\n' +
+    'Vod Moment: https://www.twitch.tv/videos/1003292329?t=11h22m55s \n' +
+    '\n' +
+    'https://www.twitch.tv/KristoferYee \n' +
+    '\n',
+  playlist: null,
+  notify: false,
+  thumbnail: null
+}
+THE END!
+THE END!
+>> Added subs..
+creating YT meta.. 
+get copliation thumbnail data..
+durationStr duration=14.049023
+ss v C:\Users\Jon\Personal Projects\pa-beta\src\twitch\5uppp\ImpartialUnusualPieHotPokket-xnDiV83W7dILTf7c.mp4
+ss t 00:00:07
+ss o C:\Users\Jon\Personal Projects\pa-beta\src\assets\imgs\thumbs\bg.jpg
+{
+  images: [
+    'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\assets\\imgs\\thumbs\\bg.jpg',
+    'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\assets\\imgs\\thumbs\\primary\\xqcow-primary-1.png',
+    'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\assets\\imgs\\thumbs\\secondary\\39daph-secondary-1.png',
+    'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\assets\\imgs\\thumbs\\bubble_long.png',
+    'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\assets\\imgs\\thumbs\\bubble.png'
+  ],
+  texts: [ 'Canadians', 'YOH' ],
+  path: 'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\mix\\thumbnail.jpg'
+}
+generateThumbnail 'compilation' {
+  images: [
+    'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\assets\\imgs\\thumbs\\bg.jpg',
+    'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\assets\\imgs\\thumbs\\primary\\xqcow-primary-1.png',
+    'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\assets\\imgs\\thumbs\\secondary\\39daph-secondary-1.png',
+    'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\assets\\imgs\\thumbs\\bubble_long.png',
+    'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\assets\\imgs\\thumbs\\bubble.png'
+  ],
+  texts: [ 'Canadians', 'YOH' ],
+  path: 'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\mix\\thumbnail.jpg'
+}
+secondaryText YOH
+YT Metadata  {
+  title: 'Top Twitch Daily | xQcOW Canadians | 39daph YOH | 5uppp Bully 5up | Lilypichu Dnd Math | peterparkTV',
+  description: 'Timestamps:\n' +
+    '\n' +
+    '0:00 Intro\n' +
+    '0:06 xQcOW CANADIANS\n' +
+    '0:53 39daph YOH\n' +
+    '1:21 5uppp BULLY 5UP\n' +
+    '1:35 lilypichu DND MATH\n' +
+    '2:35 peterparkTV DAY 2 OF PEENER POGUE | IN QUEUE FOR GTA RP\n' +
+    '3:05 TinaKitten SHE THREW FOR FUNSIES\n' +
+    "3:35 xChocoBars SHE'S GONNA GET ME AGAIN!!!!!!\n" +
+    '4:05 xChocoBars JANET OUTSMARTS THE ASSASSIN!!!!!\n' +
+    '5:05 Sykkuno SASUKE USES FIREBALL JUTSU \n' +
+    '5:34 AriaSaki THE WOLF AMONG US FOR THE FIRST TIME :D\n' +
+    "6:04 itsHafu 5UP DOESN'T REALISE HE WASN'T VOTED OUT\n" +
+    '6:30 kkatamina TEKAU PAPA PT.3\n' +
+    '7:30 xQcOW PEPEGA\n' +
+    '7:56 TinaKitten GOGY ISNT CRACKED\n' +
+    '8:26 pokimane DFDSF\n' +
+    '8:52 AriaSaki THE WOLF AMONG US FOR THE FIRST TIME :D [NO SPOILE\n' +
+    '9:22 Sykkuno NO SHOOTSU\n' +
+    '10:10 lilypichu "I WAS YOUR ROOMBA~"\n' +
+    '10:58 peterparkTV UPDATE\n' +
+    '11:28 xChocoBars WATER BUFFALO | !MERCH\n' +
+    '11:58 SteveSuptic 2 DUDES AND ME\n' +
+    'Credits:\n' +
+    '\n' +
+    'https://www.twitch.tv/xqcow\n' +
+    'https://www.twitch.tv/39daph\n' +
+    'https://www.twitch.tv/5uppp\n' +
+    'https://www.twitch.tv/lilypichu\n' +
+    'https://www.twitch.tv/peterparktv\n' +
+    'https://www.twitch.tv/tinakitten\n' +
+    'https://www.twitch.tv/xchocobars\n' +
+    'https://www.twitch.tv/sykkuno\n' +
+    'https://www.twitch.tv/ariasaki\n' +
+    'https://www.twitch.tv/itshafu\n' +
+    'https://www.twitch.tv/kkatamina\n' +
+    'https://www.twitch.tv/pokimane\n' +
+    'https://www.twitch.tv/stevesuptic\n' +
+    '\n' +
+    '#xQcOW #39daph #5uppp #lilypichu #peterparkTV #TinaKitten #xChocoBars #Sykkuno #AriaSaki #itsHafu #kkatamina #pokimane #SteveSuptic ',
+  playlist: null,
+  notify: true,
+  thumbnail: 'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\mix\\thumbnail.jpg'
+}
+UPLOADING TO YOUTUBE WITH PARAMS {
+  filePath: 'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\mix\\compilation.mp4',
+  title: 'Top Twitch Daily | xQcOW Canadians | 39daph YOH | 5uppp Bully 5up | Lilypichu Dnd Math | peterparkTV',
+  description: 'Timestamps:\n' +
+    '\n' +
+    '0:00 Intro\n' +
+    '0:06 xQcOW CANADIANS\n' +
+    '0:53 39daph YOH\n' +
+    '1:21 5uppp BULLY 5UP\n' +
+    '1:35 lilypichu DND MATH\n' +
+    '2:35 peterparkTV DAY 2 OF PEENER POGUE | IN QUEUE FOR GTA RP\n' +
+    '3:05 TinaKitten SHE THREW FOR FUNSIES\n' +
+    "3:35 xChocoBars SHE'S GONNA GET ME AGAIN!!!!!!\n" +
+    '4:05 xChocoBars JANET OUTSMARTS THE ASSASSIN!!!!!\n' +
+    '5:05 Sykkuno SASUKE USES FIREBALL JUTSU \n' +
+    '5:34 AriaSaki THE WOLF AMONG US FOR THE FIRST TIME :D\n' +
+    "6:04 itsHafu 5UP DOESN'T REALISE HE WASN'T VOTED OUT\n" +
+    '6:30 kkatamina TEKAU PAPA PT.3\n' +
+    '7:30 xQcOW PEPEGA\n' +
+    '7:56 TinaKitten GOGY ISNT CRACKED\n' +
+    '8:26 pokimane DFDSF\n' +
+    '8:52 AriaSaki THE WOLF AMONG US FOR THE FIRST TIME :D [NO SPOILE\n' +
+    '9:22 Sykkuno NO SHOOTSU\n' +
+    '10:10 lilypichu "I WAS YOUR ROOMBA~"\n' +
+    '10:58 peterparkTV UPDATE\n' +
+    '11:28 xChocoBars WATER BUFFALO | !MERCH\n' +
+    '11:58 SteveSuptic 2 DUDES AND ME\n' +
+    'Credits:\n' +
+    '\n' +
+    'https://www.twitch.tv/xqcow\n' +
+    'https://www.twitch.tv/39daph\n' +
+    'https://www.twitch.tv/5uppp\n' +
+    'https://www.twitch.tv/lilypichu\n' +
+    'https://www.twitch.tv/peterparktv\n' +
+    'https://www.twitch.tv/tinakitten\n' +
+    'https://www.twitch.tv/xchocobars\n' +
+    'https://www.twitch.tv/sykkuno\n' +
+    'https://www.twitch.tv/ariasaki\n' +
+    'https://www.twitch.tv/itshafu\n' +
+    'https://www.twitch.tv/kkatamina\n' +
+    'https://www.twitch.tv/pokimane\n' +
+    'https://www.twitch.tv/stevesuptic\n' +
+    '\n' +
+    '#xQcOW #39daph #5uppp #lilypichu #peterparkTV #TinaKitten #xChocoBars #Sykkuno #AriaSaki #itsHafu #kkatamina #pokimane #SteveSuptic ',
+  playlist: null,
+  notify: true,
+  thumbnail: 'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\mix\\thumbnail.jpg'
+}
+THE END!
+getLiveChannels [
+  'TinaKitten',     'stevesuptic',
+  'xchocobars',     'brookeab',
+  '5uppp',          'karlnetwork',
+  'itshafu',        'xQcOW',
+  '39daph',         'pokimane',
+  'kkatamina',      'Sykkuno',
+  'disguisedtoast', 'ludwig',
+  'yvonnie',        'lilypichu',
+  'fuslie',         'natsumiii',
+  'ariasaki',       'masayoshi',
+  'quarterjade',    'peterparktv',
+  'kristoferyee',   'amouranth',
+  'melina',         'imjasmine',
+  'indiefoxx',      'Jinnytty'
+]
+followChannel res {
+  data: [
+    {
+      id: '42449626638',
+      user_id: '125387632',
+      user_login: 'amouranth',
+      user_name: 'Amouranth',
+      game_id: '509658',
+      game_name: 'Just Chatting',
+      type: 'live',
+      title: '💦🍑HOT TUB BAN APPEALS🍑 $1000 GIVEAWAY💦BIKINI TRY ON💦4K💦SHAMELESS💦!instagram: amouranth 💦!socials💦!gfuel',
+      viewer_count: 14478,
+      started_at: '2021-04-28T04:17:30Z',
+      language: 'en',
+      thumbnail_url: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_amouranth-{width}x{height}.jpg',
+      tag_ids: [Array],
+      is_mature: false
+    },
+    {
+      id: '41604893405',
+      user_id: '254756234',
+      user_login: 'kristoferyee',
+      user_name: 'KristoferYee',
+      game_id: '32982',
+      game_name: 'Grand Theft Auto V',
+      type: 'live',
+      title: 'Jay Que the NEWEST Wu Chang Artist | GTA No Pixel 3.0 | @KristoferYee on socials !soundcloud',
+      viewer_count: 5804,
+      started_at: '2021-04-28T00:49:33Z',
+      language: 'en',
+      thumbnail_url: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_kristoferyee-{width}x{height}.jpg',
+      tag_ids: [Array],
+      is_mature: false
+    },
+    {
+      id: '41605663949',
+      user_id: '62510206',
+      user_login: 'ariasaki',
+      user_name: 'AriaSaki',
+      game_id: '32513',
+      game_name: 'To the Moon',
+      type: 'live',
+      title: 'To the moon!',
+      viewer_count: 5620,
+      started_at: '2021-04-28T01:57:46Z',
+      language: 'en',
+      thumbnail_url: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_ariasaki-{width}x{height}.jpg',
+      tag_ids: [Array],
+      is_mature: false
+    }
+  ],
+  pagination: {}
+}
+stream {
+  id: '42449626638',
+  user_id: '125387632',
+  user_login: 'amouranth',
+  user_name: 'Amouranth',
+  game_id: '509658',
+  game_name: 'Just Chatting',
+  type: 'live',
+  title: '💦🍑HOT TUB BAN APPEALS🍑 $1000 GIVEAWAY💦BIKINI TRY ON💦4K💦SHAMELESS💦!instagram: amouranth 💦!socials💦!gfuel',
+  viewer_count: 14478,
+  started_at: '2021-04-28T04:17:30Z',
+  language: 'en',
+  thumbnail_url: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_amouranth-{width}x{height}.jpg',
+  tag_ids: [ '6ea6bca4-4712-4ab9-a906-e3336a9d8039' ],
+  is_mature: false
+}
+stream {
+  id: '41604893405',
+  user_id: '254756234',
+  user_login: 'kristoferyee',
+  user_name: 'KristoferYee',
+  game_id: '32982',
+  game_name: 'Grand Theft Auto V',
+  type: 'live',
+  title: 'Jay Que the NEWEST Wu Chang Artist | GTA No Pixel 3.0 | @KristoferYee on socials !soundcloud',
+  viewer_count: 5804,
+  started_at: '2021-04-28T00:49:33Z',
+  language: 'en',
+  thumbnail_url: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_kristoferyee-{width}x{height}.jpg',
+  tag_ids: [ '6ea6bca4-4712-4ab9-a906-e3336a9d8039' ],
+  is_mature: false
+}
+stream {
+  id: '41605663949',
+  user_id: '62510206',
+  user_login: 'ariasaki',
+  user_name: 'AriaSaki',
+  game_id: '32513',
+  game_name: 'To the Moon',
+  type: 'live',
+  title: 'To the moon!',
+  viewer_count: 5620,
+  started_at: '2021-04-28T01:57:46Z',
+  language: 'en',
+  thumbnail_url: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_ariasaki-{width}x{height}.jpg',
+  tag_ids: [ '6ea6bca4-4712-4ab9-a906-e3336a9d8039' ],
+  is_mature: false
+}
+makeShorts..  {
+  channels: [ 'amouranth', 'kristoferyee', 'ariasaki' ],
+  viewThreshold: 100,
+  notify: false,
+  upload: true
+}
+starting shorts for amouranth.. count:0
+TypeError: Cannot read property 'views' of undefined
+    at TwitchTubeService._callee$ (C:\Users\Jon\Personal Projects\pa-beta\src\services\/TwitchTubeService.ts:68:63)
+    at tryCatch (C:\Users\Jon\Personal Projects\pa-beta\node_modules\regenerator-runtime\runtime.js:63:40)
+    at Generator.invoke [as _invoke] (C:\Users\Jon\Personal Projects\pa-beta\node_modules\regenerator-runtime\runtime.js:293:22)
+    at Generator.next (C:\Users\Jon\Personal Projects\pa-beta\node_modules\regenerator-runtime\runtime.js:118:21)
+    at asyncGeneratorStep (C:\Users\Jon\Personal Projects\pa-beta\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (C:\Users\Jon\Personal Projects\pa-beta\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+starting shorts for kristoferyee.. count:26
+already did video for kristoferyee skipping...
+starting shorts for ariasaki.. count:27
+already did video for ariasaki skipping...
+getLiveChannels [
+  'TinaKitten',     'stevesuptic',
+  'xchocobars',     'brookeab',
+  '5uppp',          'karlnetwork',
+  'itshafu',        'xQcOW',
+  '39daph',         'pokimane',
+  'kkatamina',      'Sykkuno',
+  'disguisedtoast', 'ludwig',
+  'yvonnie',        'lilypichu',
+  'fuslie',         'natsumiii',
+  'ariasaki',       'masayoshi',
+  'quarterjade',    'peterparktv',
+  'kristoferyee',   'amouranth',
+  'melina',         'imjasmine',
+  'indiefoxx',      'Jinnytty'
+]
+followChannel res {
+  data: [
+    {
+      id: '42449626638',
+      user_id: '125387632',
+      user_login: 'amouranth',
+      user_name: 'Amouranth',
+      game_id: '509658',
+      game_name: 'Just Chatting',
+      type: 'live',
+      title: '💦🍑HOT TUB BAN APPEALS🍑 $1000 GIVEAWAY💦BIKINI TRY ON💦4K💦SHAMELESS💦!instagram: amouranth 💦!socials💦!gfuel',
+      viewer_count: 13291,
+      started_at: '2021-04-28T04:17:30Z',
+      language: 'en',
+      thumbnail_url: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_amouranth-{width}x{height}.jpg',
+      tag_ids: [Array],
+      is_mature: false
+    },
+    {
+      id: '41605663949',
+      user_id: '62510206',
+      user_login: 'ariasaki',
+      user_name: 'AriaSaki',
+      game_id: '32513',
+      game_name: 'To the Moon',
+      type: 'live',
+      title: 'To the moon!',
+      viewer_count: 5211,
+      started_at: '2021-04-28T01:57:46Z',
+      language: 'en',
+      thumbnail_url: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_ariasaki-{width}x{height}.jpg',
+      tag_ids: [Array],
+      is_mature: false
+    },
+    {
+      id: '41604893405',
+      user_id: '254756234',
+      user_login: 'kristoferyee',
+      user_name: 'KristoferYee',
+      game_id: '509658',
+      game_name: 'Just Chatting',
+      type: 'live',
+      title: 'Jay Que the NEWEST Wu Chang Artist | GTA No Pixel 3.0 | @KristoferYee on socials !soundcloud',
+      viewer_count: 5202,
+      started_at: '2021-04-28T00:49:33Z',
+      language: 'en',
+      thumbnail_url: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_kristoferyee-{width}x{height}.jpg',
+      tag_ids: [Array],
+      is_mature: false
+    }
+  ],
+  pagination: {}
+}
+stream {
+  id: '42449626638',
+  user_id: '125387632',
+  user_login: 'amouranth',
+  user_name: 'Amouranth',
+  game_id: '509658',
+  game_name: 'Just Chatting',
+  type: 'live',
+  title: '💦🍑HOT TUB BAN APPEALS🍑 $1000 GIVEAWAY💦BIKINI TRY ON💦4K💦SHAMELESS💦!instagram: amouranth 💦!socials💦!gfuel',
+  viewer_count: 13291,
+  started_at: '2021-04-28T04:17:30Z',
+  language: 'en',
+  thumbnail_url: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_amouranth-{width}x{height}.jpg',
+  tag_ids: [ '6ea6bca4-4712-4ab9-a906-e3336a9d8039' ],
+  is_mature: false
+}
+stream {
+  id: '41605663949',
+  user_id: '62510206',
+  user_login: 'ariasaki',
+  user_name: 'AriaSaki',
+  game_id: '32513',
+  game_name: 'To the Moon',
+  type: 'live',
+  title: 'To the moon!',
+  viewer_count: 5211,
+  started_at: '2021-04-28T01:57:46Z',
+  language: 'en',
+  thumbnail_url: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_ariasaki-{width}x{height}.jpg',
+  tag_ids: [ '6ea6bca4-4712-4ab9-a906-e3336a9d8039' ],
+  is_mature: false
+}
+stream {
+  id: '41604893405',
+  user_id: '254756234',
+  user_login: 'kristoferyee',
+  user_name: 'KristoferYee',
+  game_id: '509658',
+  game_name: 'Just Chatting',
+  type: 'live',
+  title: 'Jay Que the NEWEST Wu Chang Artist | GTA No Pixel 3.0 | @KristoferYee on socials !soundcloud',
+  viewer_count: 5202,
+  started_at: '2021-04-28T00:49:33Z',
+  language: 'en',
+  thumbnail_url: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_kristoferyee-{width}x{height}.jpg',
+  tag_ids: [ '6ea6bca4-4712-4ab9-a906-e3336a9d8039' ],
+  is_mature: false
+}
+makeShorts..  {
+  channels: [ 'amouranth', 'ariasaki', 'kristoferyee' ],
+  viewThreshold: 100,
+  notify: false,
+  upload: true
+}
+starting shorts for amouranth.. count:0
+TypeError: Cannot read property 'views' of undefined
+    at TwitchTubeService._callee$ (C:\Users\Jon\Personal Projects\pa-beta\src\services\/TwitchTubeService.ts:68:63)
+    at tryCatch (C:\Users\Jon\Personal Projects\pa-beta\node_modules\regenerator-runtime\runtime.js:63:40)
+    at Generator.invoke [as _invoke] (C:\Users\Jon\Personal Projects\pa-beta\node_modules\regenerator-runtime\runtime.js:293:22)
+    at Generator.next (C:\Users\Jon\Personal Projects\pa-beta\node_modules\regenerator-runtime\runtime.js:118:21)
+    at asyncGeneratorStep (C:\Users\Jon\Personal Projects\pa-beta\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (C:\Users\Jon\Personal Projects\pa-beta\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+starting shorts for ariasaki.. count:27
+making video for ariasaki - 3 The Wolf Among us for the first time :D [No Spoilers]
+downloadClip.. {
+  slug: 'DeadRealWolfGingerPower-F3XYAC29BxAY96_2',
+  tracking_id: '1155189352',
+  url: 'https://clips.twitch.tv/DeadRealWolfGingerPower-F3XYAC29BxAY96_2?tt_medium=clips_api&tt_content=url',
+  embed_url: 'https://clips.twitch.tv/embed?clip=DeadRealWolfGingerPower-F3XYAC29BxAY96_2&tt_medium=clips_api&tt_content=embed',
+  embed_html: "<iframe src='https://clips.twitch.tv/embed?clip=DeadRealWolfGingerPower-F3XYAC29BxAY96_2&tt_medium=clips_api&tt_content=embed' width='640' height='360' frameborder='0' scrolling='no' allowfullscreen='true'></iframe>",
+  broadcaster: {
+    id: '62510206',
+    name: 'ariasaki',
+    display_name: 'AriaSaki',
+    channel_url: 'https://www.twitch.tv/ariasaki',
+    logo: 'https://static-cdn.jtvnw.net/jtv_user_pictures/6e5892f2-0336-4ec1-82df-4e89470fda3a-profile_image-300x300.png'
+  },
+  curator: {
+    id: '9063916',
+    name: 'individuals',
+    display_name: 'Individuals',
+    channel_url: 'https://www.twitch.tv/individuals',
+    logo: 'https://static-cdn.jtvnw.net/jtv_user_pictures/individuals-profile_image-56393963f04081bb-150x150.jpeg'
+  },
+  vod: {
+    id: '1003369983',
+    url: 'https://www.twitch.tv/videos/1003369983?t=7h37m26s',
+    offset: 27446,
+    preview_image_url: 'https://clips-media-assets2.twitch.tv/41605663949-offset-27470-preview.jpg'
+  },
+  broadcast_id: '41605663949',
+  game: 'The Wolf Among Us',
+  language: 'en',
+  title: 'The Wolf Among us for the first time :D [No Spoilers]',
+  views: 3,
+  duration: 28,
+  created_at: '2021-04-28T09:35:48Z',
+  thumbnails: {
+    medium: 'https://clips-media-assets2.twitch.tv/41605663949-offset-27470-preview-480x272.jpg',
+    small: 'https://clips-media-assets2.twitch.tv/41605663949-offset-27470-preview-260x147.jpg',
+    tiny: 'https://clips-media-assets2.twitch.tv/41605663949-offset-27470-preview-86x45.jpg'
+  }
+}
+downloading..  {
+  url: 'https://clips-media-assets2.twitch.tv/41605663949-offset-27470.mp4',
+  filePath: 'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\shorts\\AriaSaki\\DeadRealWolfGingerPower-F3XYAC29BxAY96_2.mp4'
+}
+download success!..  C:\Users\Jon\Personal Projects\pa-beta\src\twitch\shorts\AriaSaki\DeadRealWolfGingerPower-F3XYAC29BxAY96_2.mp4
+downloaded..   C:\Users\Jon\Personal Projects\pa-beta\src\twitch\shorts\AriaSaki\DeadRealWolfGingerPower-F3XYAC29BxAY96_2.mp4
+YT Metadata  {
+  title: 'The Wolf Among us for the first time :D [No Spoilers] | AriaSaki #shorts',
+  description: '#AriaSaki \n' +
+    '\n' +
+    'Historical Date: Apr 28, 2021 05:35:48\n' +
+    '\n' +
+    'Vod Moment: https://www.twitch.tv/videos/1003369983?t=7h37m26s \n' +
+    '\n' +
+    'https://www.twitch.tv/AriaSaki \n' +
+    '\n',
+  playlist: null,
+  notify: false,
+  thumbnail: null
+}
+UPLOADING TO YOUTUBE WITH PARAMS {
+  filePath: 'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\shorts\\AriaSaki\\DeadRealWolfGingerPower-F3XYAC29BxAY96_2.mp4',
+  title: 'The Wolf Among us for the first time :D [No Spoilers] | AriaSaki #shorts',
+  description: '#AriaSaki \n' +
+    '\n' +
+    'Historical Date: Apr 28, 2021 05:35:48\n' +
+    '\n' +
+    'Vod Moment: https://www.twitch.tv/videos/1003369983?t=7h37m26s \n' +
+    '\n' +
+    'https://www.twitch.tv/AriaSaki \n' +
+    '\n',
+  playlist: null,
+  notify: false,
+  thumbnail: null
+}
+starting shorts for kristoferyee.. count:25
+making video for kristoferyee - 70 Did Leah just moan? o.o
+downloadClip.. {
+  slug: 'PoliteProudLasagnaGivePLZ-mH3i-HRhgAHFPVl4',
+  tracking_id: '1155289917',
+  url: 'https://clips.twitch.tv/PoliteProudLasagnaGivePLZ-mH3i-HRhgAHFPVl4?tt_medium=clips_api&tt_content=url',
+  embed_url: 'https://clips.twitch.tv/embed?clip=PoliteProudLasagnaGivePLZ-mH3i-HRhgAHFPVl4&tt_medium=clips_api&tt_content=embed',
+  embed_html: "<iframe src='https://clips.twitch.tv/embed?clip=PoliteProudLasagnaGivePLZ-mH3i-HRhgAHFPVl4&tt_medium=clips_api&tt_content=embed' width='640' height='360' frameborder='0' scrolling='no' allowfullscreen='true'></iframe>",
+  broadcaster: {
+    id: '254756234',
+    name: 'kristoferyee',
+    display_name: 'KristoferYee',
+    channel_url: 'https://www.twitch.tv/kristoferyee',
+    logo: 'https://static-cdn.jtvnw.net/jtv_user_pictures/5e1cb0fd-9e2b-4033-a074-0d2391fba1eb-profile_image-300x300.jpg'
+  },
+  curator: {
+    id: '38339489',
+    name: 'valcryst_',
+    display_name: 'Valcryst_',
+    channel_url: 'https://www.twitch.tv/valcryst_',
+    logo: 'https://static-cdn.jtvnw.net/jtv_user_pictures/35b05685-b05c-4890-883d-a9b1aff9ba6a-profile_image-150x150.jpeg'
+  },
+  vod: {
+    id: '1003292329',
+    url: 'https://www.twitch.tv/videos/1003292329?t=12h4m25s',
+    offset: 43465,
+    preview_image_url: 'https://clips-media-assets2.twitch.tv/AT-cm%7C1155289917-preview.jpg'
+  },
+  broadcast_id: '41604893405',
+  game: 'Grand Theft Auto V',
+  language: 'en',
+  title: 'Did Leah just moan? o.o',
+  views: 70,
+  duration: 20.67,
+  created_at: '2021-04-28T12:55:10Z',
+  thumbnails: {
+    medium: 'https://clips-media-assets2.twitch.tv/AT-cm%7C1155289917-preview-480x272.jpg',
+    small: 'https://clips-media-assets2.twitch.tv/AT-cm%7C1155289917-preview-260x147.jpg',
+    tiny: 'https://clips-media-assets2.twitch.tv/AT-cm%7C1155289917-preview-86x45.jpg'
+  }
+}
+downloading..  {
+  url: 'https://clips-media-assets2.twitch.tv/AT-cm%7C1155289917.mp4',
+  filePath: 'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\shorts\\KristoferYee\\PoliteProudLasagnaGivePLZ-mH3i-HRhgAHFPVl4.mp4'
+}
+download success!..  C:\Users\Jon\Personal Projects\pa-beta\src\twitch\shorts\KristoferYee\PoliteProudLasagnaGivePLZ-mH3i-HRhgAHFPVl4.mp4
+downloaded..   C:\Users\Jon\Personal Projects\pa-beta\src\twitch\shorts\KristoferYee\PoliteProudLasagnaGivePLZ-mH3i-HRhgAHFPVl4.mp4
+YT Metadata  {
+  title: 'Did Leah just moan? o.o | KristoferYee #shorts',
+  description: '#KristoferYee \n' +
+    '\n' +
+    'Historical Date: Apr 28, 2021 08:55:10\n' +
+    '\n' +
+    'Vod Moment: https://www.twitch.tv/videos/1003292329?t=12h4m25s \n' +
+    '\n' +
+    'https://www.twitch.tv/KristoferYee \n' +
+    '\n',
+  playlist: null,
+  notify: false,
+  thumbnail: null
+}
+UPLOADING TO YOUTUBE WITH PARAMS {
+  filePath: 'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\shorts\\KristoferYee\\PoliteProudLasagnaGivePLZ-mH3i-HRhgAHFPVl4.mp4',
+  title: 'Did Leah just moan? o.o | KristoferYee #shorts',
+  description: '#KristoferYee \n' +
+    '\n' +
+    'Historical Date: Apr 28, 2021 08:55:10\n' +
+    '\n' +
+    'Vod Moment: https://www.twitch.tv/videos/1003292329?t=12h4m25s \n' +
+    '\n' +
+    'https://www.twitch.tv/KristoferYee \n' +
+    '\n',
+  playlist: null,
+  notify: false,
+  thumbnail: null
+}
+THE END!
+THE END!
+getLiveChannels [
+  'TinaKitten',     'stevesuptic',
+  'xchocobars',     'brookeab',
+  '5uppp',          'karlnetwork',
+  'itshafu',        'xQcOW',
+  '39daph',         'pokimane',
+  'kkatamina',      'Sykkuno',
+  'disguisedtoast', 'ludwig',
+  'yvonnie',        'lilypichu',
+  'fuslie',         'natsumiii',
+  'ariasaki',       'masayoshi',
+  'quarterjade',    'peterparktv',
+  'kristoferyee',   'amouranth',
+  'melina',         'imjasmine',
+  'indiefoxx',      'Jinnytty'
+]
+followChannel res {
+  data: [
+    {
+      id: '42449626638',
+      user_id: '125387632',
+      user_login: 'amouranth',
+      user_name: 'Amouranth',
+      game_id: '509658',
+      game_name: 'Just Chatting',
+      type: 'live',
+      title: '💦🍑HOT TUB💦BIKINI TRY ON💦4K💦SHAMELESS💦!instagram: amouranth 💦!socials💦!gfuel',
+      viewer_count: 14818,
+      started_at: '2021-04-28T04:17:30Z',
+      language: 'en',
+      thumbnail_url: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_amouranth-{width}x{height}.jpg',
+      tag_ids: [Array],
+      is_mature: false
+    },
+    {
+      id: '41605663949',
+      user_id: '62510206',
+      user_login: 'ariasaki',
+      user_name: 'AriaSaki',
+      game_id: '32513',
+      game_name: 'To the Moon',
+      type: 'live',
+      title: 'To the moon!',
+      viewer_count: 4994,
+      started_at: '2021-04-28T01:57:46Z',
+      language: 'en',
+      thumbnail_url: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_ariasaki-{width}x{height}.jpg',
+      tag_ids: [Array],
+      is_mature: false
+    },
+    {
+      id: '41609920237',
+      user_id: '30777889',
+      user_login: 'itshafu',
+      user_name: 'itsHafu',
+      game_id: '509658',
+      game_name: 'Just Chatting',
+      type: 'live',
+      title: 'HAFU -- GOOD MORNING!!!',
+      viewer_count: 1540,
+      started_at: '2021-04-28T13:57:10Z',
+      language: 'en',
+      thumbnail_url: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_itshafu-{width}x{height}.jpg',
+      tag_ids: [Array],
+      is_mature: false
+    }
+  ],
+  pagination: {}
+}
+stream {
+  id: '42449626638',
+  user_id: '125387632',
+  user_login: 'amouranth',
+  user_name: 'Amouranth',
+  game_id: '509658',
+  game_name: 'Just Chatting',
+  type: 'live',
+  title: '💦🍑HOT TUB💦BIKINI TRY ON💦4K💦SHAMELESS💦!instagram: amouranth 💦!socials💦!gfuel',
+  viewer_count: 14818,
+  started_at: '2021-04-28T04:17:30Z',
+  language: 'en',
+  thumbnail_url: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_amouranth-{width}x{height}.jpg',
+  tag_ids: [ '6ea6bca4-4712-4ab9-a906-e3336a9d8039' ],
+  is_mature: false
+}
+stream {
+  id: '41605663949',
+  user_id: '62510206',
+  user_login: 'ariasaki',
+  user_name: 'AriaSaki',
+  game_id: '32513',
+  game_name: 'To the Moon',
+  type: 'live',
+  title: 'To the moon!',
+  viewer_count: 4994,
+  started_at: '2021-04-28T01:57:46Z',
+  language: 'en',
+  thumbnail_url: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_ariasaki-{width}x{height}.jpg',
+  tag_ids: [ '6ea6bca4-4712-4ab9-a906-e3336a9d8039' ],
+  is_mature: false
+}
+stream {
+  id: '41609920237',
+  user_id: '30777889',
+  user_login: 'itshafu',
+  user_name: 'itsHafu',
+  game_id: '509658',
+  game_name: 'Just Chatting',
+  type: 'live',
+  title: 'HAFU -- GOOD MORNING!!!',
+  viewer_count: 1540,
+  started_at: '2021-04-28T13:57:10Z',
+  language: 'en',
+  thumbnail_url: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_itshafu-{width}x{height}.jpg',
+  tag_ids: [ '6ea6bca4-4712-4ab9-a906-e3336a9d8039' ],
+  is_mature: false
+}
+makeShorts..  {
+  channels: [ 'amouranth', 'ariasaki', 'itshafu' ],
+  viewThreshold: 100,
+  notify: false,
+  upload: true
+}
+starting shorts for amouranth.. count:0
+TypeError: Cannot read property 'views' of undefined
+    at TwitchTubeService._callee$ (C:\Users\Jon\Personal Projects\pa-beta\src\services\/TwitchTubeService.ts:68:63)
+    at tryCatch (C:\Users\Jon\Personal Projects\pa-beta\node_modules\regenerator-runtime\runtime.js:63:40)
+    at Generator.invoke [as _invoke] (C:\Users\Jon\Personal Projects\pa-beta\node_modules\regenerator-runtime\runtime.js:293:22)
+    at Generator.next (C:\Users\Jon\Personal Projects\pa-beta\node_modules\regenerator-runtime\runtime.js:118:21)
+    at asyncGeneratorStep (C:\Users\Jon\Personal Projects\pa-beta\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (C:\Users\Jon\Personal Projects\pa-beta\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+starting shorts for ariasaki.. count:28
+already did video for ariasaki skipping...
+starting shorts for itshafu.. count:20
+making video for itshafu - 18 blind hafu
+downloadClip.. {
+  slug: 'TriangularWimpyClipsmomBleedPurple-4UodhlFzbtWlCTPG',
+  tracking_id: '1154522442',
+  url: 'https://clips.twitch.tv/TriangularWimpyClipsmomBleedPurple-4UodhlFzbtWlCTPG?tt_medium=clips_api&tt_content=url',
+  embed_url: 'https://clips.twitch.tv/embed?clip=TriangularWimpyClipsmomBleedPurple-4UodhlFzbtWlCTPG&tt_medium=clips_api&tt_content=embed',
+  embed_html: "<iframe src='https://clips.twitch.tv/embed?clip=TriangularWimpyClipsmomBleedPurple-4UodhlFzbtWlCTPG&tt_medium=clips_api&tt_content=embed' width='640' height='360' frameborder='0' scrolling='no' allowfullscreen='true'></iframe>",
+  broadcaster: {
+    id: '30777889',
+    name: 'itshafu',
+    display_name: 'itsHafu',
+    channel_url: 'https://www.twitch.tv/itshafu',
+    logo: 'https://static-cdn.jtvnw.net/jtv_user_pictures/bc69bcad-e9ce-48de-9326-adba3c052385-profile_image-300x300.png'
+  },
+  curator: {
+    id: '68896411',
+    name: 'rosetemplar',
+    display_name: 'RoseTemplar',
+    channel_url: 'https://www.twitch.tv/rosetemplar',
+    logo: 'https://static-cdn.jtvnw.net/jtv_user_pictures/acbeba8f-ae04-4af1-9836-646b9038bba3-profile_image-150x150.png'
+  },
+  vod: {
+    id: '1000436892',
+    url: 'https://www.twitch.tv/videos/1000436892?t=5h10m0s',
+    offset: 18600,
+    preview_image_url: 'https://clips-media-assets2.twitch.tv/AT-cm%7C1154522442-preview.jpg'
+  },
+  broadcast_id: '41574180381',
+  game: 'Just Chatting',
+  language: 'en',
+  title: 'blind hafu',
+  views: 18,
+  duration: 16.25,
+  created_at: '2021-04-27T21:45:16Z',
+  thumbnails: {
+    medium: 'https://clips-media-assets2.twitch.tv/AT-cm%7C1154522442-preview-480x272.jpg',
+    small: 'https://clips-media-assets2.twitch.tv/AT-cm%7C1154522442-preview-260x147.jpg',
+    tiny: 'https://clips-media-assets2.twitch.tv/AT-cm%7C1154522442-preview-86x45.jpg'
+  }
+}
+downloading..  {
+  url: 'https://clips-media-assets2.twitch.tv/AT-cm%7C1154522442.mp4',
+  filePath: 'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\shorts\\itsHafu\\TriangularWimpyClipsmomBleedPurple-4UodhlFzbtWlCTPG.mp4'
+}
+download success!..  C:\Users\Jon\Personal Projects\pa-beta\src\twitch\shorts\itsHafu\TriangularWimpyClipsmomBleedPurple-4UodhlFzbtWlCTPG.mp4
+downloaded..   C:\Users\Jon\Personal Projects\pa-beta\src\twitch\shorts\itsHafu\TriangularWimpyClipsmomBleedPurple-4UodhlFzbtWlCTPG.mp4
+YT Metadata  {
+  title: 'blind hafu | itsHafu #shorts',
+  description: '#itsHafu \n' +
+    '\n' +
+    'Historical Date: Apr 28, 2021 05:45:16\n' +
+    '\n' +
+    'Vod Moment: https://www.twitch.tv/videos/1000436892?t=5h10m0s \n' +
+    '\n' +
+    'https://www.twitch.tv/itsHafu \n' +
+    '\n',
+  playlist: null,
+  notify: false,
+  thumbnail: null
+}
+UPLOADING TO YOUTUBE WITH PARAMS {
+  filePath: 'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\shorts\\itsHafu\\TriangularWimpyClipsmomBleedPurple-4UodhlFzbtWlCTPG.mp4',
+  title: 'blind hafu | itsHafu #shorts',
+  description: '#itsHafu \n' +
+    '\n' +
+    'Historical Date: Apr 28, 2021 05:45:16\n' +
+    '\n' +
+    'Vod Moment: https://www.twitch.tv/videos/1000436892?t=5h10m0s \n' +
+    '\n' +
+    'https://www.twitch.tv/itsHafu \n' +
+    '\n',
+  playlist: null,
+  notify: false,
+  thumbnail: null
+}
+THE END!
+getLiveChannels [
+  'TinaKitten',     'stevesuptic',
+  'xchocobars',     'brookeab',
+  '5uppp',          'karlnetwork',
+  'itshafu',        'xQcOW',
+  '39daph',         'pokimane',
+  'kkatamina',      'Sykkuno',
+  'disguisedtoast', 'ludwig',
+  'yvonnie',        'lilypichu',
+  'fuslie',         'natsumiii',
+  'ariasaki',       'masayoshi',
+  'quarterjade',    'peterparktv',
+  'kristoferyee',   'amouranth',
+  'melina',         'imjasmine',
+  'indiefoxx',      'Jinnytty'
+]
+followChannel res {
+  data: [
+    {
+      id: '42449626638',
+      user_id: '125387632',
+      user_login: 'amouranth',
+      user_name: 'Amouranth',
+      game_id: '509658',
+      game_name: 'Just Chatting',
+      type: 'live',
+      title: '💦🍑HOT TUB💦BIKINI TRY ON💦4K💦SHAMELESS💦!instagram: amouranth 💦!socials💦!gfuel',
+      viewer_count: 13564,
+      started_at: '2021-04-28T04:17:30Z',
+      language: 'en',
+      thumbnail_url: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_amouranth-{width}x{height}.jpg',
+      tag_ids: [Array],
+      is_mature: false
+    },
+    {
+      id: '41609920237',
+      user_id: '30777889',
+      user_login: 'itshafu',
+      user_name: 'itsHafu',
+      game_id: '509658',
+      game_name: 'Just Chatting',
+      type: 'live',
+      title: 'HAFU -- GOOD MORNING!!!',
+      viewer_count: 5819,
+      started_at: '2021-04-28T13:57:10Z',
+      language: 'en',
+      thumbnail_url: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_itshafu-{width}x{height}.jpg',
+      tag_ids: [Array],
+      is_mature: false
+    },
+    {
+      id: '41605663949',
+      user_id: '62510206',
+      user_login: 'ariasaki',
+      user_name: 'AriaSaki',
+      game_id: '32513',
+      game_name: 'To the Moon',
+      type: 'live',
+      title: 'To the moon!',
+      viewer_count: 4534,
+      started_at: '2021-04-28T01:57:46Z',
+      language: 'en',
+      thumbnail_url: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_ariasaki-{width}x{height}.jpg',
+      tag_ids: [Array],
+      is_mature: false
+    },
+    {
+      id: '42451958334',
+      user_id: '10180005',
+      user_login: 'stevesuptic',
+      user_name: 'SteveSuptic',
+      game_id: '509658',
+      game_name: 'Just Chatting',
+      type: 'live',
+      title: 'Humble streamer is not late and never was',
+      viewer_count: 3119,
+      started_at: '2021-04-28T14:29:41Z',
+      language: 'en',
+      thumbnail_url: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_stevesuptic-{width}x{height}.jpg',
+      tag_ids: [Array],
+      is_mature: true
+    }
+  ],
+  pagination: {}
+}
+stream {
+  id: '42449626638',
+  user_id: '125387632',
+  user_login: 'amouranth',
+  user_name: 'Amouranth',
+  game_id: '509658',
+  game_name: 'Just Chatting',
+  type: 'live',
+  title: '💦🍑HOT TUB💦BIKINI TRY ON💦4K💦SHAMELESS💦!instagram: amouranth 💦!socials💦!gfuel',
+  viewer_count: 13564,
+  started_at: '2021-04-28T04:17:30Z',
+  language: 'en',
+  thumbnail_url: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_amouranth-{width}x{height}.jpg',
+  tag_ids: [ '6ea6bca4-4712-4ab9-a906-e3336a9d8039' ],
+  is_mature: false
+}
+stream {
+  id: '41609920237',
+  user_id: '30777889',
+  user_login: 'itshafu',
+  user_name: 'itsHafu',
+  game_id: '509658',
+  game_name: 'Just Chatting',
+  type: 'live',
+  title: 'HAFU -- GOOD MORNING!!!',
+  viewer_count: 5819,
+  started_at: '2021-04-28T13:57:10Z',
+  language: 'en',
+  thumbnail_url: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_itshafu-{width}x{height}.jpg',
+  tag_ids: [ '6ea6bca4-4712-4ab9-a906-e3336a9d8039' ],
+  is_mature: false
+}
+stream {
+  id: '41605663949',
+  user_id: '62510206',
+  user_login: 'ariasaki',
+  user_name: 'AriaSaki',
+  game_id: '32513',
+  game_name: 'To the Moon',
+  type: 'live',
+  title: 'To the moon!',
+  viewer_count: 4534,
+  started_at: '2021-04-28T01:57:46Z',
+  language: 'en',
+  thumbnail_url: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_ariasaki-{width}x{height}.jpg',
+  tag_ids: [ '6ea6bca4-4712-4ab9-a906-e3336a9d8039' ],
+  is_mature: false
+}
+stream {
+  id: '42451958334',
+  user_id: '10180005',
+  user_login: 'stevesuptic',
+  user_name: 'SteveSuptic',
+  game_id: '509658',
+  game_name: 'Just Chatting',
+  type: 'live',
+  title: 'Humble streamer is not late and never was',
+  viewer_count: 3119,
+  started_at: '2021-04-28T14:29:41Z',
+  language: 'en',
+  thumbnail_url: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_stevesuptic-{width}x{height}.jpg',
+  tag_ids: [
+    '6ea6bca4-4712-4ab9-a906-e3336a9d8039',
+    'c2839af5-f1d2-46c4-8edc-1d0bfbd85070'
+  ],
+  is_mature: true
+}
+makeShorts..  {
+  channels: [ 'amouranth', 'itshafu', 'ariasaki', 'stevesuptic' ],
+  viewThreshold: 100,
+  notify: false,
+  upload: true
+}
+starting shorts for amouranth.. count:0
+TypeError: Cannot read property 'views' of undefined
+    at TwitchTubeService._callee$ (C:\Users\Jon\Personal Projects\pa-beta\src\services\/TwitchTubeService.ts:68:63)
+    at tryCatch (C:\Users\Jon\Personal Projects\pa-beta\node_modules\regenerator-runtime\runtime.js:63:40)
+    at Generator.invoke [as _invoke] (C:\Users\Jon\Personal Projects\pa-beta\node_modules\regenerator-runtime\runtime.js:293:22)
+    at Generator.next (C:\Users\Jon\Personal Projects\pa-beta\node_modules\regenerator-runtime\runtime.js:118:21)
+    at asyncGeneratorStep (C:\Users\Jon\Personal Projects\pa-beta\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (C:\Users\Jon\Personal Projects\pa-beta\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+starting shorts for itshafu.. count:20
+already did video for itshafu skipping...
+starting shorts for ariasaki.. count:28
+making video for ariasaki - 5 hi
+downloadClip.. {
+  slug: 'ShakingAliveLionCurseLit-steZRZo021tEWKh5',
+  tracking_id: '1155197919',
+  url: 'https://clips.twitch.tv/ShakingAliveLionCurseLit-steZRZo021tEWKh5?tt_medium=clips_api&tt_content=url',
+  embed_url: 'https://clips.twitch.tv/embed?clip=ShakingAliveLionCurseLit-steZRZo021tEWKh5&tt_medium=clips_api&tt_content=embed',
+  embed_html: "<iframe src='https://clips.twitch.tv/embed?clip=ShakingAliveLionCurseLit-steZRZo021tEWKh5&tt_medium=clips_api&tt_content=embed' width='640' height='360' frameborder='0' scrolling='no' allowfullscreen='true'></iframe>",
+  broadcaster: {
+    id: '62510206',
+    name: 'ariasaki',
+    display_name: 'AriaSaki',
+    channel_url: 'https://www.twitch.tv/ariasaki',
+    logo: 'https://static-cdn.jtvnw.net/jtv_user_pictures/6e5892f2-0336-4ec1-82df-4e89470fda3a-profile_image-300x300.png'
+  },
+  curator: {
+    id: '633306118',
+    name: 'nayahatesyou1',
+    display_name: 'nayahatesyou1',
+    channel_url: 'https://www.twitch.tv/nayahatesyou1',
+    logo: 'https://static-cdn.jtvnw.net/jtv_user_pictures/651260e4-f670-4177-99ef-230c6595f684-profile_image-150x150.png'
+  },
+  vod: {
+    id: '1003369983',
+    url: 'https://www.twitch.tv/videos/1003369983?t=7h57m44s',
+    offset: 28664,
+    preview_image_url: 'https://clips-media-assets2.twitch.tv/AT-cm%7C1155197919-preview.jpg'
+  },
+  broadcast_id: '41605663949',
+  game: 'The Wolf Among Us',
+  language: 'en',
+  title: 'hi',
+  views: 5,
+  duration: 9.39,
+  created_at: '2021-04-28T09:55:49Z',
+  thumbnails: {
+    medium: 'https://clips-media-assets2.twitch.tv/AT-cm%7C1155197919-preview-480x272.jpg',
+    small: 'https://clips-media-assets2.twitch.tv/AT-cm%7C1155197919-preview-260x147.jpg',
+    tiny: 'https://clips-media-assets2.twitch.tv/AT-cm%7C1155197919-preview-86x45.jpg'
+  }
+}
+downloading..  {
+  url: 'https://clips-media-assets2.twitch.tv/AT-cm%7C1155197919.mp4',
+  filePath: 'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\shorts\\AriaSaki\\ShakingAliveLionCurseLit-steZRZo021tEWKh5.mp4'
+}
+download success!..  C:\Users\Jon\Personal Projects\pa-beta\src\twitch\shorts\AriaSaki\ShakingAliveLionCurseLit-steZRZo021tEWKh5.mp4
+downloaded..   C:\Users\Jon\Personal Projects\pa-beta\src\twitch\shorts\AriaSaki\ShakingAliveLionCurseLit-steZRZo021tEWKh5.mp4
+YT Metadata  {
+  title: 'hi | AriaSaki #shorts',
+  description: '#AriaSaki \n' +
+    '\n' +
+    'Historical Date: Apr 28, 2021 05:55:49\n' +
+    '\n' +
+    'Vod Moment: https://www.twitch.tv/videos/1003369983?t=7h57m44s \n' +
+    '\n' +
+    'https://www.twitch.tv/AriaSaki \n' +
+    '\n',
+  playlist: null,
+  notify: false,
+  thumbnail: null
+}
+UPLOADING TO YOUTUBE WITH PARAMS {
+  filePath: 'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\shorts\\AriaSaki\\ShakingAliveLionCurseLit-steZRZo021tEWKh5.mp4',
+  title: 'hi | AriaSaki #shorts',
+  description: '#AriaSaki \n' +
+    '\n' +
+    'Historical Date: Apr 28, 2021 05:55:49\n' +
+    '\n' +
+    'Vod Moment: https://www.twitch.tv/videos/1003369983?t=7h57m44s \n' +
+    '\n' +
+    'https://www.twitch.tv/AriaSaki \n' +
+    '\n',
+  playlist: null,
+  notify: false,
+  thumbnail: null
+}
+starting shorts for stevesuptic.. count:23
+making video for stevesuptic - 497 Steve Tongue
+downloadClip.. {
+  slug: 'CrispyVibrantLionTBTacoLeft-uxXZAXSOZ_p-ieHw',
+  tracking_id: '1154181953',
+  url: 'https://clips.twitch.tv/CrispyVibrantLionTBTacoLeft-uxXZAXSOZ_p-ieHw?tt_medium=clips_api&tt_content=url',
+  embed_url: 'https://clips.twitch.tv/embed?clip=CrispyVibrantLionTBTacoLeft-uxXZAXSOZ_p-ieHw&tt_medium=clips_api&tt_content=embed',
+  embed_html: "<iframe src='https://clips.twitch.tv/embed?clip=CrispyVibrantLionTBTacoLeft-uxXZAXSOZ_p-ieHw&tt_medium=clips_api&tt_content=embed' width='640' height='360' frameborder='0' scrolling='no' allowfullscreen='true'></iframe>",
+  broadcaster: {
+    id: '10180005',
+    name: 'stevesuptic',
+    display_name: 'SteveSuptic',
+    channel_url: 'https://www.twitch.tv/stevesuptic',
+    logo: 'https://static-cdn.jtvnw.net/jtv_user_pictures/c92f5710-c7ef-4bd9-9d5a-e3e91538877b-profile_image-300x300.png'
+  },
+  curator: {
+    id: '268096738',
+    name: 'stevesbootycall',
+    display_name: 'StevesBootyCall',
+    channel_url: 'https://www.twitch.tv/stevesbootycall',
+    logo: 'https://static-cdn.jtvnw.net/jtv_user_pictures/fa7ee64c-3f93-4a7c-be80-3eb2ded7ea0f-profile_image-150x150.png'
+  },
+  vod: {
+    id: '1002651624',
+    url: 'https://www.twitch.tv/videos/1002651624?t=3h24m21s',
+    offset: 12261,
+    preview_image_url: 'https://clips-media-assets2.twitch.tv/41598235949-offset-12286-preview.jpg'
+  },
+  broadcast_id: '41598235949',
+  game: 'Among Us',
+  language: 'en',
+  title: 'Steve Tongue',
+  views: 497,
+  duration: 29.78,
+  created_at: '2021-04-27T17:54:59Z',
+  thumbnails: {
+    medium: 'https://clips-media-assets2.twitch.tv/41598235949-offset-12286-preview-480x272.jpg',
+    small: 'https://clips-media-assets2.twitch.tv/41598235949-offset-12286-preview-260x147.jpg',
+    tiny: 'https://clips-media-assets2.twitch.tv/41598235949-offset-12286-preview-86x45.jpg'
+  }
+}
+downloading..  {
+  url: 'https://clips-media-assets2.twitch.tv/41598235949-offset-12286.mp4',
+  filePath: 'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\shorts\\SteveSuptic\\CrispyVibrantLionTBTacoLeft-uxXZAXSOZ_p-ieHw.mp4'
+}
+download success!..  C:\Users\Jon\Personal Projects\pa-beta\src\twitch\shorts\SteveSuptic\CrispyVibrantLionTBTacoLeft-uxXZAXSOZ_p-ieHw.mp4
+downloaded..   C:\Users\Jon\Personal Projects\pa-beta\src\twitch\shorts\SteveSuptic\CrispyVibrantLionTBTacoLeft-uxXZAXSOZ_p-ieHw.mp4
+YT Metadata  {
+  title: 'Steve Tongue | SteveSuptic #shorts',
+  description: '#SteveSuptic \n' +
+    '\n' +
+    'Historical Date: Apr 28, 2021 01:54:59\n' +
+    '\n' +
+    'Vod Moment: https://www.twitch.tv/videos/1002651624?t=3h24m21s \n' +
+    '\n' +
+    'https://www.twitch.tv/SteveSuptic \n' +
+    '\n',
+  playlist: null,
+  notify: false,
+  thumbnail: null
+}
+UPLOADING TO YOUTUBE WITH PARAMS {
+  filePath: 'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\shorts\\SteveSuptic\\CrispyVibrantLionTBTacoLeft-uxXZAXSOZ_p-ieHw.mp4',
+  title: 'Steve Tongue | SteveSuptic #shorts',
+  description: '#SteveSuptic \n' +
+    '\n' +
+    'Historical Date: Apr 28, 2021 01:54:59\n' +
+    '\n' +
+    'Vod Moment: https://www.twitch.tv/videos/1002651624?t=3h24m21s \n' +
+    '\n' +
+    'https://www.twitch.tv/SteveSuptic \n' +
+    '\n',
+  playlist: null,
+  notify: false,
+  thumbnail: null
+}
+THE END!
+THE END!
+getLiveChannels [
+  'TinaKitten',     'stevesuptic',
+  'xchocobars',     'brookeab',
+  '5uppp',          'karlnetwork',
+  'itshafu',        'xQcOW',
+  '39daph',         'pokimane',
+  'kkatamina',      'Sykkuno',
+  'disguisedtoast', 'ludwig',
+  'yvonnie',        'lilypichu',
+  'fuslie',         'natsumiii',
+  'ariasaki',       'masayoshi',
+  'quarterjade',    'peterparktv',
+  'kristoferyee',   'amouranth',
+  'melina',         'imjasmine',
+  'indiefoxx',      'Jinnytty'
+]
+followChannel res {
+  data: [
+    {
+      id: '42449626638',
+      user_id: '125387632',
+      user_login: 'amouranth',
+      user_name: 'Amouranth',
+      game_id: '509658',
+      game_name: 'Just Chatting',
+      type: 'live',
+      title: '💦🍑HOT TUB💦BIKINI TRY ON💦4K💦SHAMELESS💦!instagram: amouranth 💦!socials💦!gfuel',
+      viewer_count: 12563,
+      started_at: '2021-04-28T04:17:30Z',
+      language: 'en',
+      thumbnail_url: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_amouranth-{width}x{height}.jpg',
+      tag_ids: [Array],
+      is_mature: false
+    },
+    {
+      id: '42451958334',
+      user_id: '10180005',
+      user_login: 'stevesuptic',
+      user_name: 'SteveSuptic',
+      game_id: '278888515',
+      game_name: 'Gartic Phone',
+      type: 'live',
+      title: 'Humble streamer is not late and never was',
+      viewer_count: 9811,
+      started_at: '2021-04-28T14:29:41Z',
+      language: 'en',
+      thumbnail_url: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_stevesuptic-{width}x{height}.jpg',
+      tag_ids: [Array],
+      is_mature: true
+    },
+    {
+      id: '41609920237',
+      user_id: '30777889',
+      user_login: 'itshafu',
+      user_name: 'itsHafu',
+      game_id: '509658',
+      game_name: 'Just Chatting',
+      type: 'live',
+      title: 'HAFU -- GOOD MORNING!!!',
+      viewer_count: 6340,
+      started_at: '2021-04-28T13:57:10Z',
+      language: 'en',
+      thumbnail_url: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_itshafu-{width}x{height}.jpg',
+      tag_ids: [Array],
+      is_mature: false
+    },
+    {
+      id: '41605663949',
+      user_id: '62510206',
+      user_login: 'ariasaki',
+      user_name: 'AriaSaki',
+      game_id: '32513',
+      game_name: 'To the Moon',
+      type: 'live',
+      title: 'To the moon!',
+      viewer_count: 4163,
+      started_at: '2021-04-28T01:57:46Z',
+      language: 'en',
+      thumbnail_url: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_ariasaki-{width}x{height}.jpg',
+      tag_ids: [Array],
+      is_mature: false
+    },
+    {
+      id: '42452142430',
+      user_id: '159498717',
+      user_login: 'jinnytty',
+      user_name: 'Jinnytty',
+      game_id: '509658',
+      game_name: 'Just Chatting',
+      type: 'live',
+      title: 'hello guyss',
+      viewer_count: 0,
+      started_at: '2021-04-28T15:03:49Z',
+      language: 'en',
+      thumbnail_url: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_jinnytty-{width}x{height}.jpg',
+      tag_ids: null,
+      is_mature: false
+    }
+  ],
+  pagination: {}
+}
+stream {
+  id: '42449626638',
+  user_id: '125387632',
+  user_login: 'amouranth',
+  user_name: 'Amouranth',
+  game_id: '509658',
+  game_name: 'Just Chatting',
+  type: 'live',
+  title: '💦🍑HOT TUB💦BIKINI TRY ON💦4K💦SHAMELESS💦!instagram: amouranth 💦!socials💦!gfuel',
+  viewer_count: 12563,
+  started_at: '2021-04-28T04:17:30Z',
+  language: 'en',
+  thumbnail_url: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_amouranth-{width}x{height}.jpg',
+  tag_ids: [ '6ea6bca4-4712-4ab9-a906-e3336a9d8039' ],
+  is_mature: false
+}
+stream {
+  id: '42451958334',
+  user_id: '10180005',
+  user_login: 'stevesuptic',
+  user_name: 'SteveSuptic',
+  game_id: '278888515',
+  game_name: 'Gartic Phone',
+  type: 'live',
+  title: 'Humble streamer is not late and never was',
+  viewer_count: 9811,
+  started_at: '2021-04-28T14:29:41Z',
+  language: 'en',
+  thumbnail_url: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_stevesuptic-{width}x{height}.jpg',
+  tag_ids: [ '6ea6bca4-4712-4ab9-a906-e3336a9d8039' ],
+  is_mature: true
+}
+stream {
+  id: '41609920237',
+  user_id: '30777889',
+  user_login: 'itshafu',
+  user_name: 'itsHafu',
+  game_id: '509658',
+  game_name: 'Just Chatting',
+  type: 'live',
+  title: 'HAFU -- GOOD MORNING!!!',
+  viewer_count: 6340,
+  started_at: '2021-04-28T13:57:10Z',
+  language: 'en',
+  thumbnail_url: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_itshafu-{width}x{height}.jpg',
+  tag_ids: [ '6ea6bca4-4712-4ab9-a906-e3336a9d8039' ],
+  is_mature: false
+}
+stream {
+  id: '41605663949',
+  user_id: '62510206',
+  user_login: 'ariasaki',
+  user_name: 'AriaSaki',
+  game_id: '32513',
+  game_name: 'To the Moon',
+  type: 'live',
+  title: 'To the moon!',
+  viewer_count: 4163,
+  started_at: '2021-04-28T01:57:46Z',
+  language: 'en',
+  thumbnail_url: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_ariasaki-{width}x{height}.jpg',
+  tag_ids: [ '6ea6bca4-4712-4ab9-a906-e3336a9d8039' ],
+  is_mature: false
+}
+stream {
+  id: '42452142430',
+  user_id: '159498717',
+  user_login: 'jinnytty',
+  user_name: 'Jinnytty',
+  game_id: '509658',
+  game_name: 'Just Chatting',
+  type: 'live',
+  title: 'hello guyss',
+  viewer_count: 0,
+  started_at: '2021-04-28T15:03:49Z',
+  language: 'en',
+  thumbnail_url: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_jinnytty-{width}x{height}.jpg',
+  tag_ids: null,
+  is_mature: false
+}
+makeShorts..  {
+  channels: [ 'amouranth', 'stevesuptic', 'itshafu', 'ariasaki', 'Jinnytty' ],
+  viewThreshold: 100,
+  notify: false,
+  upload: true
+}
+starting shorts for amouranth.. count:0
+TypeError: Cannot read property 'views' of undefined
+    at TwitchTubeService._callee$ (C:\Users\Jon\Personal Projects\pa-beta\src\services\/TwitchTubeService.ts:68:63)
+    at tryCatch (C:\Users\Jon\Personal Projects\pa-beta\node_modules\regenerator-runtime\runtime.js:63:40)
+    at Generator.invoke [as _invoke] (C:\Users\Jon\Personal Projects\pa-beta\node_modules\regenerator-runtime\runtime.js:293:22)
+    at Generator.next (C:\Users\Jon\Personal Projects\pa-beta\node_modules\regenerator-runtime\runtime.js:118:21)
+    at asyncGeneratorStep (C:\Users\Jon\Personal Projects\pa-beta\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (C:\Users\Jon\Personal Projects\pa-beta\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+starting shorts for stevesuptic.. count:22
+already did video for stevesuptic skipping...
+starting shorts for itshafu.. count:20
+making video for itshafu - 17 awoo
+downloadClip.. {
+  slug: 'FrigidCleverSoymilkOhMyDog-yS6_vpUxm-lsyw81',
+  tracking_id: '1155355304',
+  url: 'https://clips.twitch.tv/FrigidCleverSoymilkOhMyDog-yS6_vpUxm-lsyw81?tt_medium=clips_api&tt_content=url',
+  embed_url: 'https://clips.twitch.tv/embed?clip=FrigidCleverSoymilkOhMyDog-yS6_vpUxm-lsyw81&tt_medium=clips_api&tt_content=embed',
+  embed_html: "<iframe src='https://clips.twitch.tv/embed?clip=FrigidCleverSoymilkOhMyDog-yS6_vpUxm-lsyw81&tt_medium=clips_api&tt_content=embed' width='640' height='360' frameborder='0' scrolling='no' allowfullscreen='true'></iframe>",
+  broadcaster: {
+    id: '30777889',
+    name: 'itshafu',
+    display_name: 'itsHafu',
+    channel_url: 'https://www.twitch.tv/itshafu',
+    logo: 'https://static-cdn.jtvnw.net/jtv_user_pictures/bc69bcad-e9ce-48de-9326-adba3c052385-profile_image-300x300.png'
+  },
+  curator: {
+    id: '181587354',
+    name: 'twoandahalfscums',
+    display_name: 'twoandahalfscums',
+    channel_url: 'https://www.twitch.tv/twoandahalfscums',
+    logo: 'https://static-cdn.jtvnw.net/jtv_user_pictures/1210a8d5-f3dd-4a66-903b-b7d6b1d9d098-profile_image-150x150.jpeg'
+  },
+  vod: {
+    id: '1003754141',
+    url: 'https://www.twitch.tv/videos/1003754141?t=26m35s',
+    offset: 1595,
+    preview_image_url: 'https://clips-media-assets2.twitch.tv/AT-cm%7C1155355304-preview.jpg'
+  },
+  broadcast_id: '41609920237',
+  game: 'Just Chatting',
+  language: 'en',
+  title: 'awoo',
+  views: 17,
+  duration: 4.95,
+  created_at: '2021-04-28T14:24:17Z',
+  thumbnails: {
+    medium: 'https://clips-media-assets2.twitch.tv/AT-cm%7C1155355304-preview-480x272.jpg',
+    small: 'https://clips-media-assets2.twitch.tv/AT-cm%7C1155355304-preview-260x147.jpg',
+    tiny: 'https://clips-media-assets2.twitch.tv/AT-cm%7C1155355304-preview-86x45.jpg'
+  }
+}
+downloading..  {
+  url: 'https://clips-media-assets2.twitch.tv/AT-cm%7C1155355304.mp4',
+  filePath: 'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\shorts\\itsHafu\\FrigidCleverSoymilkOhMyDog-yS6_vpUxm-lsyw81.mp4'
+}
+download success!..  C:\Users\Jon\Personal Projects\pa-beta\src\twitch\shorts\itsHafu\FrigidCleverSoymilkOhMyDog-yS6_vpUxm-lsyw81.mp4
+downloaded..   C:\Users\Jon\Personal Projects\pa-beta\src\twitch\shorts\itsHafu\FrigidCleverSoymilkOhMyDog-yS6_vpUxm-lsyw81.mp4
+YT Metadata  {
+  title: 'awoo | itsHafu #shorts',
+  description: '#itsHafu \n' +
+    '\n' +
+    'Historical Date: Apr 28, 2021 10:24:17\n' +
+    '\n' +
+    'Vod Moment: https://www.twitch.tv/videos/1003754141?t=26m35s \n' +
+    '\n' +
+    'https://www.twitch.tv/itsHafu \n' +
+    '\n',
+  playlist: null,
+  notify: false,
+  thumbnail: null
+}
+UPLOADING TO YOUTUBE WITH PARAMS {
+  filePath: 'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\shorts\\itsHafu\\FrigidCleverSoymilkOhMyDog-yS6_vpUxm-lsyw81.mp4',
+  title: 'awoo | itsHafu #shorts',
+  description: '#itsHafu \n' +
+    '\n' +
+    'Historical Date: Apr 28, 2021 10:24:17\n' +
+    '\n' +
+    'Vod Moment: https://www.twitch.tv/videos/1003754141?t=26m35s \n' +
+    '\n' +
+    'https://www.twitch.tv/itsHafu \n' +
+    '\n',
+  playlist: null,
+  notify: false,
+  thumbnail: null
+}
+starting shorts for ariasaki.. count:28
+making video for ariasaki - 3 To the moon!
+downloadClip.. {
+  slug: 'LightGiftedOrangeKeyboardCat-PY556_5JrW2ZAQie',
+  tracking_id: '1155331328',
+  url: 'https://clips.twitch.tv/LightGiftedOrangeKeyboardCat-PY556_5JrW2ZAQie?tt_medium=clips_api&tt_content=url',
+  embed_url: 'https://clips.twitch.tv/embed?clip=LightGiftedOrangeKeyboardCat-PY556_5JrW2ZAQie&tt_medium=clips_api&tt_content=embed',
+  embed_html: "<iframe src='https://clips.twitch.tv/embed?clip=LightGiftedOrangeKeyboardCat-PY556_5JrW2ZAQie&tt_medium=clips_api&tt_content=embed' width='640' height='360' frameborder='0' scrolling='no' allowfullscreen='true'></iframe>",
+  broadcaster: {
+    id: '62510206',
+    name: 'ariasaki',
+    display_name: 'AriaSaki',
+    channel_url: 'https://www.twitch.tv/ariasaki',
+    logo: 'https://static-cdn.jtvnw.net/jtv_user_pictures/6e5892f2-0336-4ec1-82df-4e89470fda3a-profile_image-300x300.png'
+  },
+  curator: {
+    id: '555204558',
+    name: 'yoitskimchi',
+    display_name: 'yoitsKimChi',
+    channel_url: 'https://www.twitch.tv/yoitskimchi',
+    logo: 'https://static-cdn.jtvnw.net/jtv_user_pictures/e72571c8-e7d8-473c-88ab-9fa0d836d68a-profile_image-150x150.png'
+  },
+  vod: {
+    id: '1003369983',
+    url: 'https://www.twitch.tv/videos/1003369983?t=11h55m28s',
+    offset: 42928,
+    preview_image_url: 'https://clips-media-assets2.twitch.tv/41605663949-offset-42952-preview.jpg'
+  },
+  broadcast_id: '41605663949',
+  game: 'To the Moon',
+  language: 'en',
+  title: 'To the moon!',
+  views: 3,
+  duration: 30,
+  created_at: '2021-04-28T13:53:50Z',
+  thumbnails: {
+    medium: 'https://clips-media-assets2.twitch.tv/41605663949-offset-42952-preview-480x272.jpg',
+    small: 'https://clips-media-assets2.twitch.tv/41605663949-offset-42952-preview-260x147.jpg',
+    tiny: 'https://clips-media-assets2.twitch.tv/41605663949-offset-42952-preview-86x45.jpg'
+  }
+}
+downloading..  {
+  url: 'https://clips-media-assets2.twitch.tv/41605663949-offset-42952.mp4',
+  filePath: 'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\shorts\\AriaSaki\\LightGiftedOrangeKeyboardCat-PY556_5JrW2ZAQie.mp4'
+}
+download success!..  C:\Users\Jon\Personal Projects\pa-beta\src\twitch\shorts\AriaSaki\LightGiftedOrangeKeyboardCat-PY556_5JrW2ZAQie.mp4
+downloaded..   C:\Users\Jon\Personal Projects\pa-beta\src\twitch\shorts\AriaSaki\LightGiftedOrangeKeyboardCat-PY556_5JrW2ZAQie.mp4
+YT Metadata  {
+  title: 'To the moon! | AriaSaki #shorts',
+  description: '#AriaSaki \n' +
+    '\n' +
+    'Historical Date: Apr 28, 2021 09:53:50\n' +
+    '\n' +
+    'Vod Moment: https://www.twitch.tv/videos/1003369983?t=11h55m28s \n' +
+    '\n' +
+    'https://www.twitch.tv/AriaSaki \n' +
+    '\n',
+  playlist: null,
+  notify: false,
+  thumbnail: null
+}
+UPLOADING TO YOUTUBE WITH PARAMS {
+  filePath: 'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\shorts\\AriaSaki\\LightGiftedOrangeKeyboardCat-PY556_5JrW2ZAQie.mp4',
+  title: 'To the moon! | AriaSaki #shorts',
+  description: '#AriaSaki \n' +
+    '\n' +
+    'Historical Date: Apr 28, 2021 09:53:50\n' +
+    '\n' +
+    'Vod Moment: https://www.twitch.tv/videos/1003369983?t=11h55m28s \n' +
+    '\n' +
+    'https://www.twitch.tv/AriaSaki \n' +
+    '\n',
+  playlist: null,
+  notify: false,
+  thumbnail: null
+}
+starting shorts for Jinnytty.. count:9
+making video for Jinnytty - 1 hey guys
+downloadClip.. {
+  slug: 'ColdbloodedInquisitiveKathyBleedPurple-fHTpoLJe0p-eRDMF',
+  tracking_id: '1155338710',
+  url: 'https://clips.twitch.tv/ColdbloodedInquisitiveKathyBleedPurple-fHTpoLJe0p-eRDMF?tt_medium=clips_api&tt_content=url',
+  embed_url: 'https://clips.twitch.tv/embed?clip=ColdbloodedInquisitiveKathyBleedPurple-fHTpoLJe0p-eRDMF&tt_medium=clips_api&tt_content=embed',
+  embed_html: "<iframe src='https://clips.twitch.tv/embed?clip=ColdbloodedInquisitiveKathyBleedPurple-fHTpoLJe0p-eRDMF&tt_medium=clips_api&tt_content=embed' width='640' height='360' frameborder='0' scrolling='no' allowfullscreen='true'></iframe>",
+  broadcaster: {
+    id: '159498717',
+    name: 'jinnytty',
+    display_name: 'Jinnytty',
+    channel_url: 'https://www.twitch.tv/jinnytty',
+    logo: 'https://static-cdn.jtvnw.net/jtv_user_pictures/37567ea1-8246-4385-bcf6-8a3cdb9ca93b-profile_image-300x300.png'
+  },
+  curator: {
+    id: '209875990',
+    name: 'theguyfromtheotherday',
+    display_name: 'theguyfromtheotherday',
+    channel_url: 'https://www.twitch.tv/theguyfromtheotherday',
+    logo: 'https://static-cdn.jtvnw.net/jtv_user_pictures/5dc71a16-7760-4de6-91e2-4d66f5ecf404-profile_image-150x150.png'
+  },
+  vod: {
+    id: '1001562620',
+    url: 'https://www.twitch.tv/videos/1001562620?t=0s',
+    offset: 0,
+    preview_image_url: 'https://clips-media-assets2.twitch.tv/vod-1001562620-offset-0-preview.jpg'
+  },
+  broadcast_id: '42435627070',
+  game: 'Just Chatting',
+  language: 'en',
+  title: 'hey guys',
+  views: 1,
+  duration: 10,
+  created_at: '2021-04-28T14:03:20Z',
+  thumbnails: {
+    medium: 'https://clips-media-assets2.twitch.tv/vod-1001562620-offset-0-preview-480x272.jpg',
+    small: 'https://clips-media-assets2.twitch.tv/vod-1001562620-offset-0-preview-260x147.jpg',
+    tiny: 'https://clips-media-assets2.twitch.tv/vod-1001562620-offset-0-preview-86x45.jpg'
+  }
+}
+downloading..  {
+  url: 'https://clips-media-assets2.twitch.tv/vod-1001562620-offset-0.mp4',
+  filePath: 'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\shorts\\Jinnytty\\ColdbloodedInquisitiveKathyBleedPurple-fHTpoLJe0p-eRDMF.mp4'
+}
+download success!..  C:\Users\Jon\Personal Projects\pa-beta\src\twitch\shorts\Jinnytty\ColdbloodedInquisitiveKathyBleedPurple-fHTpoLJe0p-eRDMF.mp4
+downloaded..   C:\Users\Jon\Personal Projects\pa-beta\src\twitch\shorts\Jinnytty\ColdbloodedInquisitiveKathyBleedPurple-fHTpoLJe0p-eRDMF.mp4
+YT Metadata  {
+  title: 'hey guys | Jinnytty #shorts',
+  description: '#Jinnytty \n' +
+    '\n' +
+    'Historical Date: Apr 28, 2021 10:03:20\n' +
+    '\n' +
+    'Vod Moment: https://www.twitch.tv/videos/1001562620?t=0s \n' +
+    '\n' +
+    'https://www.twitch.tv/Jinnytty \n' +
+    '\n',
+  playlist: null,
+  notify: false,
+  thumbnail: null
+}
+UPLOADING TO YOUTUBE WITH PARAMS {
+  filePath: 'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\shorts\\Jinnytty\\ColdbloodedInquisitiveKathyBleedPurple-fHTpoLJe0p-eRDMF.mp4',
+  title: 'hey guys | Jinnytty #shorts',
+  description: '#Jinnytty \n' +
+    '\n' +
+    'Historical Date: Apr 28, 2021 10:03:20\n' +
+    '\n' +
+    'Vod Moment: https://www.twitch.tv/videos/1001562620?t=0s \n' +
+    '\n' +
+    'https://www.twitch.tv/Jinnytty \n' +
+    '\n',
+  playlist: null,
+  notify: false,
+  thumbnail: null
+}
+THE END!
+THE END!
+THE END!
+getLiveChannels [
+  'TinaKitten',     'stevesuptic',
+  'xchocobars',     'brookeab',
+  '5uppp',          'karlnetwork',
+  'itshafu',        'xQcOW',
+  '39daph',         'pokimane',
+  'kkatamina',      'Sykkuno',
+  'disguisedtoast', 'ludwig',
+  'yvonnie',        'lilypichu',
+  'fuslie',         'natsumiii',
+  'ariasaki',       'masayoshi',
+  'quarterjade',    'peterparktv',
+  'kristoferyee',   'amouranth',
+  'melina',         'imjasmine',
+  'indiefoxx',      'Jinnytty'
+]
+followChannel res {
+  data: [
+    {
+      id: '42451958334',
+      user_id: '10180005',
+      user_login: 'stevesuptic',
+      user_name: 'SteveSuptic',
+      game_id: '278888515',
+      game_name: 'Gartic Phone',
+      type: 'live',
+      title: 'Humble streamer is not late and never was',
+      viewer_count: 13763,
+      started_at: '2021-04-28T14:29:41Z',
+      language: 'en',
+      thumbnail_url: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_stevesuptic-{width}x{height}.jpg',
+      tag_ids: [Array],
+      is_mature: true
+    },
+    {
+      id: '41609920237',
+      user_id: '30777889',
+      user_login: 'itshafu',
+      user_name: 'itsHafu',
+      game_id: '509658',
+      game_name: 'Just Chatting',
+      type: 'live',
+      title: 'HAFU -- GOOD MORNING!!!',
+      viewer_count: 7565,
+      started_at: '2021-04-28T13:57:10Z',
+      language: 'en',
+      thumbnail_url: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_itshafu-{width}x{height}.jpg',
+      tag_ids: [Array],
+      is_mature: false
+    },
+    {
+      id: '39277353867',
+      user_id: '86061418',
+      user_login: '5uppp',
+      user_name: '5uppp',
+      game_id: '509658',
+      game_name: 'Just Chatting',
+      type: 'live',
+      title: 'Group games into big thing later | !displate ',
+      viewer_count: 7332,
+      started_at: '2021-04-28T15:05:50Z',
+      language: 'en',
+      thumbnail_url: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_5uppp-{width}x{height}.jpg',
+      tag_ids: [Array],
+      is_mature: false
+    },
+    {
+      id: '42452142430',
+      user_id: '159498717',
+      user_login: 'jinnytty',
+      user_name: 'Jinnytty',
+      game_id: '509658',
+      game_name: 'Just Chatting',
+      type: 'live',
+      title: 'hello guyss',
+      viewer_count: 2713,
+      started_at: '2021-04-28T15:03:49Z',
+      language: 'en',
+      thumbnail_url: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_jinnytty-{width}x{height}.jpg',
+      tag_ids: [Array],
+      is_mature: false
+    }
+  ],
+  pagination: {}
+}
+stream {
+  id: '42451958334',
+  user_id: '10180005',
+  user_login: 'stevesuptic',
+  user_name: 'SteveSuptic',
+  game_id: '278888515',
+  game_name: 'Gartic Phone',
+  type: 'live',
+  title: 'Humble streamer is not late and never was',
+  viewer_count: 13763,
+  started_at: '2021-04-28T14:29:41Z',
+  language: 'en',
+  thumbnail_url: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_stevesuptic-{width}x{height}.jpg',
+  tag_ids: [ '6ea6bca4-4712-4ab9-a906-e3336a9d8039' ],
+  is_mature: true
+}
+stream {
+  id: '41609920237',
+  user_id: '30777889',
+  user_login: 'itshafu',
+  user_name: 'itsHafu',
+  game_id: '509658',
+  game_name: 'Just Chatting',
+  type: 'live',
+  title: 'HAFU -- GOOD MORNING!!!',
+  viewer_count: 7565,
+  started_at: '2021-04-28T13:57:10Z',
+  language: 'en',
+  thumbnail_url: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_itshafu-{width}x{height}.jpg',
+  tag_ids: [ '6ea6bca4-4712-4ab9-a906-e3336a9d8039' ],
+  is_mature: false
+}
+stream {
+  id: '39277353867',
+  user_id: '86061418',
+  user_login: '5uppp',
+  user_name: '5uppp',
+  game_id: '509658',
+  game_name: 'Just Chatting',
+  type: 'live',
+  title: 'Group games into big thing later | !displate ',
+  viewer_count: 7332,
+  started_at: '2021-04-28T15:05:50Z',
+  language: 'en',
+  thumbnail_url: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_5uppp-{width}x{height}.jpg',
+  tag_ids: [ '6ea6bca4-4712-4ab9-a906-e3336a9d8039' ],
+  is_mature: false
+}
+stream {
+  id: '42452142430',
+  user_id: '159498717',
+  user_login: 'jinnytty',
+  user_name: 'Jinnytty',
+  game_id: '509658',
+  game_name: 'Just Chatting',
+  type: 'live',
+  title: 'hello guyss',
+  viewer_count: 2713,
+  started_at: '2021-04-28T15:03:49Z',
+  language: 'en',
+  thumbnail_url: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_jinnytty-{width}x{height}.jpg',
+  tag_ids: [ '6ea6bca4-4712-4ab9-a906-e3336a9d8039' ],
+  is_mature: false
+}
+makeShorts..  {
+  channels: [ 'stevesuptic', 'itshafu', '5uppp', 'Jinnytty' ],
+  viewThreshold: 100,
+  notify: false,
+  upload: true
+}
+starting shorts for stevesuptic.. count:21
+making video for stevesuptic - 32 A stressed artist
+downloadClip.. {
+  slug: 'LaconicAmorphousSnoodWTRuck-P4awS_NBaQrdpaCY',
+  tracking_id: '1155400765',
+  url: 'https://clips.twitch.tv/LaconicAmorphousSnoodWTRuck-P4awS_NBaQrdpaCY?tt_medium=clips_api&tt_content=url',
+  embed_url: 'https://clips.twitch.tv/embed?clip=LaconicAmorphousSnoodWTRuck-P4awS_NBaQrdpaCY&tt_medium=clips_api&tt_content=embed',
+  embed_html: "<iframe src='https://clips.twitch.tv/embed?clip=LaconicAmorphousSnoodWTRuck-P4awS_NBaQrdpaCY&tt_medium=clips_api&tt_content=embed' width='640' height='360' frameborder='0' scrolling='no' allowfullscreen='true'></iframe>",
+  broadcaster: {
+    id: '10180005',
+    name: 'stevesuptic',
+    display_name: 'SteveSuptic',
+    channel_url: 'https://www.twitch.tv/stevesuptic',
+    logo: 'https://static-cdn.jtvnw.net/jtv_user_pictures/c92f5710-c7ef-4bd9-9d5a-e3e91538877b-profile_image-300x300.png'
+  },
+  curator: {
+    id: '610360695',
+    name: 'sese_holy',
+    display_name: 'sese_holy',
+    channel_url: 'https://www.twitch.tv/sese_holy',
+    logo: 'https://static-cdn.jtvnw.net/jtv_user_pictures/81229620-bde2-468c-a707-c45d2aab08fa-profile_image-150x150.png'
+  },
+  vod: {
+    id: '1003778115',
+    url: 'https://www.twitch.tv/videos/1003778115?t=42m56s',
+    offset: 2576,
+    preview_image_url: 'https://clips-media-assets2.twitch.tv/AT-cm%7C1155400765-preview.jpg'
+  },
+  broadcast_id: '42451958334',
+  game: 'Gartic Phone',
+  language: 'en',
+  title: 'A stressed artist',
+  views: 32,
+  duration: 42.04,
+  created_at: '2021-04-28T15:13:28Z',
+  thumbnails: {
+    medium: 'https://clips-media-assets2.twitch.tv/AT-cm%7C1155400765-preview-480x272.jpg',
+    small: 'https://clips-media-assets2.twitch.tv/AT-cm%7C1155400765-preview-260x147.jpg',
+    tiny: 'https://clips-media-assets2.twitch.tv/AT-cm%7C1155400765-preview-86x45.jpg'
+  }
+}
+downloading..  {
+  url: 'https://clips-media-assets2.twitch.tv/AT-cm%7C1155400765.mp4',
+  filePath: 'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\shorts\\SteveSuptic\\LaconicAmorphousSnoodWTRuck-P4awS_NBaQrdpaCY.mp4'
+}
+download success!..  C:\Users\Jon\Personal Projects\pa-beta\src\twitch\shorts\SteveSuptic\LaconicAmorphousSnoodWTRuck-P4awS_NBaQrdpaCY.mp4
+downloaded..   C:\Users\Jon\Personal Projects\pa-beta\src\twitch\shorts\SteveSuptic\LaconicAmorphousSnoodWTRuck-P4awS_NBaQrdpaCY.mp4
+YT Metadata  {
+  title: 'A stressed artist | SteveSuptic #shorts',
+  description: '#SteveSuptic \n' +
+    '\n' +
+    'Historical Date: Apr 28, 2021 11:13:28\n' +
+    '\n' +
+    'Vod Moment: https://www.twitch.tv/videos/1003778115?t=42m56s \n' +
+    '\n' +
+    'https://www.twitch.tv/SteveSuptic \n' +
+    '\n',
+  playlist: null,
+  notify: false,
+  thumbnail: null
+}
+UPLOADING TO YOUTUBE WITH PARAMS {
+  filePath: 'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\shorts\\SteveSuptic\\LaconicAmorphousSnoodWTRuck-P4awS_NBaQrdpaCY.mp4',
+  title: 'A stressed artist | SteveSuptic #shorts',
+  description: '#SteveSuptic \n' +
+    '\n' +
+    'Historical Date: Apr 28, 2021 11:13:28\n' +
+    '\n' +
+    'Vod Moment: https://www.twitch.tv/videos/1003778115?t=42m56s \n' +
+    '\n' +
+    'https://www.twitch.tv/SteveSuptic \n' +
+    '\n',
+  playlist: null,
+  notify: false,
+  thumbnail: null
+}
+starting shorts for itshafu.. count:19
+making video for itshafu - 19 Momfu? | Apr 2020
+downloadClip.. {
+  slug: 'MiniatureSuperSangThisIsSparta-LPxn2Omj8Ug1aWM_',
+  tracking_id: '1155355140',
+  url: 'https://clips.twitch.tv/MiniatureSuperSangThisIsSparta-LPxn2Omj8Ug1aWM_?tt_medium=clips_api&tt_content=url',
+  embed_url: 'https://clips.twitch.tv/embed?clip=MiniatureSuperSangThisIsSparta-LPxn2Omj8Ug1aWM_&tt_medium=clips_api&tt_content=embed',
+  embed_html: "<iframe src='https://clips.twitch.tv/embed?clip=MiniatureSuperSangThisIsSparta-LPxn2Omj8Ug1aWM_&tt_medium=clips_api&tt_content=embed' width='640' height='360' frameborder='0' scrolling='no' allowfullscreen='true'></iframe>",
+  broadcaster: {
+    id: '30777889',
+    name: 'itshafu',
+    display_name: 'itsHafu',
+    channel_url: 'https://www.twitch.tv/itshafu',
+    logo: 'https://static-cdn.jtvnw.net/jtv_user_pictures/bc69bcad-e9ce-48de-9326-adba3c052385-profile_image-300x300.png'
+  },
+  curator: {
+    id: '85926620',
+    name: 'mrliin',
+    display_name: 'MrLiin',
+    channel_url: 'https://www.twitch.tv/mrliin',
+    logo: 'https://static-cdn.jtvnw.net/jtv_user_pictures/0bb0a509-5c3e-4a6d-9f27-8c572a6cc076-profile_image-150x150.png'
+  },
+  vod: {
+    id: '1003754141',
+    url: 'https://www.twitch.tv/videos/1003754141?t=26m12s',
+    offset: 1572,
+    preview_image_url: 'https://clips-media-assets2.twitch.tv/AT-cm%7C1155355140-preview.jpg'
+  },
+  broadcast_id: '41609920237',
+  game: 'Just Chatting',
+  language: 'en',
+  title: 'Momfu? | Apr 2020',
+  views: 19,
+  duration: 23.45,
+  created_at: '2021-04-28T14:24:04Z',
+  thumbnails: {
+    medium: 'https://clips-media-assets2.twitch.tv/AT-cm%7C1155355140-preview-480x272.jpg',
+    small: 'https://clips-media-assets2.twitch.tv/AT-cm%7C1155355140-preview-260x147.jpg',
+    tiny: 'https://clips-media-assets2.twitch.tv/AT-cm%7C1155355140-preview-86x45.jpg'
+  }
+}
+downloading..  {
+  url: 'https://clips-media-assets2.twitch.tv/AT-cm%7C1155355140.mp4',
+  filePath: 'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\shorts\\itsHafu\\MiniatureSuperSangThisIsSparta-LPxn2Omj8Ug1aWM_.mp4'
+}
+download success!..  C:\Users\Jon\Personal Projects\pa-beta\src\twitch\shorts\itsHafu\MiniatureSuperSangThisIsSparta-LPxn2Omj8Ug1aWM_.mp4
+downloaded..   C:\Users\Jon\Personal Projects\pa-beta\src\twitch\shorts\itsHafu\MiniatureSuperSangThisIsSparta-LPxn2Omj8Ug1aWM_.mp4
+YT Metadata  {
+  title: 'Momfu? | Apr 2020 | itsHafu #shorts',
+  description: '#itsHafu \n' +
+    '\n' +
+    'Historical Date: Apr 28, 2021 10:24:04\n' +
+    '\n' +
+    'Vod Moment: https://www.twitch.tv/videos/1003754141?t=26m12s \n' +
+    '\n' +
+    'https://www.twitch.tv/itsHafu \n' +
+    '\n',
+  playlist: null,
+  notify: false,
+  thumbnail: null
+}
+UPLOADING TO YOUTUBE WITH PARAMS {
+  filePath: 'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\shorts\\itsHafu\\MiniatureSuperSangThisIsSparta-LPxn2Omj8Ug1aWM_.mp4',
+  title: 'Momfu? | Apr 2020 | itsHafu #shorts',
+  description: '#itsHafu \n' +
+    '\n' +
+    'Historical Date: Apr 28, 2021 10:24:04\n' +
+    '\n' +
+    'Vod Moment: https://www.twitch.tv/videos/1003754141?t=26m12s \n' +
+    '\n' +
+    'https://www.twitch.tv/itsHafu \n' +
+    '\n',
+  playlist: null,
+  notify: false,
+  thumbnail: null
+}
+starting shorts for 5uppp.. count:24
+making video for 5uppp - 62 SIR
+downloadClip.. {
+  slug: 'ObliqueSplendidCheesecakeVoteNay--VAw1ZHWiBpmFMAv',
+  tracking_id: '1154485590',
+  url: 'https://clips.twitch.tv/ObliqueSplendidCheesecakeVoteNay--VAw1ZHWiBpmFMAv?tt_medium=clips_api&tt_content=url',
+  embed_url: 'https://clips.twitch.tv/embed?clip=ObliqueSplendidCheesecakeVoteNay--VAw1ZHWiBpmFMAv&tt_medium=clips_api&tt_content=embed',
+  embed_html: "<iframe src='https://clips.twitch.tv/embed?clip=ObliqueSplendidCheesecakeVoteNay--VAw1ZHWiBpmFMAv&tt_medium=clips_api&tt_content=embed' width='640' height='360' frameborder='0' scrolling='no' allowfullscreen='true'></iframe>",
+  broadcaster: {
+    id: '86061418',
+    name: '5uppp',
+    display_name: '5uppp',
+    channel_url: 'https://www.twitch.tv/5uppp',
+    logo: 'https://static-cdn.jtvnw.net/jtv_user_pictures/61c06659-ae05-4586-9337-6ef2612e7d2a-profile_image-300x300.png'
+  },
+  curator: {
+    id: '47823558',
+    name: 'aproposof',
+    display_name: 'aproposof',
+    channel_url: 'https://www.twitch.tv/aproposof',
+    logo: 'https://static-cdn.jtvnw.net/jtv_user_pictures/8f7db860-56e9-4f0a-92fa-17828d048437-profile_image-150x150.png'
+  },
+  vod: {
+    id: '1000478671',
+    url: 'https://www.twitch.tv/videos/1000478671?t=2h2m29s',
+    offset: 7349,
+    preview_image_url: 'https://clips-media-assets2.twitch.tv/AT-cm%7C1154485590-preview.jpg'
+  },
+  broadcast_id: '39272803243',
+  game: 'Gartic Phone',
+  language: 'en',
+  title: 'SIR',
+  views: 62,
+  duration: 16.45,
+  created_at: '2021-04-27T21:21:16Z',
+  thumbnails: {
+    medium: 'https://clips-media-assets2.twitch.tv/AT-cm%7C1154485590-preview-480x272.jpg',
+    small: 'https://clips-media-assets2.twitch.tv/AT-cm%7C1154485590-preview-260x147.jpg',
+    tiny: 'https://clips-media-assets2.twitch.tv/AT-cm%7C1154485590-preview-86x45.jpg'
+  }
+}
+downloading..  {
+  url: 'https://clips-media-assets2.twitch.tv/AT-cm%7C1154485590.mp4',
+  filePath: 'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\shorts\\5uppp\\ObliqueSplendidCheesecakeVoteNay--VAw1ZHWiBpmFMAv.mp4'
+}
+download success!..  C:\Users\Jon\Personal Projects\pa-beta\src\twitch\shorts\5uppp\ObliqueSplendidCheesecakeVoteNay--VAw1ZHWiBpmFMAv.mp4
+downloaded..   C:\Users\Jon\Personal Projects\pa-beta\src\twitch\shorts\5uppp\ObliqueSplendidCheesecakeVoteNay--VAw1ZHWiBpmFMAv.mp4
+YT Metadata  {
+  title: 'SIR | 5uppp #shorts',
+  description: '#5uppp \n' +
+    '\n' +
+    'Historical Date: Apr 28, 2021 05:21:16\n' +
+    '\n' +
+    'Vod Moment: https://www.twitch.tv/videos/1000478671?t=2h2m29s \n' +
+    '\n' +
+    'https://www.twitch.tv/5uppp \n' +
+    '\n',
+  playlist: null,
+  notify: false,
+  thumbnail: null
+}
+UPLOADING TO YOUTUBE WITH PARAMS {
+  filePath: 'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\shorts\\5uppp\\ObliqueSplendidCheesecakeVoteNay--VAw1ZHWiBpmFMAv.mp4',
+  title: 'SIR | 5uppp #shorts',
+  description: '#5uppp \n' +
+    '\n' +
+    'Historical Date: Apr 28, 2021 05:21:16\n' +
+    '\n' +
+    'Vod Moment: https://www.twitch.tv/videos/1000478671?t=2h2m29s \n' +
+    '\n' +
+    'https://www.twitch.tv/5uppp \n' +
+    '\n',
+  playlist: null,
+  notify: false,
+  thumbnail: null
+}
+starting shorts for Jinnytty.. count:24
+making video for Jinnytty - 1 hello guyss
+downloadClip.. {
+  slug: 'EphemeralOnerousCakeVoHiYo-Lf_-jhvHNwiNbRL-',
+  tracking_id: '1155415082',
+  url: 'https://clips.twitch.tv/EphemeralOnerousCakeVoHiYo-Lf_-jhvHNwiNbRL-?tt_medium=clips_api&tt_content=url',
+  embed_url: 'https://clips.twitch.tv/embed?clip=EphemeralOnerousCakeVoHiYo-Lf_-jhvHNwiNbRL-&tt_medium=clips_api&tt_content=embed',
+  embed_html: "<iframe src='https://clips.twitch.tv/embed?clip=EphemeralOnerousCakeVoHiYo-Lf_-jhvHNwiNbRL-&tt_medium=clips_api&tt_content=embed' width='640' height='360' frameborder='0' scrolling='no' allowfullscreen='true'></iframe>",
+  broadcaster: {
+    id: '159498717',
+    name: 'jinnytty',
+    display_name: 'Jinnytty',
+    channel_url: 'https://www.twitch.tv/jinnytty',
+    logo: 'https://static-cdn.jtvnw.net/jtv_user_pictures/37567ea1-8246-4385-bcf6-8a3cdb9ca93b-profile_image-300x300.png'
+  },
+  curator: {
+    id: '15069164',
+    name: 'faildude',
+    display_name: 'Faildude',
+    channel_url: 'https://www.twitch.tv/faildude',
+    logo: 'https://static-cdn.jtvnw.net/jtv_user_pictures/072d6775-7593-4f51-816c-a19df037396a-profile_image-150x150.png'
+  },
+  vod: {
+    id: '1003804085',
+    url: 'https://www.twitch.tv/videos/1003804085?t=23m40s',
+    offset: 1420,
+    preview_image_url: 'https://clips-media-assets2.twitch.tv/42452142430-offset-1444-preview.jpg'
+  },
+  broadcast_id: '42452142430',
+  game: 'Just Chatting',
+  language: 'en',
+  title: 'hello guyss',
+  views: 1,
+  duration: 30,
+  created_at: '2021-04-28T15:28:06Z',
+  thumbnails: {
+    medium: 'https://clips-media-assets2.twitch.tv/42452142430-offset-1444-preview-480x272.jpg',
+    small: 'https://clips-media-assets2.twitch.tv/42452142430-offset-1444-preview-260x147.jpg',
+    tiny: 'https://clips-media-assets2.twitch.tv/42452142430-offset-1444-preview-86x45.jpg'
+  }
+}
+downloading..  {
+  url: 'https://clips-media-assets2.twitch.tv/42452142430-offset-1444.mp4',
+  filePath: 'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\shorts\\Jinnytty\\EphemeralOnerousCakeVoHiYo-Lf_-jhvHNwiNbRL-.mp4'
+}
+download success!..  C:\Users\Jon\Personal Projects\pa-beta\src\twitch\shorts\Jinnytty\EphemeralOnerousCakeVoHiYo-Lf_-jhvHNwiNbRL-.mp4
+downloaded..   C:\Users\Jon\Personal Projects\pa-beta\src\twitch\shorts\Jinnytty\EphemeralOnerousCakeVoHiYo-Lf_-jhvHNwiNbRL-.mp4
+YT Metadata  {
+  title: 'hello guyss | Jinnytty #shorts',
+  description: '#Jinnytty \n' +
+    '\n' +
+    'Historical Date: Apr 28, 2021 11:28:06\n' +
+    '\n' +
+    'Vod Moment: https://www.twitch.tv/videos/1003804085?t=23m40s \n' +
+    '\n' +
+    'https://www.twitch.tv/Jinnytty \n' +
+    '\n',
+  playlist: null,
+  notify: false,
+  thumbnail: null
+}
+UPLOADING TO YOUTUBE WITH PARAMS {
+  filePath: 'C:\\Users\\Jon\\Personal Projects\\pa-beta\\src\\twitch\\shorts\\Jinnytty\\EphemeralOnerousCakeVoHiYo-Lf_-jhvHNwiNbRL-.mp4',
+  title: 'hello guyss | Jinnytty #shorts',
+  description: '#Jinnytty \n' +
+    '\n' +
+    'Historical Date: Apr 28, 2021 11:28:06\n' +
+    '\n' +
+    'Vod Moment: https://www.twitch.tv/videos/1003804085?t=23m40s \n' +
+    '\n' +
+    'https://www.twitch.tv/Jinnytty \n' +
+    '\n',
+  playlist: null,
+  notify: false,
+  thumbnail: null
+}
+THE END!
+THE END!
+THE END!
+THE END!
+getLiveChannels [
+  'TinaKitten',     'stevesuptic',
+  'xchocobars',     'brookeab',
+  '5uppp',          'karlnetwork',
+  'itshafu',        'xQcOW',
+  '39daph',         'pokimane',
+  'kkatamina',      'Sykkuno',
+  'disguisedtoast', 'ludwig',
+  'yvonnie',        'lilypichu',
+  'fuslie',         'natsumiii',
+  'ariasaki',       'masayoshi',
+  'quarterjade',    'peterparktv',
+  'kristoferyee',   'amouranth',
+  'melina',         'imjasmine',
+  'indiefoxx',      'Jinnytty'
+]
+followChannel res {
+  data: [
+    {
+      id: '42451958334',
+      user_id: '10180005',
+      user_login: 'stevesuptic',
+      user_name: 'SteveSuptic',
+      game_id: '278888515',
+      game_name: 'Gartic Phone',
+      type: 'live',
+      title: 'Humble streamer is not late and never was',
+      viewer_count: 14712,
+      started_at: '2021-04-28T14:29:41Z',
+      language: 'en',
+      thumbnail_url: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_stevesuptic-{width}x{height}.jpg',
+      tag_ids: [Array],
+      is_mature: true
+    },
+    {
+      id: '39277353867',
+      user_id: '86061418',
+      user_login: '5uppp',
+      user_name: '5uppp',
+      game_id: '509658',
+      game_name: 'Just Chatting',
+      type: 'live',
+      title: 'Group games into big thing later | !displate ',
+      viewer_count: 8652,
+      started_at: '2021-04-28T15:05:50Z',
+      language: 'en',
+      thumbnail_url: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_5uppp-{width}x{height}.jpg',
+      tag_ids: [Array],
+      is_mature: false
+    },
+    {
+      id: '41609920237',
+      user_id: '30777889',
+      user_login: 'itshafu',
+      user_name: 'itsHafu',
+      game_id: '509658',
+      game_name: 'Just Chatting',
+      type: 'live',
+      title: 'HAFU -- GOOD MORNING!!!',
+      viewer_count: 7155,
+      started_at: '2021-04-28T13:57:10Z',
+      language: 'en',
+      thumbnail_url: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_itshafu-{width}x{height}.jpg',
+      tag_ids: [Array],
+      is_mature: false
+    },
+    {
+      id: '42452142430',
+      user_id: '159498717',
+      user_login: 'jinnytty',
+      user_name: 'Jinnytty',
+      game_id: '509658',
+      game_name: 'Just Chatting',
+      type: 'live',
+      title: 'DAY 3 WORKOUT',
+      viewer_count: 3419,
+      started_at: '2021-04-28T15:03:49Z',
+      language: 'en',
+      thumbnail_url: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_jinnytty-{width}x{height}.jpg',
+      tag_ids: [Array],
+      is_mature: false
+    }
+  ],
+  pagination: {}
+}
+stream {
+  id: '42451958334',
+  user_id: '10180005',
+  user_login: 'stevesuptic',
+  user_name: 'SteveSuptic',
+  game_id: '278888515',
+  game_name: 'Gartic Phone',
+  type: 'live',
+  title: 'Humble streamer is not late and never was',
+  viewer_count: 14712,
+  started_at: '2021-04-28T14:29:41Z',
+  language: 'en',
+  thumbnail_url: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_stevesuptic-{width}x{height}.jpg',
+  tag_ids: [ '6ea6bca4-4712-4ab9-a906-e3336a9d8039' ],
+  is_mature: true
+}
+stream {
+  id: '39277353867',
+  user_id: '86061418',
+  user_login: '5uppp',
+  user_name: '5uppp',
+  game_id: '509658',
+  game_name: 'Just Chatting',
+  type: 'live',
+  title: 'Group games into big thing later | !displate ',
+  viewer_count: 8652,
+  started_at: '2021-04-28T15:05:50Z',
+  language: 'en',
+  thumbnail_url: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_5uppp-{width}x{height}.jpg',
+  tag_ids: [ '6ea6bca4-4712-4ab9-a906-e3336a9d8039' ],
+  is_mature: false
+}
+stream {
+  id: '41609920237',
+  user_id: '30777889',
+  user_login: 'itshafu',
+  user_name: 'itsHafu',
+  game_id: '509658',
+  game_name: 'Just Chatting',
+  type: 'live',
+  title: 'HAFU -- GOOD MORNING!!!',
+  viewer_count: 7155,
+  started_at: '2021-04-28T13:57:10Z',
+  language: 'en',
+  thumbnail_url: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_itshafu-{width}x{height}.jpg',
+  tag_ids: [ '6ea6bca4-4712-4ab9-a906-e3336a9d8039' ],
+  is_mature: false
+}
+stream {
+  id: '42452142430',
+  user_id: '159498717',
+  user_login: 'jinnytty',
+  user_name: 'Jinnytty',
+  game_id: '509658',
+  game_name: 'Just Chatting',
+  type: 'live',
+  title: 'DAY 3 WORKOUT',
+  viewer_count: 3419,
+  started_at: '2021-04-28T15:03:49Z',
+  language: 'en',
+  thumbnail_url: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_jinnytty-{width}x{height}.jpg',
+  tag_ids: [ '6ea6bca4-4712-4ab9-a906-e3336a9d8039' ],
+  is_mature: false
+}
+makeShorts..  {
+  channels: [ 'stevesuptic', '5uppp', 'itshafu', 'Jinnytty' ],
+  viewThreshold: 100,
+  notify: false,
+  upload: true
+}
+starting shorts for stevesuptic.. count:21
+already did video for stevesuptic skipping...
+starting shorts for 5uppp.. count:22
+already did video for 5uppp skipping...
+starting shorts for itshafu.. count:20
+already did video for itshafu skipping...
+starting shorts for Jinnytty.. count:25
+already did video for Jinnytty skipping...
+Done in 16078.75s.

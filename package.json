@@ -249,6 +249,7 @@
   "dependencies": {
     "@aws-sdk/client-codebuild": "^3.8.1",
     "@google-cloud/pubsub": "^2.10.0",
+    "@jimp/plugin-mask": "^0.16.1",
     "axios": "^0.21.1",
     "body-parser": "^1.19.0",
     "check-internet-connected": "^2.0.5",
@@ -260,18 +261,22 @@
     "express": "^4.17.1",
     "googleapis": "^70.0.0",
     "history": "^5.0.0",
+    "jimp": "^0.16.1",
     "js-base64": "^3.6.0",
     "lodash": "^4.17.21",
     "moment": "^2.29.1",
     "node-abi": "^2.21.0",
     "node-fetch": "^2.6.1",
+    "node-storage": "0.0.9",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
     "regenerator-runtime": "^0.13.5",
     "rxjs": "^6.6.7",
+    "sound-play": "^1.1.0",
     "source-map-support": "^0.5.19",
-    "title-case": "^3.0.3"
+    "title-case": "^3.0.3",
+    "uuid": "^8.3.2"
   },
   "devEngines": {
     "node": ">=10.x",
