@@ -1,4 +1,6 @@
 
+// https://twitchtokengenerator.com/
+
 /* eslint global-require: off, no-console: off */
 
 /**
@@ -97,6 +99,8 @@ const init = async()=>{
       console.log("No connection", err);
     });
   }, 3000)
+
+
 }
 
 const createWindow = async () => {
@@ -190,6 +194,59 @@ const createWindow = async () => {
     
 
     AuthService.googleAuth('src/credentials.json')
+
+    const HOUR = 60 * 60 * 1000;
+
+    console.log(`autoUploadInterval started every 3 hours`)
+    var autoUploadInterval = setInterval(async()=>{
+      
+      let channels = [
+        "TinaKitten", 
+        // "SteveSuptic", 
+        // "xChocoBars", 
+        // "BrookeAB", 
+        // "5uppp", 
+        "karlnetwork", 
+        "itshafu", 
+
+        "xQcOW",
+        "39daph", 
+        "pokimane", 
+        "kkatamina",
+        "Sykkuno",
+        "disguisedtoast",
+        "ludwig",
+        "yvonnie",
+
+        "lilypichu", 
+        "fuslie", 
+        // "natsumiii",
+        "ariasaki", 
+        "masayoshi", 
+        "quarterjade", 
+        "peterparktv", 
+        "kristoferyee", 
+        "kyedae_",
+        // "susu_jpg",
+        "melina", 
+        // "imjasmine",
+        "Jinnytty", 
+        // "justaminx", 
+        // "hasanabi",
+        "botezlive", 
+        "qtcinderella"
+      ]
+
+      await TwitchTubeService.postTopShort({
+        channels,
+        viewThreshold:800,
+        interval:"week",
+        notify:false,
+        upload:true
+      })
+
+    }, HOUR * 3)
+  
   })
 
   

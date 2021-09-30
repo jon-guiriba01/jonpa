@@ -14,7 +14,8 @@ import {
   shell,
   BrowserWindow,
   MenuItemConstructorOptions,
-  clipboard
+  clipboard,
+  Notification
 } from 'electron';
 import path from 'path';
 import * as http from 'http';
@@ -34,6 +35,8 @@ import firefox from 'selenium-webdriver/firefox'
 
 const UPLOAD_URL = 'https://www.youtube.com/upload'
 const WAIT_DURATION = 2 * 1000
+import sound from "sound-play"
+import UtilService from './UtilService'
 
 class SeleniumService{
 
@@ -64,8 +67,8 @@ class SeleniumService{
         await eTitle.sendKeys(params.title)
 
         // select made for kids radio
-        let eKidsSelect = await eModal.findElement(By.name('NOT_MADE_FOR_KIDS'))
-        await eKidsSelect.findElement(By.id("radioLabel")).click()
+        // let eKidsSelect = await eModal.findElement(By.name('NOT_MADE_FOR_KIDS'))
+        // await eKidsSelect.findElement(By.id("radioLabel")).click()
 
 
         // aapply thumbnail
@@ -102,70 +105,78 @@ class SeleniumService{
         }
 
         
-        // if(params.playlist){
+        if(params.playlist){
 
-        //   let ePlaylistToggle = await eModal.findElement(By.css(
-        //     '.style-scope.ytcp-text-dropdown-trigger'
-        //   ))
+          try{
 
-        //   await ePlaylistToggle.click()
-        //   await this.sleep(2000)
+            let ePlaylistToggle = await eModal.findElement(By.css(
+              '.style-scope.ytcp-text-dropdown-trigger'
+            ))
+            
+            await ePlaylistToggle.click()
+            await this.sleep(2000)
 
-        //   let ePlaylistSearch = await eModal.findElement(By.xpath(
-        //     '/html/body/ytcp-playlist-dialog/tp-yt-paper-dialog/div[1]/input'
-        //   ))
-        //   await ePlaylistSearch.sendKeys(params.playlist)
-        //   await this.sleep(2000)
+            let ePlaylistSearch = await eModal.findElement(By.xpath(
+              '/html/body/ytcp-playlist-dialog/tp-yt-paper-dialog/div[1]/input'
+            ))
+            await ePlaylistSearch.sendKeys(params.playlist)
+            await this.sleep(2000)
+            
+            let ePlaylistItem = await eModal.findElement(By.xpath(
+              "/html/body/ytcp-playlist-dialog/tp-yt-paper-dialog/ytcp-checkbox-group/div/ul/tp-yt-iron-list/div/ytcp-ve[1]/li/label"
+            )) 
+            await this.sleep(1000)
+
+            // try{
+            // let ePlaylistItem = await ePlaylistContainer.findElement(By.linkText(params.playlist))
+            // await ePlaylistItem.click()
+            await ePlaylistItem.click()
+            await this.sleep(1000)
+
+            let eDoneBtn = await eModal.findElement(By.xpath(
+              '/html/body/ytcp-playlist-dialog/tp-yt-paper-dialog/div[2]/ytcp-button[3]/div'
+            ))
+            eDoneBtn.click()
+            await this.sleep(1000)
+
+            // }catch(err){
+            //   console.log("error selecting existing playlist, creating a new one")
+            //   let eNewPlaylistBtn = await eModal.findElement(By.xpath(
+            //     '/html/body/ytcp-playlist-dialog/tp-yt-paper-dialog/div[2]/ytcp-button[1]'
+            //   ))
+            //   await eNewPlaylistBtn.click()
+            //   await this.sleep(1000)
+
+
+            //   let eNewPlaylistTextarea = await eModal.findElement(By.xpath(
+            //     '/html/body/ytcp-playlist-dialog/tp-yt-paper-dialog/div[2]/div[1]/ytcp-form-textarea/div/textarea'
+            //   ))
+            //   await eNewPlaylistTextarea.click()
+            //   await eNewPlaylistTextarea.sendKeys(params.playlist)
+            //   await this.sleep(1000)
+
+            //   let eCreateBtn = await eModal.findElement(By.xpath(
+            //     '/html/body/ytcp-playlist-dialog/tp-yt-paper-dialog/div[3]/ytcp-button[2]/div'
+            //   ))
+            //   eCreateBtn.click()
+            //   await this.sleep(1000)
+
+            //   let ePlaylistItem = await eModal.findElement(By.linkText(params.playlist))
+            //   await ePlaylistItem.click()
+
+            //   let eDoneBtn = await eModal.findElement(By.xpath(
+            //     '/html/body/ytcp-playlist-dialog/tp-yt-paper-dialog/div[2]/ytcp-button[3]/div'
+            //   ))
+            //   eDoneBtn.click()
+            //   await this.sleep(1000)
+            // }
+
+          }catch(err){
+            console.log(err)
+          }
+
           
-        //   let ePlaylistContainer = await eModal.findElement(By.xpath(
-        //     "//div[@id='checkbox']"
-        //   ))
-        //   await this.sleep(1000)
-
-        //   try{
-        //     // let ePlaylistItem = await ePlaylistContainer.findElement(By.linkText(params.playlist))
-        //     // await ePlaylistItem.click()
-        //     await ePlaylistContainer.click()
-        //     await this.sleep(1000)
-
-        //     let eDoneBtn = await ePlaylistContainer.findElement(By.xpath(
-        //       '/html/body/ytcp-playlist-dialog/tp-yt-paper-dialog/div[2]/ytcp-button[3]/div'
-        //     ))
-        //     eDoneBtn.click()
-        //     await this.sleep(1000)
-
-        //   }catch(err){
-        //     // let eNewPlaylistBtn = await ePlaylistContainer.findElement(By.xpath(
-        //     //   '/html/body/ytcp-playlist-dialog/tp-yt-paper-dialog/div[2]/ytcp-button[1]'
-        //     // ))
-        //     // await eNewPlaylistBtn.click()
-        //     // await this.sleep(1000)
-
-
-        //     // let eNewPlaylistTextarea = await ePlaylistContainer.findElement(By.xpath(
-        //     //   '/html/body/ytcp-playlist-dialog/tp-yt-paper-dialog/div[2]/div[1]/ytcp-form-textarea/div/textarea'
-        //     // ))
-        //     // await eNewPlaylistTextarea.click()
-        //     // await eNewPlaylistTextarea.sendKeys(params.playlist)
-        //     // await this.sleep(1000)
-
-        //     // let eCreateBtn = await ePlaylistContainer.findElement(By.xpath(
-        //     //   '/html/body/ytcp-playlist-dialog/tp-yt-paper-dialog/div[3]/ytcp-button[2]/div'
-        //     // ))
-        //     // eCreateBtn.click()
-        //     // await this.sleep(1000)
-
-        //     // let ePlaylistItem = await ePlaylistContainer.findElement(By.linkText(params.playlist))
-        //     // await ePlaylistItem.click()
-
-        //     // let eDoneBtn = await ePlaylistContainer.findElement(By.xpath(
-        //     //   '/html/body/ytcp-playlist-dialog/tp-yt-paper-dialog/div[2]/ytcp-button[3]/div'
-        //     // ))
-        //     // eDoneBtn.click()
-        //     // await this.sleep(1000)
-        //   }
-          
-        // }
+        }
 
         await this.sleep(500)
 
@@ -178,10 +189,10 @@ class SeleniumService{
 
         if (!params.notify){
           // let notifyContainer = await eModal.findElement(By.id('notify-subscribers'))
-          let eNotify = await eModal.findElement(By.xpath(
-            '/html/body/ytcp-uploads-dialog/tp-yt-paper-dialog/div/ytcp-animatable[1]/ytcp-video-metadata-editor/div/ytcp-video-metadata-editor-advanced/div[5]/div[4]/ytcp-checkbox-lit/div[2]'
-          ))
-          await eNotify.click()
+          // let eNotify = await eModal.findElement(By.xpath(
+          //   '/html/body/ytcp-uploads-dialog/tp-yt-paper-dialog/div/ytcp-animatable[1]/ytcp-video-metadata-editor/div/ytcp-video-metadata-editor-advanced/div[5]/div[4]/ytcp-checkbox-lit/div[2]'
+          // ))
+          // await eNotify.click()
         }
 
         await this.sleep(500)
@@ -200,31 +211,33 @@ class SeleniumService{
         // video_id = self.get_video_id(modal)
         let eStatus = await eModal.findElement(By.xpath("/html/body/ytcp-uploads-dialog/tp-yt-paper-dialog/div/ytcp-animatable[2]/div/div[1]/ytcp-video-upload-progress/span"))
 
-        // while True:
-        //     in_process = status_container.text.find(UPLOADED) != -1
-        //     if in_process:
-        //         sleep(self.timeout)
-        //     else:
-        //         break
 
         let eDoneButton = await eModal.findElement(By.id("done-button"))
-
-        // if done_button.get_attribute("aria-disabled") == "true":
-        //     error_message = self.driver.find_element_by_xpath(ERROR_CONTAINER).text
-        //     return False, None
-
         await this.sleep(WAIT_DURATION)
         eDoneButton.click()
-        // sleep(self.timeout)
-        // await this.driver.wait(until.titleIs('webdriver - Google Search'), 1000);
-        console.log('THE END!')
+
+        await driver.wait(until.elementLocated(By.xpath("//div[contains(text(), 'Video upload complete')]")), 1000 * 60 * 5);
+        await this.sleep(2000)
+
+        await driver.quit();
+
+        new Notification({
+          title: 'upload finished',
+          body: params.title,
+          hasReply:false
+        }).show()
+
+        await sound.play(`${UtilService.PATH.ASSET}/audio/ring1.mp3`, 1);
+        console.log('Upload finished..')
+        
+        
         resolve(null)
       } catch(err){
         console.log(err)
-        reject()
+        resolve(null)
       }finally {
-        await this.sleep(60000 * 20)
-        await driver.quit();
+        // await this.sleep(60000 * 10)
+        // await driver.quit();
       }
 
     })

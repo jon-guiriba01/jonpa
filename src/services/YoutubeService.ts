@@ -14,6 +14,7 @@ import {
   shell,
   BrowserWindow,
   MenuItemConstructorOptions,
+  Notification,
   clipboard
 } from 'electron';
 import path from 'path';
@@ -27,12 +28,14 @@ import bodyParser from 'body-parser'
 
 import EventService from './EventService'
 import SeleniumService from './SeleniumService'
+import UtilService from './UtilService'
 import { encode, decode } from 'js-base64';
 
 var instance = null
 import youtubedl from 'youtube-dl-exec'
 import {Builder, By, Key, until} from 'selenium-webdriver'
 import firefox from 'selenium-webdriver/firefox'
+import sound from "sound-play"
 
 
 
@@ -57,7 +60,8 @@ class YoutubeService{
   oAuth2Client
   youtube
   pubSubClient
-  clipboardInterval
+  clipboardDLULInterval
+  clipboardDLInterval
   constructor(){
   }
 
@@ -70,34 +74,55 @@ class YoutubeService{
   }
 
   async download(url){
-    console.log("\nYoutube Download\n", url)
-    let metaData = await youtubedl(url, {
-      dumpJson: true,
-      noWarnings: true,
-      noCallHome: true,
-      noCheckCertificate: true,
-      preferFreeFormats: true,
-      youtubeSkipDashManifest: true,
-      referer: url
-    })
-    let dlRes = await youtubedl(url, {
-      noWarnings: true,
-      noCallHome: true,
-      noCheckCertificate: true,
-      preferFreeFormats: true,
-      youtubeSkipDashManifest: true,
-      referer: url,
-      output:"src/youtube/%(title)s.%(ext)s"
-    })
+    try{
+      await fs.rmdirSync(`${UtilService.PATH.LOCAL}\\youtube\\clips`, {recursive:true})
+      await fs.mkdirSync(`${UtilService.PATH.LOCAL}\\youtube\\clips`)
 
-    return {
-      fileName:`${metaData.fulltitle}.${metaData.ext}`,
-      title:metaData.title,
-      tags:metaData.tags,
+      console.log("\nYoutube Download\n", url)
+      let metaData = await youtubedl(url, {
+        dumpJson: true,
+        noWarnings: true,
+        noCallHome: true,
+        noCheckCertificate: true,
+        preferFreeFormats: true,
+        youtubeSkipDashManifest: true,
+        referer: url
+      })
+      console.log("\nmetaData\n", metaData)
+      let filename = `${UtilService.getUqId()}`
+      let dlRes = await youtubedl(url, {
+        noWarnings: true,
+        noCallHome: true,
+        noCheckCertificate: true,
+        preferFreeFormats: true,
+        youtubeSkipDashManifest: true,
+        referer: url,
+        output:`src/youtube/clips/${filename}.%(ext)s`
+      })
+      // console.log("dlRes\n", dlRes)
+      let files = await fs.readdirSync(`${UtilService.PATH.LOCAL}\\youtube\\clips`)
+
+      await new Notification({
+        title: 'download done',
+        body: files[0],
+        hasReply:true
+      }).show()
+      await sound.play(`${UtilService.getLocalPath()}/assets/audio/ring1.mp3`, 1);
+
+      return {
+        filePath:`${UtilService.PATH.LOCAL}\\youtube\\clips\\${files[0]}`,
+        title:metaData.title,
+        tags:metaData.tags,
+        description:metaData.description,
+        notify:false
+      }
+    }catch(err){
+      console.log(err)
     }
   }
 
   upload(params){
+
     console.log("UPLOADING TO YOUTUBE WITH PARAMS", params)
     return SeleniumService.ytUpload(params)
   }
@@ -159,16 +184,44 @@ class YoutubeService{
   }
 
   enableAutoClipoboardDownload(){
-    if(this.clipboardInterval) return
+    if(this.clipboardDLInterval) return
 
-    this.clipboardInterval = setInterval(()=>{
+    this.clipboardDLInterval = setInterval(()=>{
+      if(clipboard.readText().includes('youtube.com/watch')){
+        let url = clipboard.readText()
+        clipboard.clear()
+        
+        this.download(url).then(async (opts)=>{
+
+          new Notification({
+            title: 'youtbe download finished',
+            body: params.title,
+            hasReply:false
+          }).show()
+
+          await sound.play(`${UtilService.PATH.ASSET}/audio/ring1.mp3`, 1);
+          
+        }).catch((err)=>{
+          console.log("err", err)
+        })
+        
+      }
+    },2500)
+
+  }
+  enableAutoClipoboardDLUL(){
+    if(this.clipboardDLULInterval) return
+
+    this.clipboardDLULInterval = setInterval(()=>{
       if(clipboard.readText().includes('youtube.com/watch')){
         let url = clipboard.readText()
         clipboard.clear()
         
         this.download(url).then((opts)=>{
           this.upload({
-            filePath:opts.fileName,
+            filePath:opts.filePath,
+            title:opts.title,
+            description:opts.description,
           })
         }).catch((err)=>{
           console.log("err", err)
@@ -178,7 +231,7 @@ class YoutubeService{
     },2500)
   }
 
-  disableAutoClipoboardDownload(){
+  disableAutoClipoboardTransfer(){
     if(this.clipboardInterval)
       clearInterval(this.clipboardInterval)
   }

@@ -7,6 +7,7 @@ import moment from 'moment';
 import UtilService from './UtilService'
 import express from 'express'
 import bodyParser from 'body-parser'
+import axios from 'axios'
 
 
 var _ = require('lodash');
@@ -15,6 +16,7 @@ var instance = null
 
 const DOMAIN = "https://api.twitch.tv"
 const TOP_CLIPS_PATH = "kraken/clips/top"
+const CHANNELS_PATH = "kraken/channels"
 const HELIX_PATH = "helix/clips"
 const MIX_PATH = "mix"
 const CLEAN_DIRS = true
@@ -44,6 +46,83 @@ class TwitchService{
 		})
 
 		return res.clips
+	}
+
+	async getUsers(channels){
+		let users = {}
+		let paramsStr = "?1=1&login="
+		for(let channel of channels){
+			paramsStr +=`${channel},`
+		}
+		paramsStr = paramsStr.slice(0, -1)
+		let res = await axios.get(`https://api.twitch.tv/kraken/users${paramsStr}`,{
+		 headers: {
+ 		    "Accept": "application/vnd.twitchtv.v5+json",
+ 		    "Client-Id": process.env.TWITCH_CLIENT_ID,
+ 		    "Authorization": `Bearer ${process.env.TWITCH_OAUTH}`, 
+ 		  }
+	  })
+
+		for(let user of res.data.users){
+			users[user.display_name.toLowerCase()] = user
+		}
+
+	  return users
+	}
+
+	async getChannelRecentVideos(channelId){
+
+  	let res = await axios.get(`https://api.twitch.tv/helix/videos?user_id=${channelId}&period=week&first=50`,{
+		  headers: {
+ 		    "Accept": "application/vnd.twitchtv.v5+json",
+ 		    "Client-Id": process.env.TWITCH_CLIENT_ID,
+ 		    "Authorization": `Bearer ${process.env.TWITCH_OAUTH}`, 
+ 		  }
+	  })
+  	return res.data.data
+
+	}
+
+  async getLiveChannels(params){
+		console.log("getLiveChannels", params.channels)
+		let paramsStr = "?1=1"
+		for(let channel of params.channels){
+			paramsStr += `&user_login=${channel}`
+		}
+  	// let res = await fetch(`https://api.twitch.tv/kraken/streams${paramsStr}`, {
+		let res = await fetch(`https://api.twitch.tv/helix/streams${paramsStr}`, {
+		  headers: {
+		    "Accept": "application/vnd.twitchtv.v5+json",
+		    "client-id": process.env.TWITCH_CLIENT_ID,
+		    "Authorization": `Bearer ${process.env.TWITCH_OAUTH}`, 
+		  },
+			method: 'GET',
+		}).then(res => {
+			let json = res.json()
+	 	 return json
+		})
+
+		console.log("followChannel res", res)
+	
+		let channels = []
+		let streams = []
+
+		for(let stream of res.data){
+			console.log("stream", stream)
+			if(stream.type == 'live'){
+				for(let c of params.channels){
+					if(c.toLowerCase() == stream.user_login.toLowerCase()){
+						channels.push(c)
+						streams.push(stream)
+					}
+				}
+			}
+		}
+
+		return {
+			channels:channels,
+			streams:streams
+		}
 	}
 
 	downloadClip(clip,dir){
@@ -124,52 +203,6 @@ class TwitchService{
 
 		})
 	}
-
-	async
-
-
-  async getLiveChannels(params){
-		console.log("getLiveChannels", params.channels)
-		let paramsStr = "?1=1"
-		for(let channel of params.channels){
-			paramsStr += `&user_login=${channel}`
-		}
-  	// let res = await fetch(`https://api.twitch.tv/kraken/streams${paramsStr}`, {
-		let res = await fetch(`https://api.twitch.tv/helix/streams${paramsStr}`, {
-		  headers: {
-		    "Accept": "application/vnd.twitchtv.v5+json",
-		    "client-id": process.env.TWITCH_CLIENT_ID,
-		    "Authorization": `Bearer ${process.env.TWITCH_OAUTH}`, 
-		  },
-			method: 'GET',
-		}).then(res => {
-			let json = res.json()
-	 	 return json
-		})
-
-		console.log("followChannel res", res)
-	
-		let channels = []
-		let streams = []
-
-		for(let stream of res.data){
-			console.log("stream", stream)
-			if(stream.type == 'live'){
-				for(let c of params.channels){
-					if(c.toLowerCase() == stream.user_login.toLowerCase()){
-						channels.push(c)
-						streams.push(stream)
-					}
-				}
-			}
-		}
-
-		return {
-			channels:channels,
-			streams:streams
-		}
-	}
-
 
 
 	static get(){

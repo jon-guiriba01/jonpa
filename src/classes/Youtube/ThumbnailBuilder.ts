@@ -21,9 +21,9 @@ export class ThumbnailBuilder{
 	settings = {
 		outPath:"",
 		text:{
-			charLimit:60,
+			charLimit:70,
 			size:20,
-			fontPath:UtilService.getPath()+"/assets/fonts/Bangers.fnt"
+			fontPath:UtilService.getPath()+"/assets/fonts/Bangers-67.fnt"
 		},
 		mode:ThumbnailBuilder.MODE.COMPILATION
 	}
@@ -51,11 +51,24 @@ export class ThumbnailBuilder{
 
 	build(){
 		return new Promise(async(resolve,reject)=>{
-			switch (this.settings.mode) {
-				case ThumbnailBuilder.MODE.COMPILATION:
-					await this.buildCompilationThumbnail()
-					resolve(true)
-					break;
+			try{
+				switch (this.settings.mode) {
+					case ThumbnailBuilder.MODE.COMPILATION:
+						await this.buildCompilationThumbnail()
+						resolve(true)
+						break;
+					case ThumbnailBuilder.MODE.SPECIAL:
+						await this.buildSpecialThumbnail()
+						resolve(true)
+						break;
+					case ThumbnailBuilder.MODE.SHORT:
+						await this.buildShortThumbnail()
+						resolve(true)
+						break;
+				}
+			}catch(err){
+				console.log(err)
+				resolve()
 			}
 		})
 	}
@@ -68,6 +81,48 @@ export class ThumbnailBuilder{
 		this.texts[label] = text
 	}
 
+	async buildSpecialThumbnail(){
+		console.log('buildSpecialThumbnail', {images:this.images,texts:this.texts})
+
+	  let base =	await this.imageOverlay(
+	  	await jimp.read(this.images['bg']),
+	  	await jimp.read(this.images['primary']),
+	  	0, 0
+		)
+
+    await base.write(this.settings.outPath)
+	}
+
+	async buildShortThumbnail(){
+		console.log('buildShortThumbnail', {images:this.images,texts:this.texts})
+
+	 //  let base =	await this.imageOverlay(
+	 //  	await jimp.read(this.images['bg']),
+	 //  	await jimp.read(this.images['secondary']),
+	 //  	20, 720-220
+		// )
+		let base = await jimp.read(this.images['bg'])
+
+		let frame = `${UtilService.PATH.ASSETS}\\imgs\\thumbs\\frame.png`
+	  await base.composite(
+	  	await jimp.read(frame), 0, 0
+		)
+
+		let title1 = this.ytTitle(this.texts['title1'], this.settings.text.charLimit)
+	  await this.applyText(base,title1,{
+	  		x: 1280-550-34,
+	  		y: 720+50,
+	  		w: 550,
+	  		h: 40,
+	  		minTextW: 100,
+	  		maxTextW: 550,
+	  		borderImgPath:`${UtilService.PATH.ASSETS}\\imgs\\thumbs\\bubble_long.png`
+	  	}						
+	  )
+
+    await base.write(this.settings.outPath)
+	}
+	
 	async buildCompilationThumbnail(){
 		console.log('buildCompilationThumbnail', {images:this.images,texts:this.texts})
 
@@ -182,6 +237,9 @@ export class ThumbnailBuilder{
     await UtilService.wait(1000)
 		let b1 = await jimp.read(b1Path)
 
+		if(size.h > config.h)
+			config.y += size.h - config.h + 5
+
     await base.composite(b1, config.x-10 , config.y-10 )
 
     await base.print(
@@ -219,6 +277,7 @@ export namespace ThumbnailBuilder{
 
 	export enum MODE{
 		COMPILATION,
-		SPECIAL
+		SPECIAL,
+		SHORT
 	}
 }

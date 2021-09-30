@@ -3,7 +3,7 @@ import path from 'path';
 import fetch from 'node-fetch';
 import * as fs from 'fs';
 import moment from 'moment';
-// import * as _ from 'lodash';
+import * as _ from 'lodash';
 import { titleCase } from "title-case";
 import YoutubeService from './YoutubeService'
 import DescriptionBuilder from '../classes/Youtube/DescriptionBuilder'
@@ -12,9 +12,9 @@ import VideoService from './VideoService'
 import TwitchService from './TwitchService'
 import SeleniumService from './SeleniumService'
 import UtilService from './UtilService'
+import StorageService from './StorageService'
 import Storage from 'node-storage'
 
-var _ = require('lodash');
 
 var instance = null
 
@@ -23,11 +23,15 @@ const TOP_CLIPS_PATH = "kraken/clips/top"
 const HELIX_PATH = "helix/clips"
 const MIX_PATH = "mix"
 const CLEAN_DIRS = false
+const BLACKLIST_TITLES = ['insta', 'reddit', 'redd.it']
 
 class TwitchTubeService{
-	constructor(){}
+	store
+	constructor(){
+	}
 
-	async makeShorts2(params){
+	async makeShorts(params){
+		let processId = UtilService.getUqId()
 		await this.prepareShortsDirs([params.channel])
 		console.log("making shorts for.. " + params.channel)
 		let clips = await TwitchService.getTopClips({
@@ -42,32 +46,29 @@ class TwitchTubeService{
 			return
 		}
 
-		var store = await new Storage(`${UtilService.getPath()}/twitch-storage`)
-
 		let prevTitlesEntry = `${params.channel}.shorts.prevTitles`
-		let prevTitles = store.get(prevTitlesEntry) || []
-
-		clips.map(e=>console.log(e.views + " " + e.title + " " + moment().diff(moment(e.created_at),'hours') +" hours since") )
+		let prevTitles = await StorageService.get(prevTitlesEntry) || []
+		let prevVideos = await TwitchService.getChannelRecentVideos(params.channelId)
+		let prevVidTitles = prevVideos.map(e=>e.title)
 
 		clips = clips.filter( e=>{
       return e.views > params.viewThreshold &&
-      	moment().diff(moment(e.created_at),'hours') < 72 &&
-      	prevTitles.map(e=>e.toLowerCase()).includes(e.title.toLowerCase()) 
+      	e.title.length > 4 &&
+      	// moment().diff(moment(e.created_at),'hours') < 72 &&
+      	!prevTitles.includes(this.ytTitle(e.title)) &&
+      	!this.isVidTitle(prevVidTitles,e.title) &&
+      	e.duration > 15 &&
+      	!(new RegExp(BLACKLIST_TITLES.join("|")).test(e.title))
     })
 
 		clips.sort( (a,b)=>{
       return moment(b.created_at).diff(moment(a.created_at), 'seconds')
     })
 
-		clips.map(e=>console.log(e.views + " " + e.title + " " + moment().diff(moment(e.created_at),'hours') +" hours since") )
-
+		clips.map(e=>console.log(e.views + " " + e.title + " " + moment().diff(moment(e.created_at),'hours') +" hours ago") )
 
 		let lastUsedEntry = `${params.channel}.shorts.lastUsed`
-		let lastUsed = store.get(lastUsedEntry)
-		if(lastUsed && moment().diff(moment(lastUsed), 'minutes') < 30){
-		  console.log("already did video for "+ params.channel + " skipping...")
-		  return
-		}
+		let lastUsed = StorageService.get(lastUsedEntry)
 
 
     let selectedClip = clips[0]
@@ -77,13 +78,11 @@ class TwitchTubeService{
     	return
     }
 
-
-    selectedClip.title = 
-      selectedClip.title.length > 50 ? 
-      selectedClip.title.substring(0,50) : 
-      selectedClip.title
-    selectedClip.title = selectedClip.title.replace(/[^\x00-\x7F]|<|>/g, "")
+    selectedClip.title = this.ytTitle(selectedClip.title)
     prevTitles.push(selectedClip.title)
+
+    if(prevTitles.length > 100)
+    	prevTitles.shift()
 
     console.log('making video for ' + params.channel + " - " + selectedClip.views + " " + selectedClip.title)
 
@@ -91,125 +90,41 @@ class TwitchTubeService{
     
     let filePath = await TwitchService.downloadClip(selectedClip, downloadDir)
     console.log("downloaded..  ", filePath)
+    selectedClip.filePath = filePath
+    StorageService.set(lastUsedEntry, moment().format())
+    StorageService.set(prevTitlesEntry, prevTitles)
 
-    store.put(lastUsedEntry, moment().format())
-    store.put(prevTitlesEntry, prevTitles)
+  	let thumbPath = `${UtilService.getLocalPath()}\\twitch\\shorts\\${selectedClip.broadcaster.display_name}\\thumbnail_${processId}.jpg`
+    try{
+    	await this.buildShortThumbnail([selectedClip], thumbPath)
+    }catch(err){
+    	console.log(err)
+    }
 
     let uploadData = await this.makeShortsYTMeta(selectedClip, {
       channel:params.channel,
-      notify:params.notify
+      notify:params.notify,
+      thumbPath:thumbPath
     })
+
+
+    let outDir = `${UtilService.getPath()}\\twitch\\shorts\\${selectedClip.broadcaster.display_name}`
+    let generatedPath = await this.generateShort([selectedClip], outDir, processId)
 
     
     console.log("YT Metadata ", uploadData)
 
 		if(params.upload){
     	console.log("uploading to youtube..")
-			YoutubeService.upload({
-				filePath:UtilService.getLocalRoot()+"\\"+filePath,
+			await YoutubeService.upload({
+				filePath:UtilService.getLocalRoot()+"\\"+generatedPath,
 				...uploadData
 			})
 		}
 
 	}
-	async makeShorts(params){
-		console.log("makeShorts.. ", params)
-		await this.prepareShortsDirs(params.channels)
-		let interval = params.interval
-		let channels = await this.getChannelsData(params.channels, interval)
 
-		var store = await new Storage(`${UtilService.getPath()}/twitch-storage`)
-		let promises = []
-
-		for(let streamer in channels){
-
-		    try{
-		      let stream = params.streams.find(e=>e.user_name.toLowerCase() == streamer.toLowerCase())
-		      console.log("streamData", stream)
-
-		      if(!channels[streamer]['clips']){
-		      	return
-		      }
-		      console.log(`starting shorts for ${streamer}.. count:${channels[streamer]['clips'].length}` )
-		      let sortedClips = channels[streamer]['clips'].sort( (a,b)=>{
-		        return moment(b.created_at).diff(moment(a.created_at), 'seconds')
-		      })
-		      let lastUsedEntry = `${streamer}.shorts.lastUsed`
-		      let prevTitlesEntry = `${streamer}.shorts.prevTitles`
-
-		      let lastUsed = store.get(lastUsedEntry)
-		      if(lastUsed && moment().diff(moment(lastUsed), 'minutes') < 30){
-		        console.log("already did video for "+ streamer + " skipping...")
-		        return
-		      }
-
-		      let prevTitles = store.get(prevTitlesEntry) || []
-		      // console.log(`prevTitles - ${streamer} - ${prevTitles.join(',')}` )
-
-		      let clip
-		      for(let i=0; i < sortedClips.length; i++){
-		      	let isStreamTitle = prevTitles.map(e=>e.toLowerCase()).includes(sortedClips[i].title.toLowerCase()) 
-		      	let isUsedTitle = sortedClips[i].title.toLowerCase() == stream.title.toLowerCase() 
-		      	let isLowViews = sortedClips[i].view < params.viewThreshold
-		      	console.log("c " + sortedClips[i].title + `st:${isStreamTitle},ut:${isUsedTitle},lv:${isLowViews}`)
-	          if(
-	          	!isStreamTitle
-	          	&& !isUsedTitle
-	          	&& !isLowViews
-	          ){
-	        		clip = sortedClips[i]
-	        		break
-	          }
-		      }
-		      if(!clip) {
-		        console.log("no suitable clip for "+ streamer + " skipping...")
-		      	return
-		      }
-
-
-	        clip.title = 
-	          clip.title.length > 50 ? 
-	          clip.title.substring(0,50) : 
-	          clip.title
-	        clip.title = clip.title.replace(/[^\x00-\x7F]|<|>/g, "")
-
-	        prevTitles.push(clip.title)
-
-		      console.log('making video for ' + streamer + " - " + clip.views + " " + clip.title)
-
-		      let downloadDir = `${UtilService.getPath()}\\twitch\\shorts\\${clip.broadcaster.display_name}`
-		      
-		      let filePath = await TwitchService.downloadClip(clip, downloadDir)
-		      console.log("downloaded..  ", filePath)
-
-		      store.put(lastUsedEntry, moment().format())
-		      store.put(prevTitlesEntry, prevTitles)
-
-		      let uploadData = await this.makeShortsYTMeta(clip, {
-		        channel:streamer,
-		        notify:params.notify
-		      })
-
-		      
-		      console.log("YT Metadata ", uploadData)
-		      console.log(clip.title.toLowerCase() + ' ' + stream.title.toLowerCase())
-
-		      // if(params.upload){
-		      console.log("uploading to youtube..")
-
-					if(params.upload){
-						YoutubeService.upload({
-							filePath:UtilService.getLocalRoot()+"\\"+filePath,
-							...uploadData
-						})
-					}
-		    }catch(err){
-		      console.log(err)
-		    }
-		}
-	}
-
-	async postMixCompilation(params){
+	async postSpecialCompilation(params){
 		let processId = UtilService.getUqId()
 
 		console.log("PROCESS ID", processId)
@@ -224,12 +139,15 @@ class TwitchTubeService{
 		}
 
 		console.log("filterCompilationClips..")
-		let clips:Array<any> = this.filterCompilationClips(channels, {
-			maxVideoLength:params.maxVideoLength, 
-			minVideoLength:params.minVideoLength,
-			viewThreshold:params.viewThreshold,
-			channels:params.channels
-		})
+		let clips:Array<any> = await this.filterCompilationClips(
+			_.cloneDeep(channels), 
+			{
+				maxVideoLength:params.maxVideoLength, 
+				minVideoLength:params.minVideoLength,
+				viewThreshold:params.treshold,
+				channels:params.channels
+			}
+		)
 
 		console.log("download clips..")
 		await this.downloadClips(clips)
@@ -237,21 +155,13 @@ class TwitchTubeService{
 		console.log("generate compilation..")
 		let outDir = `${UtilService.getPath()}\\twitch\\${MIX_PATH}`
 		let compilationPath = await this.generateCompilation(clips, outDir, processId)
+		console.log("compilationPath.. ", compilationPath)
 		console.log("creating YT meta.. ")
 
-		let thumb:any = await this.getCompilationThumbnailData(clips)
-		let tBuilder = new ThumbnailBuilder(thumb.path, {mode: ThumbnailBuilder.MODE.COMPILATION})
-		tBuilder.setImage('primary', thumb.images[0])
-		tBuilder.setImage('panel1bg', thumb.images[1])
-		tBuilder.setImage('secondary', thumb.images[2])
-		tBuilder.setImage('panel2bg', thumb.images[3])
-		tBuilder.setImage('panel3bg', thumb.images[4])
-		tBuilder.setText('title1', thumb.texts[0])
-		tBuilder.setText('title2', thumb.texts[1])
-		tBuilder.setText('title3', thumb.texts[2])
-		await tBuilder.build()
+		let thumbPath = `${UtilService.getLocalPath()}\\twitch\\mix\\thumbnail_${processId}.jpg`
+		await this.buildSpecialThumbnail(clips, thumbPath)
 
-		let uploadData = await this.makeYTMeta(clips, {...params, thumb:thumb})
+		let uploadData = await this.makeYTMeta(clips, {...params, thumbPath:thumbPath})
 
 		console.log("YT Metadata ", uploadData)
 
@@ -262,115 +172,281 @@ class TwitchTubeService{
 			})
 	}
 
-	async getCompilationThumbnailData(clips){
-		let thumb = {
-			images:[],
-			texts:[],
-			path: `${UtilService.getLocalPath()}\\twitch\\mix\\thumbnail_${UtilService.getUqId()}.png`,
+	
+	async postTopShort(params){
+		let processId = UtilService.getUqId()
+		console.log("PROCESS ID", processId)
+		console.log("preparing dirs... ")
+		await this.prepareDirs(params.channels, CLEAN_DIRS)
+
+		console.log("getting channel data... ")
+		let channels = await this.getChannelsData(params.channels, params.interval)
+
+		for(let streamer in channels){
+			if(channels[streamer]['clips'])
+				console.log(streamer + " - " + channels[streamer]['clips'].length)
 		}
+
+		console.log("filterCompilationClips..")
+		let clips:Array<any> = await this.filterCompilationClips(
+			_.cloneDeep(channels), 
+			{
+				maxVideoLength:params.maxVideoLength, 
+				minVideoLength:params.minVideoLength,
+				viewThreshold:params.treshold,
+				channels:params.channels
+			}
+		)
+
+	
+		let lastUsedEntry = `${params.channel}.shorts.lastUsed`
+		let lastUsed = StorageService.get(lastUsedEntry)
+
+    let selectedClip = clips[0]
+
+    if(!selectedClip) {
+      console.log("no suitable clip for "+ params.channel + " skipping...")
+    	return
+    }
+
+    selectedClip.title = this.ytTitle(selectedClip.title)
+
+    let prevTitlesEntry = `${params.channel}.shorts.prevTitles`
+    let prevTitles = await StorageService.get(prevTitlesEntry) || []
+
+    prevTitles.push(selectedClip.title)
+    if(prevTitles.length > 100)
+    	prevTitles.shift()
+
+    console.log('making video for ' + params.channel + " - " + selectedClip.views + " " + selectedClip.title)
+
+    let downloadDir = `${UtilService.getPath()}\\twitch\\shorts\\${selectedClip.broadcaster.display_name}`
+    
+    let filePath = await TwitchService.downloadClip(selectedClip, downloadDir)
+    console.log("downloaded..  ", filePath)
+    selectedClip.filePath = filePath
+    StorageService.set(lastUsedEntry, moment().format())
+    StorageService.set(prevTitlesEntry, prevTitles)
+
+  	let thumbPath = `${UtilService.getLocalPath()}\\twitch\\shorts\\${selectedClip.broadcaster.display_name}\\thumbnail_${processId}.jpg`
+    try{
+    	await this.buildShortThumbnail([selectedClip], thumbPath)
+    }catch(err){
+    	console.log(err)
+    }
+
+    let uploadData = await this.makeShortsYTMeta(selectedClip, {
+      channel:params.channel,
+      notify:params.notify,
+      thumbPath:thumbPath
+    })
+
+
+    let outDir = `${UtilService.getPath()}\\twitch\\shorts\\${selectedClip.broadcaster.display_name}`
+    let generatedPath = await this.generateShort([selectedClip], outDir, processId)
+
+    
+    console.log("YT Metadata ", uploadData)
+
+		if(params.upload){
+    	console.log("uploading to youtube..")
+			await YoutubeService.upload({
+				filePath:UtilService.getLocalRoot()+"\\"+generatedPath,
+				...uploadData
+			})
+		}
+	}
+
+
+
+	async postMixCompilation(params){
+		let processId = UtilService.getUqId()
+
+		console.log("PROCESS ID", processId)
+		console.log("preparing dirs... ")
+		await this.prepareDirs(params.channels, CLEAN_DIRS)
+
+		console.log("getting channel data... ")
+		let channels = await this.getChannelsData(params.channels, params.interval)
+
+		for(let streamer in channels){
+			if(channels[streamer]['clips'])
+				console.log(streamer + " - " + channels[streamer]['clips'].length)
+		}
+
+		console.log("filterCompilationClips..")
+		let clips:Array<any> = await this.filterCompilationClips(
+			_.cloneDeep(channels), 
+			{
+				maxVideoLength:params.maxVideoLength, 
+				minVideoLength:params.minVideoLength,
+				viewThreshold:params.treshold,
+				channels:params.channels
+			}
+		)
 		
+		let compilationPath
+		if(params.download){
+			console.log("download clips..")
+			await this.downloadClips(clips)
+
+			console.log("generate compilation..")
+			let outDir = `${UtilService.getPath()}\\twitch\\${MIX_PATH}`
+			compilationPath = await this.generateCompilation(clips, outDir, processId)
+		}
+
+		console.log("generating thumbnail.. ")
+		let thumbPath = `${UtilService.getLocalPath()}\\twitch\\mix\\thumbnail_${processId}.jpg`
+		await this.buildCompilationThumbnail(clips, thumbPath)
+
+		console.log("creating YT meta.. ")
+		let uploadData = await this.makeYTMeta(clips, {...params, thumbPath:thumbPath})
+		console.log("YT Metadata ", uploadData)
+
+		if(params.upload)
+			YoutubeService.upload({
+				filePath: UtilService.getLocalRoot()+"\\"+compilationPath,
+				...uploadData
+			})
+	}
+
+	async buildCompilationThumbnail(clips, path){
 		try{
 
 			let i = 0
 			let prevChannel
-			let mem = {}
+			let mem = []
 
+			let tBuilder = new ThumbnailBuilder(path, {mode: ThumbnailBuilder.MODE.COMPILATION})
+		
+			let prevChannelThumbsEntry = `mix:compilation:thumbs`
+			let prevChannelThumbs = StorageService.get(prevChannelThumbsEntry) || []
+			console.log("prevChannelThumbs.. ", prevChannelThumbs.join(","))
 			for(let clip of clips){
 				let channel = clip.broadcaster.display_name
 				
-				if(!mem[channel]) mem[channel] = true
-				else continue
+				if(!mem.includes(channel) && !prevChannelThumbs.includes(channel) ) 
+					mem.push(channel)
+				else 
+					continue
 
 				let limit = 1
 				
-				if(!thumb.images[1]){
+				if(i == 0){
 					let files = await fs.readdirSync(`${UtilService.getLocalPath()}\\assets\\imgs\\thumbs\\primary`)
 
 					for(let file of files){
 						if(file.includes('${channel.toLowerCase()}-primary'))
 							limit++
 					}
-					console.log(`${channel.toLowerCase} - limit: ${limit} `)
+					console.log(`${channel.toLowerCase()} - limit: ${limit} `)
 
-					thumb.images[0] = `${UtilService.getLocalPath()}\\assets\\imgs\\thumbs\\primary\\${channel.toLowerCase()}-primary-${UtilService.getRandomInt(1,limit)}.png`
-					thumb.texts[0] = clip.title
+					tBuilder.setImage('primary', 
+						`${UtilService.getLocalPath()}\\assets\\imgs\\thumbs\\primary\\${channel.toLowerCase()}-primary-${UtilService.getRandomInt(1,limit)}.png`
+					)
+					tBuilder.setText('title1', clip.title)
 
-					let outPath = `${UtilService.getLocalPath()}\\assets\\imgs\\thumbs\\generated\\panel1bg.png`
+					let p1Path = `${UtilService.getLocalPath()}\\assets\\imgs\\thumbs\\generated\\panel1bg.png`
 					if(!await fs.existsSync(clip.filePath)){
 						await this.downloadClip(clip.filePath, clip.slug)
 					}
 
-					await this.getBgFromVid(clip.filePath, outPath)
-					thumb.images[1] = outPath
+					await this.getBgFromVid(clip.filePath, p1Path)
+					tBuilder.setImage('panel1bg', p1Path)
 				}
-				else if(!thumb.images[2]){
+				else if(i == 1){
 
 					let files = await fs.readdirSync(`${UtilService.getLocalPath()}\\assets\\imgs\\thumbs\\secondary`)
 					for(let file of files){
 						if(file.includes('${channel.toLowerCase()}-secondary'))
 							limit++
 					}
-					console.log(`${channel.toLowerCase} - limit: ${limit} `)
+					console.log(`${channel.toLowerCase()} - limit: ${limit} `)
 
-					let outPath = `${UtilService.getLocalPath()}\\assets\\imgs\\thumbs\\generated\\panel2bg.png`
+					let p2Path = `${UtilService.getLocalPath()}\\assets\\imgs\\thumbs\\generated\\panel2bg.png`
 					if(!await fs.existsSync(clip.filePath)){
 						await this.downloadClip(clip.filePath, clip.slug)
 					}
-					await this.getBgFromVid(clip.filePath, outPath)
+					await this.getBgFromVid(clip.filePath, p2Path)
 
-					thumb.images[2] = `${UtilService.getLocalPath()}\\assets\\imgs\\thumbs\\secondary\\${channel.toLowerCase()}-secondary-${UtilService.getRandomInt(1,limit)}.png`
-					thumb.texts[1] = clip.title
-					thumb.images[3] = outPath
+					tBuilder.setImage('secondary', `${UtilService.getLocalPath()}\\assets\\imgs\\thumbs\\secondary\\${channel.toLowerCase()}-secondary-${UtilService.getRandomInt(1,limit)}.png`)
+					tBuilder.setImage('panel2bg', p2Path)
 				}
-				else if(!thumb.images[4]){
+				else if(i == 2){
 
 					let files = await fs.readdirSync(`${UtilService.getLocalPath()}\\assets\\imgs\\thumbs\\third`)
 					for(let file of files){
 						if(file.includes('${channel.toLowerCase()}-third'))
 							limit++
 					}
-					console.log(`${channel.toLowerCase} - limit: ${limit} `)
+					console.log(`${channel.toLowerCase()} - limit: ${limit} `)
 
-					thumb.images[4] = `${UtilService.getLocalPath()}\\assets\\imgs\\thumbs\\third\\${channel.toLowerCase()}-third-${UtilService.getRandomInt(1,limit)}.png`
-					thumb.texts[2] = clip.title
-					console.log("thumb.images[4]", thumb.images[4])
-					console.log("thumb.texts[2]", clip.title)
-				}
-				else if(!thumb.images[0]){
-					// let outPath = `${UtilService.getLocalPath()}\\assets\\imgs\\thumbs\\bg.jpg`
-					// await this.getBgFromVid(clip.filePath, outPath)
-					// thumb.images[0] = outPath
+					tBuilder.setImage('panel3bg',  `${UtilService.getLocalPath()}\\assets\\imgs\\thumbs\\third\\${channel.toLowerCase()}-third-${UtilService.getRandomInt(1,limit)}.png`)
+
+					break
 				}
 
-				prevChannel = channel
 				i++
 			}
+			let tileSortedClips = _.cloneDeep(clips)
+			tileSortedClips.sort((a,b)=>b.title.length - a.title.length)
 
-			// thumb.images[3] =  `${UtilService.getLocalPath()}\\assets\\imgs\\thumbs\\bubble_long.png`
-			// thumb.images[4] = `${UtilService.getLocalPath()}\\assets\\imgs\\thumbs\\bubble.png`
+			let titles = ["title1","title2","title3",]
+			for(let clip of clips){
+				if(titles.length == 0) break
+				tBuilder.setText(titles.shift(), clip.title)
+			}
+
+			console.log("prevChannelThumbs set.. ", mem.join(","))
+			await StorageService.set(prevChannelThumbsEntry, mem)
+			await tBuilder.build()
 
 		}catch(err){
-			console.log("error")
+			console.log(err)
 		}
 
-		return thumb
+
+
 	}
-	async getSpecialThumbnailData(clips){
-		let thumb = {
-			images:[],
-			texts:[],
-			path: `${UtilService.getLocalPath()}\\twitch\\mix\\thumbnail.jpg`,
-		}
+	async buildSpecialThumbnail(clips, path){
 
 		let channel = clips[0].broadcaster.display_name
 		
-		thumb.images[1] = `${UtilService.getLocalPath()}\\assets\\imgs\\thumbs\\special\\${channel.toLowerCase()}-special-${UtilService.getRandomInt(1,1)}.png`
-		let outPath = `${UtilService.getLocalPath()}\\assets\\imgs\\thumbs\\bg.jpg`
-		await this.getBgFromVid(clips[0].filePath, outPath)
-		thumb.images[0] = outPath
+		let tBuilder = new ThumbnailBuilder(path, {mode: ThumbnailBuilder.MODE.SPECIAL})
 
+		tBuilder.setImage('primary', 
+			`${UtilService.getLocalPath()}\\assets\\imgs\\thumbs\\special\\${channel.toLowerCase()}-special-${UtilService.getRandomInt(1,1)}.png`
+		)
+		let bgPath = `${UtilService.getLocalPath()}\\assets\\imgs\\thumbs\\bg.jpg`
+		await this.getBgFromVid(clips[0].filePath, bgPath)
 
-		return thumb
+		tBuilder.setImage('bg',  bgPath)
+
+		tBuilder.setText('title1', `${channel} Special` )
+		await tBuilder.build()
+	}
+
+	async buildShortThumbnail(clips, path){
+
+		let channel = clips[0].broadcaster.display_name
+		
+		let limit = 0
+		let files = await fs.readdirSync(`${UtilService.getLocalPath()}\\assets\\imgs\\thumbs\\secondary`)
+		for(let file of files){
+			if(file.includes('${channel.toLowerCase()}-secondary'))
+				limit++
+		}
+
+		let tBuilder = new ThumbnailBuilder(path, {mode: ThumbnailBuilder.MODE.SHORT})
+
+		tBuilder.setImage('secondary', `${UtilService.getLocalPath()}\\assets\\imgs\\thumbs\\secondary\\${channel.toLowerCase()}-secondary-${UtilService.getRandomInt(1,limit)}.png`)
+		
+		let bgPath = `${UtilService.getLocalPath()}\\twitch\\shorts\\${channel}\\bg.jpg`
+		await this.getBgFromVid(clips[0].filePath, bgPath)
+		tBuilder.setImage('bg',  bgPath)
+
+		tBuilder.setText('title1', `${clips[0].title}` )
+		await tBuilder.build()
 	}
 
 	async downloadClips(clips){
@@ -390,14 +466,20 @@ class TwitchTubeService{
 		let res = {}
 
 		for(let channel of channels){
-			res[channel] = {}
 
-			res[channel]['clips'] = await TwitchService.getTopClips({
+			let topClips = await TwitchService.getTopClips({
 				channel:channel,
 				period:interval,
 				trending:false,
 				limit:30
 			})
+
+			if(!topClips || topClips.length == 0){
+				continue
+			}
+
+			res[channel] = {}
+			res[channel]['clips'] = topClips
 				
 		}
 
@@ -409,18 +491,19 @@ class TwitchTubeService{
 	async makeShortsYTMeta(clip, params){
 
 		let title = clip.title + " | " +  clip.broadcaster.display_name + " #shorts"
+		let vodUrl = clip?.vod?.url || "Not Found"
 		let description = 
-		`#${clip.broadcaster.display_name} \n\n`+
-		`Historical Date: ${moment(clip.created_at).format('MMM DD, YYYY hh:mm:ss')}\n\n`+
-		`Vod Moment: ${clip.vod.url} \n\n`+
-		`https://www.twitch.tv/${clip.broadcaster.display_name} \n\n`
+		`Historical Date: ${moment(clip.created_at).format('MMM DD, YYYY hh:mm:ss')}\n`+
+		`Vod Moment: ${vodUrl} \n`+
+		`https://www.twitch.tv/${clip.broadcaster.display_name}\n\n` +
+		`#${clip.broadcaster.display_name}\n`
 
 		return {
 			title: title,
 			description: description,
-			playlist:null,
+			playlist:clip.broadcaster.display_name,
 			notify:params.notify,
-			thumbnail:null
+			thumbnail:params.thumbPath
 		}
 
 	}
@@ -442,7 +525,7 @@ class TwitchTubeService{
 		// timestamps.push(
 		// 	`${moment().date("2015-01-01").minutes( totalDuration/60 ).seconds(totalDuration % 60).format("m:ss")} Intro\n`
 		// )
-		// totalDuration += 6
+		// totalDuration += 11
  
 		let names = ['xqc', 'yuno', 'poki', 'tina', 'jasmine', 'daph']
 
@@ -487,10 +570,13 @@ class TwitchTubeService{
 		title = title.substring(0,title.length - 3)
 
 		if(channels.length == 1){
-			title = channels[0] + " Weekly Top Clips Special | " + title
+			title = title +" | " + channels[0] + " Weekly Special" 
 			playlist = channels[0]
+
 		}else{
 			title = "Top Twitch Daily | " + title
+			playlist = "Mix Compilation"
+			
 		}
 
 		if(title.length > 100)
@@ -509,19 +595,38 @@ class TwitchTubeService{
 			backdrop: null,
 		}
 
-		let thumbnail = opts.thumb ? opts.thumb.path : null
 
 		return {
 			title: title,
 			description: description,
 			playlist:playlist,
 			notify:notify,
-			thumbnail:thumbnail 
+			thumbnail:opts.thumbPath 
 		}
 
 
 	}
 
+	generateShort(clips, outDir, processId){
+		let videos = []
+
+		for(let clip of clips){
+			videos.push({
+				title:clip.title,
+				file:clip.filePath
+			})
+		}
+
+		let videoConfig = {
+		  processId: processId,
+		  outDir: outDir,
+		  outName:`short_${processId}.mp4`,
+		  videos:videos,
+		}
+
+		return VideoService.generateShort(videoConfig)
+
+	}
 	generateCompilation(clips, outDir, processId){
 		let videos = []
 		let timestamps = []
@@ -557,15 +662,19 @@ class TwitchTubeService{
 		}
 
 		console.log("filterCompilationClips..")
-		let clips:Array<any> = this.filterCompilationClips(channels, {
-			maxVideoLength:params.maxVideoLength, 
-			minVideoLength:params.minVideoLength,
-			viewThreshold:params.viewThreshold,
-			channels:params.channels
-		})
+		let clips:Array<any> = await this.filterCompilationClips(
+			_.cloneDeep(channels), 
+			{
+				maxVideoLength:params.maxVideoLength, 
+				minVideoLength:params.minVideoLength,
+				viewThreshold:params.treshold,
+				channels:params.channels
+			}
+		)
 
 		console.log("getCompilationThumbnailData..")
-		let thumb = await this.getCompilationThumbnailData(clips)
+		let thumbPath = `${UtilService.getLocalPath()}\\twitch\\mix\\thumbnail_${UtilService.getUqId()}.png`
+		let thumb = await this.getCompilationThumbnailData(clips, thumbPath)
 		console.log("generating thumbnail..")
 
 		let tBuilder = new ThumbnailBuilder(thumb.path, {mode: ThumbnailBuilder.MODE.COMPILATION})
@@ -603,40 +712,80 @@ class TwitchTubeService{
 		return res.clips
 	}
 
-	filterCompilationClips(channelData, params){
-		
+	async filterCompilationClips(channelData, params){
+		console.log(">>>> filterCompilationClips")
 		const randProperty = (obj)=> {
 	    var keys = Object.keys(obj);
 	    return keys[ keys.length * Math.random() << 0];
 		}
 
-		let totalDuration = 0
-		let res = []
-		let titlesMem = []
 		//to prevent pop from obscuring the object
-		let cdClone = _.cloneDeep(channelData)
 		// let cdKeys = Object.keys(cdClone)
 		// console.log("using clips from", cdKeys)
+
+
+		let titlesMem = []
 		let clips = []
+
+
+	  let users = await TwitchService.getUsers(params.channels)
 		let count = {}
+		for(let channel in channelData){
+			channelData[channel]['clips'].sort(function(a, b){return b.views-a.views})
 
-		for(let channel in cdClone){
+	  	let channelId = users[channel.toLowerCase()]._id
+			let prevVideos = await TwitchService.getChannelRecentVideos(channelId)
+			let prevVidTitles = prevVideos.map(e=>e.title)
 
-			cdClone[channel]['clips'].sort(function(a, b){return b.views-a.views})
+			let prevTitlesEntry = `${params.channel}.shorts.prevTitles`
+			let prevTitles = await StorageService.get(prevTitlesEntry) || []
+	  	let blackListTitles = ['insta', 'reddit', 'redd.it']
 
-			for(let clip of cdClone[channel]['clips']){
+			for(let clip of channelData[channel]['clips']){
 		  	let channel = clip.broadcaster.display_name
 
 		  	if(!count[channel])
 		  		count[channel] = 0
 
-		  	count[channel]++
+		  	let isVidCountReached = (count[channel] > 4 && Object.keys(channelData).length > 1)
+		  	if(isVidCountReached){
+		  		console.log("isVidCountReached for " + channel )
+		  		break
+		  	}
 
-	  	  if( (count[channel] >= 6 || clip.views < params.viewThreshold ) && params.channels.length > 1 ){
+		  	let isLowViews = clip.views < params.viewThreshold
+		  	let isStreamTitle = this.isVidTitle(prevVidTitles, clip.title)
+		  	let isUsedTitle = prevTitles.includes(this.ytTitle(clip.title))
+		  	let isDuplicate = titlesMem.includes(clip.title) 
+		  	let isShort = clip.duration <= 15
+		  	let isBlacklisted = new RegExp(blackListTitles.join("|")).test(clip.title)
+	  	  if( 
+	  	  	isLowViews || isStreamTitle ||
+      		isUsedTitle || isDuplicate || isShort || 
+      		isBlacklisted
+	  	  ){
+	  	  	console.log(
+	  	  		`skipping.. ${clip.title} - ${clip.views} - dur:${clip.duration}: ${channel} |${clip.url}`
+  	  		)
+	  	  	// console.log(
+	  	  	// 	`skipping.. ${clip.title} - ${clip.views} - dur:${clip.duration}:`+
+  	  		// 	`${isVidCountReached?'isVidCountReached ':''}${isLowViews?'isLowViews ':''}${isStreamTitle?'isStreamTitle ':''}` +
+  	  		// 	`${isUsedTitle?'isUsedTitle ':''}${isDuplicate?'isDuplicate ':''}${isShort?'isShort ':''}`
+  	  		// )
 	  	  	continue
 	  	  } 
+	  	  else{
+		  		count[channel]++
+  	  	  titlesMem.push(clip.title)
 
-				clips.push(clip)
+  	  	  let fileName = `${clip.slug.substr(clip.slug - 16)}.mp4`
+  	  	  clip.filePath = `${UtilService.getPath()}\\twitch\\${clip.broadcaster.display_name}\\${fileName}`
+  	  	  clip.title = this.ytTitle(clip.title)
+
+  	  	  console.log(`pushing ${clip.broadcaster.display_name} - ${clip.views} - ${clip.title} `)
+  				clips.push(clip)
+
+	  	  }
 			}
 		}
 
@@ -647,74 +796,61 @@ class TwitchTubeService{
 			console.log(`${c.broadcaster.display_name} - ${c.views} - ${c.title} `)
 		}
 
-		let top1 = clips.shift()
-		let top2 = clips.shift()
+		if(Object.keys(channelData).length > 1){
+			clips.forEach(e=>console.log(`${e.broadcaster.display_name} - ${e.views} - ${e.title} `))
 
-		UtilService.shuffle(clips)
+			let top1 = clips.shift()
+			let top2 = clips.shift()
 
-		clips.unshift(top1)
-		clips.unshift(top2)
+			UtilService.shuffle(clips)
+			UtilService.shuffle(clips)
 
-		let identical = 0
-		for(let i = 0; i < clips.length-1; i++){
-		  let channel = clips[i].broadcaster.display_name
+			clips.unshift(top1)
+			clips.unshift(top2)
 
-			if(channel == clips[i+1].broadcaster.display_name){
-				identical++
-			}else{
+			let identical = 0
+			for(let i = 0; i < clips.length-1; i++){
+			  let channel = clips[i].broadcaster.display_name
 
-				if(identical != 0){
-					let toShift = clips.splice(i - identical, identical)
-					clips.splice(i, 0, ...toShift)
-					i--
+				if(channel == clips[i+1].broadcaster.display_name){
+					identical++
+				}else{
+
+					if(identical != 0){
+						let toShift = clips.splice(i - identical, identical)
+						clips.splice(i, 0, ...toShift)
+						i--
+					}
+					identical = 0
 				}
-				identical = 0
 			}
-			
+
 		}
 
-		// console.log(111111)
-		// console.log(clips)
 
-		console.log('\nfinal clips to be used..')
+		let totalDuration = 0
+
+		let temp = []
 		for(let c of clips){
-			console.log(`${c.broadcaster.display_name} - ${c.views} - ${c.title}`)
-		}
-
-
-		for(let i = 0; i < clips.length; i++){
-			let clip = clips[i]
-
-			console.log("channel.. ", clip.broadcaster.display_name + " " + clip.title)
-			// let clip = cdClone[cdKeys[i]]['clips'].shift()
-			// console.log("clip = ", clip)
-			let fileName = `${clip.slug.substr(clip.slug - 16)}.mp4`
-			clip.filePath = `${UtilService.getPath()}\\twitch\\${clip.broadcaster.display_name}\\${fileName}`
-			clip.title = 
-				clip.title.length > 50 ? 
-				clip.title.substring(0,50) : 
-				clip.title
-			clip.title = clip.title.replace(/[^\x00-\x7F]|<|>/g, "")
-
-
-			if(!titlesMem.includes(clip.title)){
-				console.log("adding " + clip.title + " | clip duration: " + clip.duration + " | totat_duration: " + totalDuration)
-				titlesMem.push(clip.title)
-				res.push(clip)
-				totalDuration += clip.duration
-			}
-
-			if(totalDuration >= params.maxVideoLength){
-				console.log(`reached max video length.. ${totalDuration} > ${params.maxVideoLength}`)
+			if(totalDuration > params.maxVideoLength)
 				break
-			}
 
+			console.log(`${c.broadcaster.display_name} - ${c.views} - ${c.title} - t:${totalDuration}`)
+			temp.push(c)
+			totalDuration += c.duration
 		}
+		clips = temp
+		// clips = clips.filter(e=>{
+		// 	console.log(`${e.broadcaster.display_name} - ${e.views} - ${e.title} - t:${totalDuration}`)
+		// 	totalDuration += e.duration
+		// 	return totalDuration <= params.maxVideoLength
+		// })
 
 
+		console.log("===After Shuffle===")
+		clips.forEach(e=>console.log(`${e.broadcaster.display_name} - ${e.views} - ${e.title} `))
 
-
-		return res
+		return clips
 
 	}
 
@@ -761,6 +897,14 @@ class TwitchTubeService{
 			})
 	   });
 
+	}
+
+	isVidTitle(vids,title){
+		for(let vid of vids){
+			if(vid.toLowerCase().trim() == title.toLowerCase().trim())
+				return true
+		}
+		return false
 	}
 
 	async getClipData(slug){
@@ -810,6 +954,12 @@ class TwitchTubeService{
 		    await fs.mkdirSync(channelDir)
 			}
 		}
+	}
+
+	ytTitle(str){
+		let charLimit = 65
+	  str = str.length > charLimit ? str.substring(0,charLimit) :  str
+		return str.replace(/[^\x00-\x7F]|<|>/g, "")
 	}
 
 	getTimestamps(compilationClips){

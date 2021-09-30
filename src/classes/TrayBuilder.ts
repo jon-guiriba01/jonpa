@@ -24,6 +24,43 @@ import AuthService from '../services/AuthService'
 import checkInternetConnected from 'check-internet-connected';
 import sound from "sound-play"
 import { v5 as uuidv5 } from 'uuid';
+const ALL_CHANNELS = [
+  "TinaKitten", 
+  "SteveSuptic", 
+  "xChocoBars", 
+  "BrookeAB", 
+  "5uppp", 
+  "karlnetwork", 
+  "itshafu", 
+
+  "xQcOW",
+  "39daph", 
+  "pokimane", 
+  "kkatamina",
+  "Sykkuno",
+  "disguisedtoast",
+  "ludwig",
+  "yvonnie",
+
+  "lilypichu", 
+  "fuslie", 
+  "natsumiii",
+  "ariasaki", 
+  "masayoshi", 
+  "quarterjade", 
+  "peterparktv", 
+  "kristoferyee", 
+  "kyedae_",
+  "melina", 
+  "imjasmine",
+  "Jinnytty", 
+  "justaminx", 
+  "hasanabi",
+  "botezlive", 
+  "qtcinderella",
+  "susu_jpg",
+]
+
 export default class TrayBuilder{
 	tray:Tray
 
@@ -203,67 +240,26 @@ export default class TrayBuilder{
 		      {
 		        label: 'special','submenu':[
 	      			{label: 'special-39daph', type:'normal', click: async(menuItem, BrowserWindow, event)=>{this.postSpecialCompilation(["39daph"])}},
-	      			{label: 'special-xQcOW', type:'normal', click: async(menuItem, BrowserWindow, event)=>{this.postSpecialCompilation(["xQcOW"])}},
+	      			{label: 'special-Jinnytty', type:'normal', click: async(menuItem, BrowserWindow, event)=>{this.postSpecialCompilation(["Jinnytty"])}},
+	      			{label: 'special-Melina', type:'normal', click: async(menuItem, BrowserWindow, event)=>{this.postSpecialCompilation(["Melina"])}},
 	      			{label: 'special-TinaKitten', type:'normal', click: async(menuItem, BrowserWindow, event)=>{this.postSpecialCompilation(["TinaKitten"])}},
-	      			{label: 'special-xchocobars', type:'normal', click: async(menuItem, BrowserWindow, event)=>{this.postSpecialCompilation(["xchocobars"])}},
-	      			{label: 'special-itshafu', type:'normal', click: async(menuItem, BrowserWindow, event)=>{this.postSpecialCompilation(["itshafu"])}},
-	      			{label: 'special-lilypichu', type:'normal', click: async(menuItem, BrowserWindow, event)=>{this.postSpecialCompilation(["lilypichu"])}},
-	      			{label: 'special-fuslie', type:'normal', click: async(menuItem, BrowserWindow, event)=>{this.postSpecialCompilation(["fuslie"])}},
-	      			{label: 'special-peterparktv', type:'normal', click: async(menuItem, BrowserWindow, event)=>{this.postSpecialCompilation(["peterparktv"])}},
-	      			{label: 'special-quarterjade', type:'normal', click: async(menuItem, BrowserWindow, event)=>{this.postSpecialCompilation(["quarterjade"])}},
-	      			{label: 'special-kristoferyee', type:'normal', click: async(menuItem, BrowserWindow, event)=>{this.postSpecialCompilation(["kristoferyee"])}},
-	      			{label: 'special-kkatamina', type:'normal', click: async(menuItem, BrowserWindow, event)=>{this.postSpecialCompilation(["kkatamina"])}},
+	      			{label: 'special-qtcinderella', type:'normal', click: async(menuItem, BrowserWindow, event)=>{this.postSpecialCompilation(["qtcinderella"])}},
 
 		        ]
-		      },    
+		      },      
 	      	{
-	      		label: 'postTopClips-All', type:'normal', click: async(menuItem, BrowserWindow, event)=>{
+	      		label: 'postMixCompilation', type:'normal', click: async(menuItem, BrowserWindow, event)=>{
 	      			await this.postMixCompilation([
       					"xQcOW",
-      					"39daph", 
-      					"pokimane", 
-      					"kkatamina",
       					"Sykkuno",
-      					"kristoferyee", 
-      				])
-
-	      			await this.postMixCompilation([
-      					"TinaKitten", 
-      					"stevesuptic", 
-      					"xchocobars", 
-      					"brookeab", 
-      					"5uppp", 
-      					"karlnetwork", 
-      					"itshafu", 
-      				])
-
-	      			await this.postMixCompilation([
-      					"lilypichu", 
-      					"fuslie", 
-      					"natsumiii",
-      					"ariasaki", 
-      					"masayoshi", 
-      					"quarterjade", 
-      					"peterparktv", 
-      				])
-
-  			    	console.log("postTopClips-SaladGang\n")
-  			    }
-  			  },    
-	      	{
-	      		label: 'postTopClips-Top', type:'normal', click: async(menuItem, BrowserWindow, event)=>{
-	      			await this.postMixCompilation([
-      					"xQcOW",
       					"39daph", 
       					"kkatamina",
-      					"Sykkuno",
       					"kristoferyee", 
-
       					"TinaKitten", 
-      					"xchocobars", 
-      					"brookeab", 
+      					"xChocoBars", 
+      					"BrookeAB", 
       					"itshafu",       					
-
+      			    "ariasaki", 
       					"pokimane", 
       					"lilypichu", 
       					"fuslie", 
@@ -271,49 +267,24 @@ export default class TrayBuilder{
       					"masayoshi", 
       					"quarterjade", 
       					"peterparktv", 
+      					"yvonnie", 
+      					"melina", 
+      					"Jinnytty", 
+      					"justaminx", 
+      					// "hasanabi", 
+      					"botezlive",
+
       				])
 
-  			    	console.log("postTopClips-SaladGang\n")
-  			    }
-  			  },
-	      	{
-	      		label: 'postTopClips-SaladGang', type:'normal', click: async(menuItem, BrowserWindow, event)=>{
-	      			await this.postMixCompilation([
-      					"TinaKitten", 
-      					"stevesuptic", 
-      					"xchocobars", 
-      					"brookeab", 
-      					"5uppp", 
-      					"karlnetwork", 
-      					"itshafu", 
-      				])
-
-  			    	console.log("postTopClips-SaladGang\n")
-  			    }
-  			  },
-	      	{
-	      		label: 'postTopClips-OTV', type:'normal', click: async(menuItem, BrowserWindow, event)=>{
-	      			await this.postMixCompilation([
-      					"pokimane", 
-      					"lilypichu", 
-      					"fuslie", 
-      					"natsumiii",
-      					"ariasaki", 
-      					"masayoshi", 
-      					"quarterjade", 
-      					"peterparktv", 
-      				])
-
-  			    	console.log("postTopClips-SaladGang\n")
   			    }
   			  },
 	      	{
 	      		label: 'make shorts', type:'normal', click: async(menuItem, BrowserWindow, event)=>{
 	      			let channels = [
       			    "TinaKitten", 
-      			    "stevesuptic", 
-      			    "xchocobars", 
-      			    "brookeab", 
+      			    "SteveSuptic", 
+      			    "xChocoBars", 
+      			    "BrookeAB", 
       			    "5uppp", 
       			    "karlnetwork", 
       			    "itshafu", 
@@ -336,84 +307,146 @@ export default class TrayBuilder{
       			    "peterparktv", 
       			    "kristoferyee", 
       			    "kyedae_",
-      			    // "amouranth", 
       			    "melina", 
       			    "imjasmine",
-      			    // "indiefoxx", 
       			    "Jinnytty", 
       			    "justaminx", 
+      			    "hasanabi",
+      			    "botezlive", 
+      			    "qtcinderella",
+      			    "susu_jpg"
       			  ]
 
+      			  let users = await TwitchService.getUsers(channels)
+      			  console.log("users",users)
       			  for(let channel of channels){
+      			  	console.log("channel ", channel)
+      			  	let channelId = users[channel.toLowerCase()]._id
 
-      			  	await TwitchTubeService.makeShorts2({
+      			  	await TwitchTubeService.makeShorts({
       			  	  channel:channel,
-      			  	  viewThreshold:500,
+      			  	  channelId:channelId,
+      			  	  viewThreshold:800,
       			  	  notify:false,
       			  	  upload:true
       			  	})
-
       			  }
 
 
 	      		}
 					},
-	      	{
-	      		label: 'stop twitch watcher', type:'normal', click: async(menuItem, BrowserWindow, event)=>{
-	      			console.log("stopping twitch watcher..")
-	      			if(watcherInterval) clearInterval(watcherInterval)
+					{ 
+	      		label: 'make top short', type:'normal', click: async(menuItem, BrowserWindow, event)=>{
+	      			let channels = [
+      			    // "TinaKitten", 
+      			    // "SteveSuptic", 
+      			    // "xChocoBars", 
+      			    // "BrookeAB", 
+      			    // "5uppp", 
+      			    // "karlnetwork", 
+      			    // "itshafu", 
+
+      			    // "xQcOW",
+      			    // "39daph", 
+      			    // "pokimane", 
+      			    // "kkatamina",
+      			    // "Sykkuno",
+      			    // "disguisedtoast",
+      			    // "ludwig",
+      			    // "yvonnie",
+
+      			    // "lilypichu", 
+      			    // "fuslie", 
+      			    // "natsumiii",
+      			    // "ariasaki", 
+      			    // "masayoshi", 
+      			    // "quarterjade", 
+      			    // "peterparktv", 
+      			    // "kristoferyee", 
+      			    // "kyedae_",
+      			    "susu_jpg",
+      			    "melina", 
+      			    "imjasmine",
+      			    "Jinnytty", 
+      			    // "justaminx", 
+      			    // "hasanabi",
+      			    "botezlive", 
+      			    "qtcinderella"
+      			  ]
+
+
+    			  	await TwitchTubeService.postTopShort({
+								channels,
+    			  	  viewThreshold:800,
+    			  	  interval:"week",
+    			  	  notify:false,
+    			  	  upload:true
+					})
+
 	      		}
-	      	},
-	      	{
-	      		label: 'mockThumbnail', type:'normal', click: async(menuItem, BrowserWindow, event)=>{
-							await TwitchTubeService.mockThumbnail({
-								channels:[	      			      
-									"pokimane", 
-									"lilypichu", 
-									"fuslie", 
-									"natsumiii",
-									"ariasaki", 
-									"masayoshi", 
-									"quarterjade", 
-									"peterparktv", 
-								],
-								maxVideoLength: 5 * 60,
-								minVideoLength: 3 * 60,
-								interval:'week', //day|month
-								treshold:100,
-								uploadClips:false,
-								notify:false,
-								upload:false
-
-							})
-
-
-	      		}
-	      	},
+			},
 	      	{
 	      		label: 'test', type:'normal', click: async(menuItem, BrowserWindow, event)=>{
-							let introFile = `${UtilService.PATH.ASSETS}\\vids\\intro1.mp4`
-	      			let tempIntroRawFile = `${UtilService.PATH.LOCAL}\\test\\raw_temp_intro1.ts`
-	      			let tempIntroFile = `${UtilService.PATH.LOCAL}\\test\\temp_intro1.ts`
-	      			let introSS1 = `${UtilService.PATH.LOCAL}\\test\\introSS_zz_1.png`
-	      			let testFile = `${UtilService.PATH.LOCAL}\\twitch\\39daph\\FuriousGlutenFreeAlligatorMcaT-bneglbq2fwoqmeH6.mp4`
-	      			let testRawFile = `${UtilService.PATH.LOCAL}\\twitch\\39daph\\test1.ts`
+		      			let channels = [
+	      			    "TinaKitten", 
+	      			    "stevesuptic", 
+	      			    "xchocobars", 
+	      			    "brookeab", 
+	      			    "5uppp", 
+	      			    "karlnetwork", 
+	      			    "itshafu", 
 
+	      			    "xQcOW",
+	      			    "39daph", 
+	      			    "pokimane", 
+	      			    "kkatamina",
+	      			    "Sykkuno",
+	      			    "disguisedtoast",
+	      			    "ludwig",
+	      			    "yvonnie",
 
-	      			await ScriptService.cmd(
-	      					`ffmpeg`,
-	      					 ['-ss', "00:00:00", '-i', testFile, '-vframes', '1', '-q:v', '2', introSS1], 
-	      					 {log:true}
-	      				)
-	      			await ScriptService.cmd('ffmpeg', [
-	      				'-i', introFile, '-c', 'copy', '-bsf:v', 'h264_mp4toannexb', '-f', 'mpegts', tempIntroRawFile
-	      			], {log:true})
+	      			    "lilypichu", 
+	      			    "fuslie", 
+	      			    "natsumiii",
+	      			    "ariasaki", 
+	      			    "masayoshi", 
+	      			    "quarterjade", 
+	      			    "peterparktv", 
+	      			    "kristoferyee", 
+	      			    "kyedae_",
+	      			    "melina", 
+	      			    "imjasmine",
+	      			    "Jinnytty", 
+	      			    "justaminx", 
+	      			    "hasanabi",
+	      			    "botezlive", 
+	      			    "qtcinderella"
+	      			  ]
 
-	      			await ScriptService.cmd('ffmpeg', [
-	      				'-i', tempIntroRawFile, '-i', introSS1, '-filter_complex',
-	      				`[1]scale=1920:1080,setdar=16/9[1a];[1a][0]overlay=0:0[a]`,
-	      				'-map', '[a]', '-map', '0:a', '-b:v', '8000k', '-b:a', '160k', '-ar', '44100',  '-c:v', 'libx264', '-c:a', 'aac',  tempIntroFile
-	      			], {log:true})
+	      			let res = await TwitchService.getUsers(channels)
+	      			// let res2 = await TwitchService.getUser('naja_croc')
+	      			console.log("TEST RES", res)
+	      			// console.log("TEST RES2", res2)
+
+	      			// let xxx = await TwitchService.getLiveChannels({channels:['cdawgva']})
+
+	      			// stream {
+	      			//   id: '42347519677',
+	      			//   user_id: '45098797',
+	      			//   user_login: 'cdawgva',
+	      			//   user_name: 'CDawgVA',
+	      			//   game_id: '19745',
+	      			//   game_name: 'Pokémon Platinum',
+	      			//   type: 'live',
+	      			//   title: 'Alright time to suffer all day. NUZLOCKE (not really) 18 HOUR STREAM. | !nuzlocke !gyms !partypoke !deaths\n' +
+	      			//     '\n',
+	      			//   viewer_count: 8058,
+	      			//   started_at: '2021-06-13T01:04:45Z',
+	      			//   language: 'en',
+	      			//   thumbnail_url: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_cdawgva-{width}x{height}.jpg',
+	      			//   tag_ids: [ '6ea6bca4-4712-4ab9-a906-e3336a9d8039' ],
+	      			//   is_mature: false
+	      			// }
 
 	      		}
 	      	}
@@ -422,25 +455,37 @@ export default class TrayBuilder{
 	    {
 	      label: 'youtube', 'submenu':[
 	      	{
-	      		label: 'enableClipoboardDL', type:'normal', click: async(menuItem, BrowserWindow, event)=>{
+	      		label: 'enableClipoboardDownload', type:'normal', click: async(menuItem, BrowserWindow, event)=>{
     					
     					if(!AuthService.isAuthenticated()){
     						AuthService.googleAuth('src/credentials.json').then((res)=>{
-    							console.log("AutoClipoboardDownload enabled!")
+    							console.log("AutoClipoboardDL enabled!")
       						YoutubeService.enableAutoClipoboardDownload()
     						}).catch((err)=>{ })
     					}else{
-  							console.log("AutoClipoboardDownload disabled!")
+  							console.log("AutoClipoboardDL enabled!")
       					YoutubeService.enableAutoClipoboardDownload()
-
     					}
-
-
   			    }
   			  },
 	      	{
-	      		label: 'disableClipoboardDL', type:'normal', click: async(menuItem, BrowserWindow, event)=>{
-    					YoutubeService.disableAutoClipoboardDownload()
+	      		label: 'enableClipoboardDLUL', type:'normal', click: async(menuItem, BrowserWindow, event)=>{
+    					
+    					if(!AuthService.isAuthenticated()){
+    						AuthService.googleAuth('src/credentials.json').then((res)=>{
+    							console.log("AutoClipoboardDLUL enabled!")
+      						YoutubeService.enableAutoClipoboardDLUL()
+    						}).catch((err)=>{ })
+    					}else{
+  							console.log("AutoClipoboardDLUL enabled!")
+      					YoutubeService.enableAutoClipoboardDLUL()
+    					}
+  			    }
+  			  },
+	      	{
+	      		label: 'disableClipoboardDLUL', type:'normal', click: async(menuItem, BrowserWindow, event)=>{
+  							console.log("AutoClipoboardDLUL disabled!")
+    					YoutubeService.disableAutoClipoboardDLUL()
   			    }
   			  }
 	      ]
@@ -456,6 +501,16 @@ export default class TrayBuilder{
 		      await SeleniumService.closeAll()
 		      app.quit()
 	      } 
+	    },     
+	    { 
+	      label: 'test', type: 'normal', click:async (menuItem, BrowserWindow, event)=>{
+	      	console.log("test")
+	      	await ScriptService.cmd('ffmpeg', [
+	      		'-i', 'test/a.mp4', '-filter_complex',
+	      		`[0]fade=t=in:st=1:d=3:color=white`,
+	      		'-map', '[a]', '-map', '0:a',  '-c:v', 'libx264', '-c:a', 'aac',  'test/b.mp4'
+	      	], {log:true})
+	      } 
 	    },   
 	  ])
 
@@ -465,45 +520,27 @@ export default class TrayBuilder{
 	async postMixCompilation(channels){
 		await TwitchTubeService.postMixCompilation({
 			channels,
-			maxVideoLength: 2 * 60,
-			minVideoLength: 2 * 60,
-			interval:'day', //day|month
-			treshold:100,
-			uploadClips:false,
+			maxVideoLength: 12 * 60,
+			interval:'day', //day|week|month
+			treshold:400,
 			notify:true,
-			upload:false
-
+			upload:true,
+			download:true,
 		})
-
-		const notification = {
-		  title: 'postMixCompilation Done',
-		  body: channels.join(',')
-		}
-		new Notification(notification).show()
-
-		await sound.play(`${UtilService.getLocalPath()}/assets/audio/ring1.mp3`, 1);
 	}
 
 	async postSpecialCompilation(channels){
-		await TwitchTubeService.postMixCompilation({
+		await TwitchTubeService.postSpecialCompilation({
 			channels,
-			maxVideoLength: 5 * 60,
-			minVideoLength: 3 * 60,
+			maxVideoLength: 8 * 60,
+			minVideoLength: 6 * 60,
 			interval:'week', //day|month
-			treshold:100,
-			uploadClips:false,
+			treshold:400,
 			notify:true,
 			upload:true
 
 		})
 
-		const notification = {
-		  title: 'postSpecialCompilation Done',
-		  body: channels.join(',')
-		}
-		new Notification(notification).show()
-
-		await sound.play(`${UtilService.getLocalPath()}/assets/audio/ring1.mp3`, 1);
 	}
 
 

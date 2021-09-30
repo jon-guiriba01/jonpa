@@ -7,7 +7,6 @@ import * as fs from 'fs';
 import moment from 'moment';
 import { titleCase } from "title-case";
 import jimp from 'jimp';
-
 class VideoService{
 
 	path = app.isPackaged 
@@ -16,7 +15,80 @@ class VideoService{
 
 	constructor(){}
 	// https://trac.ffmpeg.org/wiki/Concatenate#protocol
-	async compile(config){
+	async generateShort(config){
+		return new Promise(async(resolve,reject)=>{
+			let videos = config.videos
+
+			try{
+
+			  let temps = []
+			  let raws = []
+
+				for(let i = 0; i < videos.length; i++){
+
+					let tempFile = `${config.outDir}\\temp${i}_${config.processId}.ts`
+					let tempRawFile = `${config.outDir}\\raw_temp${i}_${config.processId}.ts`
+
+					console.log("creating temp for " + videos[i].file)
+
+					await ScriptService.cmd('ffmpeg', [
+						'-i', videos[i].file, '-c', 'copy', '-bsf:v', 'h264_mp4toannexb', '-f', 'mpegts', tempRawFile
+					], {log:false})
+
+					await ScriptService.cmd('ffmpeg', [
+						'-i', tempRawFile, '-filter_complex',
+						`[0]scale=1920:1080,setdar=16/9[a]`,
+						'-map', '[a]', '-map', '0:a', '-b:v', '8000k', '-b:a', '160k', '-ar', '44100',  '-c:v', 'libx264', '-c:a', 'aac',  tempFile
+					], {log:false})
+
+		
+					await fs.unlinkSync(tempRawFile)
+					temps.push(tempFile)
+				}
+				
+				let outroLimit = 0
+				let files = await fs.readdirSync(`${UtilService.getLocalPath()}\\assets\\vids`)
+				for(let file of files){
+					if(file.includes('outro'))
+						outroLimit++
+				}
+
+				let outroRand = UtilService.getRandomInt(1,outroLimit)
+				console.log("creating outro temp.. ", outroRand)
+
+				let outroPath =  `${UtilService.getLocalPath()}\\assets\\vids\\outro${outroRand}.ts`
+				// let outroPathTemp =  `${UtilService.getLocalPath()}\\assets\\vids\\temp_outro${outroRand}.ts`
+
+				// await ScriptService.cmd('ffmpeg', [
+				// 	'-i', outroPath, '-filter_complex',
+				// 	`[0]scale=1920:1080,setdar=16/9[a]`,
+				// 	'-map', '[a]', '-map', '0:a', '-b:v', '8000k', '-b:a', '160k', '-ar', '44100',  '-c:v', 'libx264', '-c:a', 'aac',  outroPathTemp
+				// ], {log:false})
+
+				temps.push(outroPath)
+
+			  let outPath = config.outDir+'\\'+config.outName
+
+				console.log(">> Concat action started ", `concat:${temps.join('|')}`)
+
+				await ScriptService.cmd(
+					'ffmpeg', [
+							'-i', `concat:${temps.join('|')}`, '-c', 'copy', 
+							outPath
+					], {log:false})
+
+				console.log(">> Concat finished..")
+
+				resolve(outPath)
+			}catch(err){
+				console.log(err)
+				reject()
+			}
+
+
+		})
+	}
+	compile(config){
 		console.log("compile begin with config ", config)
 		return new Promise(async(resolve,reject)=>{
 			let videos = config.videos
@@ -41,11 +113,10 @@ class VideoService{
 				// ], {log:false})
 				// temps.push(introTempFile)
 				// raws.push(introTempRawFile)
-				let introRand = 1
-				let introPath = `${UtilService.PATH.ASSETS}\\vids\\intro${introRand}.ts`
-
-
-				temps.push(introPath)
+				
+				// let introRand = 4
+				// let introPath = `${UtilService.PATH.ASSETS}\\vids\\intro${introRand}.ts`
+				// temps.push(introPath)
 
 				for(let i = 0; i < videos.length; i++){
 
@@ -59,14 +130,11 @@ class VideoService{
 
 					await ScriptService.cmd('ffmpeg', [
 						'-i', videos[i].file, '-c', 'copy', '-bsf:v', 'h264_mp4toannexb', '-f', 'mpegts', tempRawFile
-					], {log:true})
+					], {log:false})
 					// await ScriptService.cmd('ffmpeg', [
 					// 	'-i', tempRawFile, '-b:v', '8000k', '-b:a', '160k', '-ar', '44100', 
 					// 	'-vf', "scale=1920:1080,setdar=16/9",  '-f', 'mpegts', '-c:v', 'libx264', tempFile
 					// ], {log:false})
-
-			
-
 
 					if(i == 0){
 
@@ -74,14 +142,14 @@ class VideoService{
 							'-i', tempRawFile, '-filter_complex',
 							`[0]scale=1920:1080,setdar=16/9[a];[a]fade=t=in:st=0:d=3[a1];[a1]subtitles='${tempSrtPath}':force_style='FontName=Roboto Bk,FontSize=20,Alignment=7'[b]`,
 							'-map', '[b]', '-map', '0:a', '-b:v', '8000k', '-b:a', '160k', '-ar', '44100',  '-c:v', 'libx264', '-c:a', 'aac',  tempFile
-						], {log:true})
+						], {log:false})
 						
 					}else{
 						await ScriptService.cmd('ffmpeg', [
 							'-i', tempRawFile, '-filter_complex',
 							`[0]scale=1920:1080,setdar=16/9[a];[a]subtitles='${tempSrtPath}':force_style='FontName=Roboto Bk,FontSize=20,Alignment=7'[b]`,
 							'-map', '[b]', '-map', '0:a', '-b:v', '8000k', '-b:a', '160k', '-ar', '44100',  '-c:v', 'libx264', '-c:a', 'aac',  tempFile
-						], {log:true})
+						], {log:false})
 					}
 
 
@@ -95,24 +163,19 @@ class VideoService{
 				console.log("clips.. ", temps.length)
 
 				console.log("creating outro temp.. ")
-				let outro =  `${UtilService.getLocalPath()}\\assets\\vids\\outro.mp4`
-				let outroTempFile = config.outDir+'\\'+"temp_outro.ts"
-				let outroTempRawFile = config.outDir+'\\'+"raw_temp_outro.ts"
-				await ScriptService.cmd('ffmpeg', [
-					'-i', outro, '-c', 'copy', '-bsf:v', 'h264_mp4toannexb', '-f', 'mpegts', outroTempRawFile
-				], {log:false})
-
-				await ScriptService.cmd('ffmpeg', [
-					'-i', outroTempRawFile, '-b:v', '8000k', '-b:a', '160k', '-ar', '44100',  '-c:v', 'libx264', '-c:a', 'aac', outroTempFile
-				], {log:false})
 				
-				await fs.unlinkSync(outroTempRawFile)
-				temps.push(outroTempFile)
-				// raws.push(outroTempRawFile)
+				let outroLimit = 0
+				let files = await fs.readdirSync(`${UtilService.getLocalPath()}\\assets\\vids`)
+				for(let file of files){
+					if(file.includes('outro'))
+						outroLimit++
+				}
 
-						// '-i BlindingMistyWaffleKappaClaus-WuekI_40vRqY5OKy.mp4 -c copy -bsf:v h264_mp4toannexb -f mpegts temp1.ts'
+				let outroRand = UtilService.getRandomInt(1,outroLimit)
+				let outroPath =  `${UtilService.getLocalPath()}\\assets\\vids\\outro${outroRand}.ts`
+				temps.push(outroPath)
+
 			  let outPath = config.outDir+'\\'+config.outName
-			  // let rawOutPath = config.outDir+'\\'+ 'raw_'+config.outName
 
 				console.log(">> Concat action started ", `concat:${temps.join('|')}`)
 
@@ -125,12 +188,9 @@ class VideoService{
 				// ffmpeg -i "concat:temp1.ts|temp2.ts" -c copy -bsf:a aac_adtstoasc -r 60 testout.mp4
 				try{
 					for(let temp of temps){
-						if(temp == introPath) continue
+						if(temp == introPath || temp == outroPath) continue
 						await fs.unlinkSync(temp)
 					}
-					// for(let raw of raws){
-					// 	fs.unlinkSync(raw)
-					// }
 				}catch{}
 				
 				console.log(">> Concat finished..")
@@ -152,6 +212,7 @@ class VideoService{
 				// console.log(">> Added subs..")
 
 				// ffmpeg -i ${outPath} -vf subtitles=${config.outDir}\\compilation.srt:fontsdir='${this.path}\\fonts\\KGCandyCaneStripe.ttf':force_style='FontName=KG Candy Cane Stripe,Fontsize=20' compilation2.mp4
+				console.log("Finished compilation at " + outPath)
 				resolve(outPath)
 			}catch(err){
 				console.log(err)
