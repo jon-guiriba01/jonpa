@@ -202,51 +202,56 @@ class TwitchTubeService{
 		let lastUsedEntry = `${params.channel}.shorts.lastUsed`
 		let lastUsed = StorageService.get(lastUsedEntry)
 
-    let selectedClip = clips[0]
+		let selectedClip = clips[0]
 
-    if(!selectedClip) {
-      console.log("no suitable clip for "+ params.channel + " skipping...")
-    	return
-    }
+		if(!selectedClip) {
+		console.log("no suitable clip for "+ params.channel + " skipping...")
+			return
+		}
 
-    selectedClip.title = this.ytTitle(selectedClip.title)
+		selectedClip.title = this.ytTitle(selectedClip.title)
 
-    let prevTitlesEntry = `${params.channel}.shorts.prevTitles`
-    let prevTitles = await StorageService.get(prevTitlesEntry) || []
+		let prevTitlesEntry = `${params.channel}.shorts.prevTitles`
+		let prevTitles = await StorageService.get(prevTitlesEntry) || []
 
-    prevTitles.push(selectedClip.title)
-    if(prevTitles.length > 100)
-    	prevTitles.shift()
+		prevTitles.push(selectedClip.title)
+		if(prevTitles.length > 100)
+			prevTitles.shift()
 
-    console.log('making video for ' + params.channel + " - " + selectedClip.views + " " + selectedClip.title)
+		console.log('making video for ' + params.channel + " - " + selectedClip.views + " " + selectedClip.title)
 
-    let downloadDir = `${UtilService.getPath()}\\twitch\\shorts\\${selectedClip.broadcaster.display_name}`
-    
-    let filePath = await TwitchService.downloadClip(selectedClip, downloadDir)
-    console.log("downloaded..  ", filePath)
-    selectedClip.filePath = filePath
-    StorageService.set(lastUsedEntry, moment().format())
-    StorageService.set(prevTitlesEntry, prevTitles)
+		let downloadDir = `${UtilService.getPath()}\\twitch\\shorts\\${selectedClip.broadcaster.display_name}`
+		await UtilService.preparePath(downloadDir)
 
-  	let thumbPath = `${UtilService.getLocalPath()}\\twitch\\shorts\\${selectedClip.broadcaster.display_name}\\thumbnail_${processId}.jpg`
-    try{
-    	await this.buildShortThumbnail([selectedClip], thumbPath)
-    }catch(err){
-    	console.log(err)
-    }
+		let filePath = await TwitchService.downloadClip(selectedClip, downloadDir)
+		console.log("downloaded..  ", filePath)
+		selectedClip.filePath = filePath
+		StorageService.set(lastUsedEntry, moment().format())
+		StorageService.set(prevTitlesEntry, prevTitles)
 
-    let uploadData = await this.makeShortsYTMeta(selectedClip, {
-      channel:params.channel,
-      notify:params.notify,
-      thumbPath:thumbPath
-    })
+		let thumbDir = `${UtilService.getLocalPath()}\\twitch\\shorts\\${selectedClip.broadcaster.display_name}`
+		await UtilService.preparePath(thumbDir)
+		
+		let thumbPath = `${thumbDir}\\thumbnail_${processId}.jpg`
+		try{
+			await this.buildShortThumbnail([selectedClip], thumbPath)
+		}catch(err){
+			console.log(err)
+		}
+
+		let uploadData = await this.makeShortsYTMeta(selectedClip, {
+			channel:params.channel,
+			notify:params.notify,
+			thumbPath:thumbPath
+		})
 
 
-    let outDir = `${UtilService.getPath()}\\twitch\\shorts\\${selectedClip.broadcaster.display_name}`
-    let generatedPath = await this.generateShort([selectedClip], outDir, processId)
+		let outDir = `${UtilService.getPath()}\\twitch\\shorts\\${selectedClip.broadcaster.display_name}`
+		await UtilService.preparePath(outDir)
+		let generatedPath = await this.generateShort([selectedClip], outDir, processId)
 
-    
-    console.log("YT Metadata ", uploadData)
+		
+		console.log("YT Metadata ", uploadData)
 
 		if(params.upload){
     	console.log("uploading to youtube..")

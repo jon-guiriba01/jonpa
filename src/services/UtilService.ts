@@ -18,6 +18,25 @@ class UtilService{
 	}
 	constructor(){}
 
+	async preparePath(path){
+		if(!path) return
+		let dirs = path.split("\\")
+
+		let dir = ""
+		for(let i = 0; i < dirs.length; i++){
+			if(i == 0)
+				dir = `${dirs[i]}`
+			else
+				dir += `\\${dirs[i]}`
+		}
+		
+		console.log("checking dir: " + dir)
+		if (! await fs.existsSync(dir)){
+			await fs.mkdirSync(dir)
+		}
+	
+	}
+
 	getPath(){
 		return this.path
 	}

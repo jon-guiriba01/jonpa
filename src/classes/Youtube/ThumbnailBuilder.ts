@@ -120,7 +120,7 @@ export class ThumbnailBuilder{
 	  	}						
 	  )
 
-    await base.write(this.settings.outPath)
+    	await base.write(this.settings.outPath)
 	}
 	
 	async buildCompilationThumbnail(){

@@ -50,3 +50,5 @@ npm-debug.log.*
 *.scss.d.ts
 src/twitch
 src/assets/vids
+src/test/*
+src/youtube
