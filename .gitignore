@@ -53,3 +53,4 @@ src/assets/vids
 src/test/*
 src/youtube
 .env
+twitch-storage
