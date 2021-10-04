@@ -54,3 +54,4 @@ src/test/*
 src/youtube
 .env
 twitch-storage
+token.json
