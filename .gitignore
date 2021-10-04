@@ -52,3 +52,4 @@ src/twitch
 src/assets/vids
 src/test/*
 src/youtube
+.env

@@ -236,8 +236,9 @@ class SeleniumService{
         console.log(err)
         resolve(null)
       }finally {
-        // await this.sleep(60000 * 10)
-        // await driver.quit();
+        
+        await this.sleep(60000 * 10)
+        await driver.quit();
       }
 
     })

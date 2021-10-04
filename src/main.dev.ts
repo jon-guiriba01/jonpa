@@ -33,6 +33,7 @@ import AuthService from './services/AuthService'
 import YoutubeService from './services/YoutubeService'
 import TwitchService from './services/TwitchService'
 import TwitchTubeService from './services/TwitchTubeService'
+import FileService from './services/FileService'
 import fetch from 'node-fetch';
 
 export default class AppUpdater {
@@ -201,7 +202,6 @@ const createWindow = async () => {
 
     console.log(`autoUploadInterval started every 3 hours`)
     var autoUploadInterval = setInterval(async()=>{
-      
       let channels = [
         "TinaKitten", 
         // "SteveSuptic", 
@@ -222,14 +222,14 @@ const createWindow = async () => {
 
         "lilypichu", 
         "fuslie", 
-        // "natsumiii",
+        "natsumiii",
         "ariasaki", 
         "masayoshi", 
         "quarterjade", 
         "peterparktv", 
         "kristoferyee", 
         "kyedae_",
-        // "susu_jpg",
+        "susu_jpg",
         "melina", 
         // "imjasmine",
         "Jinnytty", 
@@ -248,7 +248,13 @@ const createWindow = async () => {
       })
 
     }, HOUR * 3)
+
+    var twitchDirCleanInterval = setInterval(async()=>{
+      await FileService.cleanTwitchDir()
+    }, HOUR * 4  )
   
+    await FileService.cleanTwitchDir()
+
   })
 
   
